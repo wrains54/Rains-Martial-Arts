@@ -9,42 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ================================
-   HEADER FIX — RMA
-   ================================ */
-
-/* Keep header aligned to viewport */
-header {
-  padding: 0 16px;
-  box-sizing: border-box;
-}
-
-/* Ensure inner nav container fills header width */
-.nav {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Mobile header alignment */
-@media (max-width: 700px) {
-
-  /* Fix grid so it doesn't collapse left */
-  .nav {
-    grid-template-columns: auto 1fr auto;
-    padding: 12px 0;
-  }
-
-  /* Hide desktop nav menu */
-  nav ul {
-    display: none;
-  }
-
-  /* Keep Join button on the right */
-  #menuToggle {
-    justify-self: end;
-  }
-}
 
 
     :root{
@@ -377,6 +341,57 @@ nav ul {
 #pricing .class-options {
   text-align: left;
 }
+  /* ================================
+   FINAL HEADER FIX — RMA
+   ================================ */
+
+/* Prevent header from overflowing viewport */
+header {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure nav container never exceeds screen width */
+.nav {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  box-sizing: border-box;
+}
+
+/* Mobile header fix */
+@media (max-width: 700px) {
+
+  /* Simplify grid so it cannot overflow */
+  .nav {
+    grid-template-columns: auto 1fr auto;
+    column-gap: 10px;
+    padding: 12px 10px;
+  }
+
+  /* Hide desktop nav */
+  nav ul {
+    display: none;
+  }
+
+  /* Keep Join button aligned right */
+  #menuToggle {
+    justify-self: end;
+  }
+
+  /* Prevent logo from pushing layout too wide */
+  .brand .name {
+    font-size: 14px;
+  }
+
+  .brand .logo {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
 </style>
 
 <script>
@@ -688,5 +703,6 @@ closePanel.addEventListener('click', () => {
 </body>
 
 </html>
+
 
 
