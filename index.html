@@ -251,20 +251,20 @@
     <button id="closePanel" class="close-btn">&times;</button>
     <h2>Join Rains Martial Arts</h2>
     <form name="join" method="POST" data-netlify="true">
-      <label for="name">Name</label>
-      <input id="name" name="name" type="text" required placeholder="Your name">
-
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" required placeholder="you@example.com">
-
-      <label for="phone">Phone</label>
-      <input id="phone" name="phone" type="tel" placeholder="(931) 644-9963">
-
-      <label for="message">Goals</label>
-      <textarea id="message" name="message" rows="4" placeholder="Tell us what you want to achieve…"></textarea>
-
-      <button type="submit" class="btn btn-primary">Request Intro</button>
-    </form>
+  <label>Name</label>
+  <input type="text" name="name" required>
+  
+  <label>Email</label>
+  <input type="email" name="email" required>
+  
+  <label>Phone</label>
+  <input type="tel" name="phone">
+  
+  <label>Goals</label>
+  <textarea name="message"></textarea>
+  
+  <button type="submit">Request Intro</button>
+</form>
   </div>
 </div>
 
@@ -551,28 +551,31 @@ closePanel.addEventListener('click', () => {
       <span class="kicker">Start</span>
       <h2>Ready to train?</h2>
       <p>Tell us a bit about your goals, and we’ll recommend the right starting point.</p>
-      <form action="#" method="post" style="margin-top:16px">
-        <div class="grid">
-          <div class="col-7">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
-          </div>
-          <div class="col-5">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
-          </div>
-        </div>
-        <div style="margin-top:12px">
-          <label for="message">Goals</label>
-          <textarea id="message" name="message" rows="4" placeholder="Share your experience and what you want to achieve…" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)"></textarea>
-        </div>
-        <div class="actions" style="margin-top:14px">
-          <button class="btn btn-primary" type="submit">Request intro</button>
-          <a class="btn btn-secondary" href="#contact">Contact us</a>
-        </div>
-      </form>
+     <form name="contact" method="POST" data-netlify="true" style="margin-top:16px">
+  <input type="hidden" name="form-name" value="contact">
+
+  <div class="grid">
+    <div class="col-7">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
     </div>
-  </section>
+
+    <div class="col-5">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+    </div>
+  </div>
+
+  <div style="margin-top:12px">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" placeholder="How can we help you?" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)"></textarea>
+  </div>
+
+  <div class="actions" style="margin-top:14px">
+    <button class="btn btn-primary" type="submit">Send Message</button>
+  </div>
+</form>
+
 <section id="contact" class="section">
   <div class="panel">
     <span class="kicker">Contact</span>
@@ -616,5 +619,4 @@ closePanel.addEventListener('click', () => {
     });
   </script>
 </body>
-
 </html>
