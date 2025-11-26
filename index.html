@@ -9,6 +9,101 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* ================================
+   MOBILE OPTIMIZATION — RMA
+   ================================ */
+@media (max-width: 700px) {
+
+  /* HEADER */
+  .nav {
+    grid-template-columns: 1fr auto; /* logo left, button right */
+  }
+
+  nav ul {
+    display: none; /* hide desktop nav */
+  }
+
+  #menuToggle {
+    justify-self: end;
+  }
+
+  /* HERO */
+  h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .sub {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .hero-inner {
+    padding: 40px 16px;
+  }
+
+  /* BUTTONS */
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* SECTIONS & PANELS */
+  .section {
+    padding: 40px 16px;
+  }
+
+  .panel {
+    padding: 20px;
+  }
+
+  /* GRID SYSTEM */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .col-7,
+  .col-5 {
+    grid-column: 1 / -1;
+  }
+
+  /* CLASS CARDS */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  /* PRICING CARDS */
+  #pricing .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  #pricing .pricing-card {
+    padding: 20px;
+  }
+
+  /* CONTACT FORM */
+  form input,
+  form textarea {
+    font-size: 16px;
+  }
+
+  /* FOOTER */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
     :root{
       --bg:#0b0c10;
       --panel:#121318;
@@ -650,3 +745,4 @@ closePanel.addEventListener('click', () => {
 </body>
 
 </html>
+
