@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rains Martial Arts</title>
+  <meta name="description" content="Unleash your inner warrior. Transform your body and mind through the ancient art of martial arts. Join our community and discover your true potential." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0c10;
+      --panel:#121318;
+      --text:#f5f6f8;
+      --muted:#c9ccd6;
+      --brand:#e53935;
+      --brand-700:#c62828;
+      --accent:#ffcf5c;
+      --link:#4fc3f7;
+      --border:#1c1f27;
+      --success:#2ecc71;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+    }
+
+    /* Header / Nav */
+    header{
+      position:sticky; top:0; z-index:100;
+      background:rgba(10,10,14,.85);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav{
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 20px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);
+    }
+    .brand .logo{
+      width:36px; height:36px; border:2px solid var(--brand);
+      border-radius:50%; display:grid; place-items:center;
+      font-weight:700; font-size:14px; letter-spacing:.5px;
+    }
+    .brand .name{
+      font-family:"League Spartan",Inter,sans-serif;
+      font-size:18px; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+    }
+    nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
+    nav a{
+      color:var(--muted); text-decoration:none; font-weight:600; font-size:14px;
+      padding:8px 10px; border-radius:8px;
+    }
+    nav a:hover{color:var(--text); background:rgba(255,255,255,.06)}
+    .cta{
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--brand); color:white; text-decoration:none;
+      padding:10px 14px; border-radius:10px; font-weight:700;
+    }
+    .cta:hover{background:var(--brand-700)}
+
+    /* Hero */
+    .hero{
+      position:relative; overflow:hidden;
+      min-height:72vh; display:grid; place-items:center;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1608151138275-2d7185ef2ca0?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+      filter:grayscale(20%) contrast(105%);
+      opacity:.35;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(1000px 500px at 80% -50%, rgba(229,57,53,.35), transparent 55%),
+                 linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.55));
+      mix-blend:screen;
+    }
+    .hero-inner{
+      position:relative; z-index:1; max-width:900px; margin:0 auto; padding:60px 20px; text-align:center;
+    }
+    .eyebrow{
+      display:inline-block; padding:6px 10px; border:1px solid var(--border);
+      border-radius:999px; color:var(--accent); font-weight:700; font-size:12px; letter-spacing:.5px; background:rgba(255,255,255,.04);
+    }
+    h1{
+      font-family:"League Spartan",Inter,sans-serif;
+      font-size:48px; line-height:1.1; margin:18px 0 12px;
+    }
+    .sub{
+      color:var(--muted); font-size:18px; max-width:720px; margin:0 auto 26px;
+    }
+    .actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 16px; border-radius:12px; font-weight:700; text-decoration:none; transition:.15s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{background:var(--brand); color:white}
+    .btn-primary:hover{background:var(--brand-700)}
+    .btn-secondary{background:rgba(255,255,255,.06); color:var(--text); border-color:var(--border)}
+    .btn-secondary:hover{background:rgba(255,255,255,.1)}
+
+    /* Sections */
+    .section{max-width:1100px; margin:0 auto; padding:50px 20px}
+    .panel{
+      background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:26px;
+    }
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns:repeat(12, 1fr);
+    }
+    .col-7{grid-column:span 7}
+    .col-5{grid-column:span 5}
+    .kicker{
+      color:var(--accent); font-weight:700; font-size:13px; letter-spacing:.4px; text-transform:uppercase;
+    }
+    h2{
+      font-family:"League Spartan",Inter,sans-serif;
+      font-size:32px; margin:10px 0 14px;
+    }
+    p{margin:0 0 12px}
+
+    /* Cards */
+    .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+    .card{
+      background:rgba(255,255,255,.04); border:1px solid var(--border); border-radius:14px; padding:18px;
+    }
+    .card h3{margin:6px 0 6px; font-size:18px}
+    .pill{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.06); border:1px solid var(--border); font-size:12px; color:var(--muted); font-weight:700}
+
+    /* Footer */
+    footer{
+      margin-top:40px; border-top:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+    .footer-inner{max-width:1100px; margin:0 auto; padding:24px 20px; display:flex; gap:20px; align-items:center; justify-content:space-between}
+    .foot-links{display:flex; gap:16px}
+    .foot-links a{color:var(--muted); text-decoration:none}
+    .foot-links a:hover{color:var(--text)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(6,1fr)}
+      .col-7{grid-column:1/-1}
+      .col-5{grid-column:1/-1}
+      h1{font-size:38px}
+      h2{font-size:28px}
+    }
+    .contact-link {
+  color: inherit;          /* makes it match surrounding text color */
+  text-decoration: none;   /* removes underline */
+  font-weight: 600;        /* optional: makes it stand out */
+}
+
+.contact-link:hover {
+  color: var(--brand);     /* optional: highlight in your red brand color on hover */
+}
+/* Contain to the same width as other panels */
+#pricing .panel {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Grid for equal-height cards and aligned buttons */
+#pricing .pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  align-items: stretch;         /* makes all cards equal height */
+}
+
+/* Card layout with body + actions pinned at bottom */
+#pricing .pricing-card {
+  display: grid;
+  grid-template-rows: 1fr auto; /* body grows, actions stick to bottom */
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+#pricing .card-body h3 { margin-top: 0; }
+#pricing .card-body p { margin: 8px 0; }
+
+#pricing .card-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Class options vertical list */
+#pricing .class-options {
+  margin-top: 24px;
+}
+
+#pricing .class-options ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+#pricing .class-options li {
+  margin: 6px 0;
+  position: relative;
+  padding-left: 18px;
+}
+
+#pricing .class-options li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--brand); /* your red accent */
+}
+  </style>
+</head>
+<body>
+ <!-- Header -->
+<header>
+  <div class="nav">
+    <a href="#home" class="brand" aria-label="Rains Martial Arts Home">
+      <div class="logo">RMA</div>
+      <div class="name">Rains Martial Arts</div>
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#classes">Classes</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <!-- Keep the Join Now button -->
+    <button id="menuToggle" class="cta">Join Now</button>
+  </div>
+</header>
+
+<!-- Slide-in panel -->
+<div id="joinPanel" class="panel-slide">
+  <div class="panel-content">
+    <button id="closePanel" class="close-btn">&times;</button>
+    <h2>Join Rains Martial Arts</h2>
+    <form action="#" method="post">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required placeholder="Your name">
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" placeholder="(931) 644-9963">
+
+      <label for="message">Goals</label>
+      <textarea id="message" name="message" rows="4" placeholder="Tell us what you want to achieve…"></textarea>
+
+      <button type="submit" class="btn btn-primary">Request Intro</button>
+    </form>
+  </div>
+</div>
+
+<style>
+/* Slide-in panel */
+.panel-slide {
+  position:fixed;
+  top:0; right:-100%;
+  width:320px; height:100%;
+  background:#121318;
+  color:#f5f6f8;
+  box-shadow:-2px 0 8px rgba(0,0,0,.4);
+  transition:right .3s ease;
+  z-index:200;
+  padding:20px;
+}
+.panel-slide.open { right:0; }
+
+.panel-content h2 { margin-top:0; }
+.panel-content label { display:block; margin-top:12px; }
+.panel-content input, .panel-content textarea {
+  width:100%; padding:10px; margin-top:6px;
+  border-radius:8px; border:1px solid #333;
+  background:rgba(255,255,255,.05); color:white;
+}
+.close-btn {
+  font-size:28px; background:none; border:none;
+  color:white; float:right; cursor:pointer;
+}
+#pricing .pricing-card h3 {
+  text-align: center;
+  margin: 0 0 12px;
+}
+/* Center the pricing section title area */
+#pricing .panel > .kicker,
+#pricing .panel > h2 {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Keep cards and lists left-aligned */
+#pricing .pricing-cards,
+#pricing .class-options {
+  text-align: left;
+}
+</style>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const joinPanel = document.getElementById('joinPanel');
+const closePanel = document.getElementById('closePanel');
+
+menuToggle.addEventListener('click', () => {
+  joinPanel.classList.add('open');
+});
+closePanel.addEventListener('click', () => {
+  joinPanel.classList.remove('open');
+});
+</script>
+
+
+  <!-- Hero -->
+  <section id="home" class="hero" role="banner">
+    <div class="hero-inner">
+      <span class="eyebrow">Train with purpose</span>
+      <h1>Begin Your Martial Arts Journey</h1>
+      <p class="sub">Welcome to Rains Martial Arts, offering Karate, Kickboxing, and Muay Thai classes for all ages. </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#join">Start your journey</a>
+        <a class="btn btn-secondary" href="#classes">View classes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes -->
+<section id="classes" class="section">
+  <div class="panel">
+    <span class="kicker">Programs</span>
+    <h2>Choose your path</h2>
+    <div class="cards">
+      <!-- Kids Karate -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Kids+Karate" alt="Kids Karate" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Kids Karate</h3>
+        <p><strong>Upcoming Classes:</strong><br>Mon-Thurs, 4:00 PM<br></p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#kids-karate">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+       <!-- Kids Kickboxing & Muay Thai -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Kids+Muay+Thai" alt="Kids Muay Thai" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Kids Kickboxing & Muay Thai</h3>
+        <p><strong>Upcoming Classes:</strong><br>Mon-Thurs, 5:00 PM<br></p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#kids-muaythai">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+      <!-- Adult Kickboxing & Muay Thai -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Adult+Kickboxing" alt="Adult Kickboxing" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Adult Kickboxing & Muay Thai</h3>
+        <p><strong>Upcoming Classes:</strong><br>Mon-Thurs, 7:00 PM<br></p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#adult-kickboxing">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Adult Karate -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Adult+Karate" alt="Adult Karate" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Adult Karate</h3>
+        <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 6:00 PM<br></p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#adult-karate">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Friday Night Club -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Friday+Night+Club" alt="Friday Night Club" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Friday Night Fight Club</h3>
+        <p><strong>Upcoming Classes:</strong><br>Fri, 8:00 PM</p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#friday-club">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+
+      <!-- Daytime Dojo -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Daytime+Dojo" alt="Daytime Dojo" style="width:100%; border-radius:10px; margin-bottom:12px;">
+        <h3>Daytime Dojo</h3>
+        <p><strong>Upcoming Classes:</strong><br>Tue & Thu, 11:00 AM</p>
+        <div class="actions" style="margin-top:10px">
+          <a class="btn btn-secondary" href="#daytime-dojo">Learn More</a>
+          <a class="btn btn-primary" href="#join">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+ <!-- About -->
+<section id="about" class="section">
+  <div class="panel">
+    <span class="kicker">About Us</span>
+    <h2>Rains Martial Arts</h2>
+    <p>
+      At Rains Martial Arts, every class is built on a foundation of discipline, respect, and authentic training. 
+      Our school was founded by <strong>Will Rains</strong>, a martial artist whose journey has taken him from 
+      earning a <strong>2nd Degree Black Belt in Taekwondo</strong>, to becoming an <strong>IKF World Champion Kickboxer</strong>, 
+      to training <strong>Muay Thai in Thailand</strong. These experiences aren’t just accolades — they shape the way 
+      we teach, blending tradition with modern combat sports to create a training environment that is both 
+      challenging and welcoming.
+    </p>
+    <p>
+      Whether you’re stepping onto the mat for the first time or sharpening skills for competition, 
+      Rains Martial Arts is a place where you’ll grow stronger in body and mind. Our mission is simple: 
+      to help every student unleash their potential, build confidence, and carry the warrior spirit into 
+      every part of life.
+    </p>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section id="benefits" class="section">
+  <div class="panel">
+    <span class="kicker">Benefits</span>
+    <h2>Why Train Martial Arts?</h2>
+    <div class="cards">
+      <!-- Confidence -->
+      <div class="card">
+        <h3>Confidence & Discipline</h3>
+        <p>Build self‑confidence and discipline through structured training that challenges you to grow.</p>
+      </div>
+
+      <!-- Fitness -->
+      <div class="card">
+        <h3>Strength & Fitness</h3>
+        <p>Improve endurance, flexibility, and overall health with dynamic workouts that engage the whole body.</p>
+      </div>
+
+      <!-- Academic Performance -->
+      <div class="card">
+        <h3>Better Grades</h3>
+        <p>Students often see improved academic performance as martial arts training builds responsibility, time management, and study habits.</p>
+      </div>
+
+      <!-- Focus -->
+      <div class="card">
+        <h3>Focus & Mental Clarity</h3>
+        <p>Sharpen concentration, reduce stress, and carry focus into school, work, and everyday life.</p>
+      </div>
+
+      <!-- Community -->
+      <div class="card">
+        <h3>Community & Friendship</h3>
+        <p>Train alongside supportive peers and mentors, building lasting bonds on and off the mat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+  <section id="pricing" class="section">
+  <div class="panel">
+    <span class="kicker">Memberships</span>
+    <h2>Choose your plan</h2>
+
+    <!-- Cards container -->
+    <div class="pricing-cards">
+      <!-- Membership -->
+      <article class="pricing-card">
+        <div class="card-body">
+          <h3>Membership</h3>
+       
+          <p>Monthly membership: 4 classes/week — Karate or Kickboxing, mix and match. Weekend Fight Club included. Training for all ages.</p>
+          <p><em>30-day free trial</em></p>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="#join">Start Free Trial</a>
+        </div>
+      </article>
+
+      <!-- Double Trouble -->
+      <article class="pricing-card">
+        <div class="card-body">
+          <h3>Double Trouble</h3>
+     
+          <p>Two students. Includes 4 weekly Karate, Kickboxing, or mixed classes. Weekend Fight Club included. Train together, grow together, save together.</p>
+          <p><em>30-day free trial</em></p>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="#join">Start Free Trial</a>
+        </div>
+      </article>
+
+      <!-- Family Plan -->
+      <article class="pricing-card">
+        <div class="card-body">
+          <h3>Family Plan</h3>
+
+          <p>Up to 4 students. Includes 4 weekly classes per student — Karate, Kickboxing, or mix. Weekend Fight Club and open mats included.</p>
+          <p><em>30-day free trial</em></p>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="#join">Start Free Trial</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Class options list -->
+    <div class="class-options">
+      <h3>Available classes</h3>
+      <ul>
+        <li>Kids Karate</li>
+        <li>Kids Muay Thai</li>
+        <li>Adult Kickboxing</li>
+        <li>Adult Karate</li>
+        <li>Friday Night Club</li>
+        <li>Daytime Dojo (homeschoolers welcome)</li>
+        <li>Flexible Scheduling Options</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact / Join -->
+  <section id="join" class="section">
+    <div class="panel">
+      <span class="kicker">Start</span>
+      <h2>Ready to train?</h2>
+      <p>Tell us a bit about your goals, and we’ll recommend the right starting point.</p>
+      <form action="#" method="post" style="margin-top:16px">
+        <div class="grid">
+          <div class="col-7">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+          </div>
+          <div class="col-5">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+          </div>
+        </div>
+        <div style="margin-top:12px">
+          <label for="message">Goals</label>
+          <textarea id="message" name="message" rows="4" placeholder="Share your experience and what you want to achieve…" style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)"></textarea>
+        </div>
+        <div class="actions" style="margin-top:14px">
+          <button class="btn btn-primary" type="submit">Request intro</button>
+          <a class="btn btn-secondary" href="#contact">Contact us</a>
+        </div>
+      </form>
+    </div>
+  </section>
+<section id="contact" class="section">
+  <div class="panel">
+    <span class="kicker">Contact</span>
+    <h2>Get in touch</h2>
+    <p><strong>Email:</strong> <a href="mailto:rainsmartial@gmail.com" class="contact-link">rainsmartial@gmail.com</a></p>
+    <p><strong>Phone:</strong> <a href="tel:9316449963" class="contact-link">(931) 644-9963</a></p>
+    <p><strong>Address:</strong> 1277 N Washington Ave, Cookeville, TN</p>
+    <p>Follow us on Instagram and Facebook for schedule updates and seminar announcements.</p>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Rains Martial Arts • 1277 N Washington Ave • (931) 644-9963</div>
+    <div class="foot-links">
+      <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
