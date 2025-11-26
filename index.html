@@ -38,11 +38,23 @@
       backdrop-filter:saturate(140%) blur(8px);
       border-bottom:1px solid var(--border);
     }
-    .nav{
-      max-width:1100px; margin:0 auto;
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 20px;
-    }
+    .nav {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+nav {
+  justify-self: center;
+}
+.cta {
+  justify-self: end;
+}
+
+
     .brand{
       display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--text);
     }
@@ -221,11 +233,14 @@
   left: 0;
   color: var(--brand); /* your red accent */
 }
-    header nav {
+nav ul {
   display: flex;
-  justify-content: center;
-  gap: 24px; /* optional spacing */
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 
   </style>
 </head>
@@ -257,6 +272,8 @@
     <button id="closePanel" class="close-btn">&times;</button>
     <h2>Join Rains Martial Arts</h2>
     <form name="join" method="POST" data-netlify="true">
+
+
   <label>Name</label>
   <input type="text" name="name" required>
   
@@ -270,7 +287,10 @@
   <textarea name="message"></textarea>
   
   <button type="submit">Request Intro</button>
+  <input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="redirect" value="/thank-you.html">
 </form>
+
   </div>
 </div>
 
@@ -558,6 +578,8 @@ closePanel.addEventListener('click', () => {
       <h2>Ready to train?</h2>
       <p>Tell us a bit about your goals, and we’ll recommend the right starting point.</p>
      <form name="contact" method="POST" data-netlify="true" style="margin-top:16px">
+        <input type="hidden" name="form-name" value="contact">
+<input type="hidden" name="redirect" value="/thank-you.html">
   <input type="hidden" name="form-name" value="contact">
 
   <div class="grid">
@@ -580,6 +602,7 @@ closePanel.addEventListener('click', () => {
   <div class="actions" style="margin-top:14px">
     <button class="btn btn-primary" type="submit">Send Message</button>
   </div>
+
 </form>
 
 <section id="contact" class="section">
