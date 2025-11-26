@@ -10,99 +10,42 @@
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /* ================================
-   MOBILE OPTIMIZATION — RMA
+   HEADER FIX — RMA
    ================================ */
+
+/* Keep header aligned to viewport */
+header {
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Ensure inner nav container fills header width */
+.nav {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Mobile header alignment */
 @media (max-width: 700px) {
 
-  /* HEADER */
+  /* Fix grid so it doesn't collapse left */
   .nav {
-    grid-template-columns: 1fr auto; /* logo left, button right */
+    grid-template-columns: auto 1fr auto;
+    padding: 12px 0;
   }
 
+  /* Hide desktop nav menu */
   nav ul {
-    display: none; /* hide desktop nav */
+    display: none;
   }
 
+  /* Keep Join button on the right */
   #menuToggle {
     justify-self: end;
   }
-
-  /* HERO */
-  h1 {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-
-  .sub {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-
-  .hero-inner {
-    padding: 40px 16px;
-  }
-
-  /* BUTTONS */
-  .actions {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* SECTIONS & PANELS */
-  .section {
-    padding: 40px 16px;
-  }
-
-  .panel {
-    padding: 20px;
-  }
-
-  /* GRID SYSTEM */
-  .grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .col-7,
-  .col-5 {
-    grid-column: 1 / -1;
-  }
-
-  /* CLASS CARDS */
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .card img {
-    height: auto;
-  }
-
-  /* PRICING CARDS */
-  #pricing .pricing-cards {
-    grid-template-columns: 1fr;
-  }
-
-  #pricing .pricing-card {
-    padding: 20px;
-  }
-
-  /* CONTACT FORM */
-  form input,
-  form textarea {
-    font-size: 16px;
-  }
-
-  /* FOOTER */
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
 }
+
 
     :root{
       --bg:#0b0c10;
@@ -745,4 +688,5 @@ closePanel.addEventListener('click', () => {
 </body>
 
 </html>
+
 
