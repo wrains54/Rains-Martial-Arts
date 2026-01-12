@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rains Martial Arts</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Rains Martial Arts in Cookeville, TN offers Karate, Kickboxing, and Muay Thai for kids and adults. Build confidence, fitness, and discipline. Free trial available.">
+  <meta name="keywords" content="Martial Arts Cookeville, Karate Cookeville, Kickboxing Cookeville, Muay Thai Cookeville, Self Defense, Kids Martial Arts">
+  <meta name="author" content="Rains Martial Arts">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Local business schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Rains Martial Arts",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1277 N Washington Ave",
+      "addressLocality": "Cookeville",
+      "addressRegion": "TN",
+      "postalCode": "38501",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-931-644-9963",
+    "url": "https://rainsmartialarts.com",
+    "priceRange": "$$",
+    "openingHours": "Mo-Th 16:00-20:00, Fr 19:00-21:00"
+  }
+  </script>
+  <link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a href="#home" class="brand" aria-label="Rains Martial Arts Home">
+        <img src="images/REDNWHITE.png" alt="Rains Martial Arts Logo" class="logo-img" />
+        <div class="name">Rains Martial Arts</div>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="#about.html">About</a></li>
+          <li><a href="#pricing">Memberships</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <button id="menuToggle" class="cta" type="button">Join Now</button>
+
+        <div class="social-header">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" aria-label="Instagram" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" aria-label="TikTok" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-in Join Panel -->
+  <div id="joinPanel" class="panel-slide" aria-hidden="true">
+    <div class="panel-content">
+      <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+
+      <h2>Book Your Free Trial</h2>
+      <p>Experience up to 3 classes of world-class training.</p>
+
+      <form name="join" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="join">
+        <input type="hidden" name="redirect" value="/thank-you.html">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="tel" name="phone">
+
+        <label>Goals</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit">Request Intro</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="home" class="hero hero-split" role="banner">
+    <div class="hero-left">
+      <div class="hero-inner">
+        <h1>Build Confidence. Sharpen Discipline</h1>
+        <p class="sub">
+          Rains Martial Arts in Cookeville offers high-level Karate, Kickboxing, and Muay Thai for kids, teens, and adults.
+          Train with world-class coaching in a supportive, disciplined environment.
+        </p>
+        <div class="actions">
+          <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Book Free Trial</button>
+          <a class="btn btn-secondary" href="classes.html">View Classes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="slides">
+        <div class="slide active" style="background-image: url('images/ADRIAN_1.jpg');"></div>
+        <div class="slide" style="background-image: url('images/CLASS_1.jpg');"></div>
+        <div class="slide" style="background-image: url('images/IMG_4858.jpeg');"></div>
+      </div>
+    </div>
+  </section>
+
+  
+ 
+<!-- Testimonials (Higher on the page, before pricing) -->
+  <section class="section testimonials">
+    <div class="panel">
+      <span class="kicker">Real Results</span>
+      <h2>What Our Members Say</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p class="quote">“Will is a dynamic duo of fun and precision with skills and forms”</p>
+          <div class="author">Parent of karate student</div>
+        </div>
+
+        <div class="testimonial">
+          <p class="quote">“Will is the big brother I've never had, Will is patient, calm, and doesn't rush you”</p>
+          <div class="author"> Ally - Kids Karate Student</div>
+        </div>
+
+        <div class="testimonial">
+          <p class="quote">“example”</p>
+          <div class="author">— Jake - Adult Kickboxing Student</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Benefits -->
+  <section id="benefits" class="section">
+    <div class="panel">
+      <span class="kicker">Benefits</span>
+      <h2>Why Train Martial Arts?</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Confidence & Discipline</h3>
+          <p>Build self-confidence and discipline through structured training that challenges you to grow.</p>
+        </div>
+
+        <div class="card">
+          <h3>Strength & Fitness</h3>
+          <p>Improve endurance, flexibility, and overall health with dynamic workouts that engage the whole body.</p>
+        </div>
+
+        <div class="card">
+          <h3>Better Grades</h3>
+          <p>Students often see improved academic performance as martial arts training builds responsibility, time management, and study habits.</p>
+        </div>
+
+        <div class="card">
+          <h3>Focus & Mental Clarity</h3>
+          <p>Sharpen concentration, reduce stress, and carry focus into school, work, and everyday life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <div class="panel">
+      <span class="kicker">Memberships</span>
+      <h2>Choose your plan</h2>
+
+      <div class="pricing-cards">
+        <article class="pricing-card">
+          <div class="card-body">
+            <h3>Membership</h3>
+            <p class="price">$100 / month</p>
+            <p>
+              Our core training plan. 
+              Perfect for adults and kids who want structure, consistency, and real progress.
+            </p>
+            <p><em></em></p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#join">Book Free Trial</a>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="card-body">
+            <h3>Double Trouble</h3>
+            <p class="price">$180 / month</p>
+            <p>Train with a partner and save. Ideal for friends, couples, or siblings who want to stay motivated together while receiving full access to our programs.</p>
+            <p><em></em></p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#join">Book Free Trial</a>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="card-body">
+            <h3>Family Plan</h3>
+            <p class="price">$250 / month</p>
+            <p>One powerful membership for the whole family. Up to 4 students. Build discipline, confidence, and fitness together.</p>
+            <p><em></em></p>
+          </div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="#join">Book Free Trial</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join -->
+  <section id="join" class="section">
+    <div class="panel">
+      <span class="kicker">Start</span>
+      <h2>Ready to train?</h2>
+      <p>Send us your information and we will schedule your free trial — up to 3 classes to experience our training, coaching, and community.</p>
+      <p>Schedule not lining up with our class times? No problem. Tell us your availability and we’ll find the right fit.</p>
+
+      <form name="contact" method="POST" data-netlify="true" style="margin-top:16px">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="redirect" value="/thank-you.html">
+
+        <div class="grid">
+          <div class="col-7">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name"
+              style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+          </div>
+
+          <div class="col-5">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com"
+              style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+          </div>
+        </div>
+
+        <div class="col-5">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" required placeholder="(931) 555-1234"
+            style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
+        </div>
+
+        <div style="margin-top:12px">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
+            style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)"></textarea>
+        </div>
+
+        <div class="actions" style="margin-top:14px">
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="panel">
+      <span class="kicker">Contact</span>
+      <h2>Get in touch</h2>
+      <p><strong>Email:</strong> <a href="mailto:rainsmartial@gmail.com" class="contact-link">rainsmartial@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:9316449963" class="contact-link">(931) 644-9963</a></p>
+      <p><strong>Address:</strong> 1277 N Washington Ave, Cookeville, TN</p>
+
+      <div style="margin-top:18px; border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+        <iframe
+          src="https://www.google.com/maps?q=1277%20N%20Washington%20Ave%2C%20Cookeville%2C%20TN&output=embed"
+          width="100%"
+          height="280"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <p>Follow us on Instagram and Facebook for schedule updates and seminar announcements.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Rains Martial Arts • 1277 N Washington Ave • (931) 644-9963</div>
+      <div class="foot-links">
+        <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+      </div>
+    </div>
+
+    <div class="social-footer">
+      <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" aria-label="Instagram" rel="noopener">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+        </svg>
+      </a>
+
+      <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" aria-label="TikTok" rel="noopener">
+        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Slide-in panel
+    const menuToggle = document.getElementById('menuToggle');
+    const joinPanel = document.getElementById('joinPanel');
+    const closePanel = document.getElementById('closePanel');
+
+    menuToggle.addEventListener('click', () => {
+      joinPanel.classList.add('open');
+      joinPanel.setAttribute('aria-hidden', 'false');
+    });
+
+    closePanel.addEventListener('click', () => {
+      joinPanel.classList.remove('open');
+      joinPanel.setAttribute('aria-hidden', 'true');
+    });
+
+    // Hero slideshow
+    const slides = document.querySelectorAll('.hero-right .slide');
+    let index = 0;
+
+    function showSlide() {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      index = (index + 1) % slides.length;
+    }
+
+    if (slides.length) {
+      showSlide();
+      setInterval(showSlide, 4000);
+    }
+
+    // Footer year (your HTML already had the span; this just fills it)
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Rains Martial Arts</title>
+
+  <meta name="description" content="Learn about Rains Martial Arts in Cookeville, TN. Our philosophy, coaching background, and commitment to real martial arts training.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ <link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <a href="index.html#home" class="brand">
+        <img src="WebBackgroundLogo.png" alt="Rains Martial Arts Logo" class="logo-img" />
+        <div class="name">Rains Martial Arts</div>
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#pricing">Memberships</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <button id="menuToggle" class="cta" type="button">Join Now</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-in Join Panel -->
+  <div id="joinPanel" class="panel-slide">
+    <div class="panel-content">
+      <button id="closePanel" class="close-btn">&times;</button>
+
+      <h2>Book Your Free Trial</h2>
+      <p>Experience up to 3 classes of world-class training.</p>
+
+      <form name="join" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="join">
+        <input type="hidden" name="redirect" value="/thank-you.html">
+
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Phone</label>
+        <input type="tel" name="phone">
+
+        <label>Goals</label>
+        <textarea name="message"></textarea>
+
+        <button type="submit">Request Intro</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- About Page Content -->
+  <section class="section">
+    <div class="panel">
+      <span class="kicker">About Us</span>
+      <h2>Rains Martial Arts</h2>
+
+      <p>
+        Rains Martial Arts was built on the idea that martial arts should be taught with
+        structure, discipline, and authenticity — not watered down fitness classes or
+        belt factories.
+      </p>
+
+      <p>
+        Founded by <strong>Will Rains</strong>, the school reflects a lifelong journey through
+        traditional martial arts and modern combat sports. From earning a
+        <strong>2nd Degree Black Belt in Taekwondo</strong>, to becoming an
+        <strong>IKF World Champion Kickboxer</strong>, to training and fighting in
+        <strong>Muay Thai gyms in Thailand</strong>, every experience has shaped how we train.
+      </p>
+
+      <p>
+        That background means students learn more than just techniques — they learn how to
+        move with purpose, think under pressure, and build confidence that carries into
+        school, work, and everyday life.
+      </p>
+
+      <p>
+        Whether you’re a beginner, a parent looking for the right environment for your child,
+        or an experienced martial artist looking for real training, Rains Martial Arts is a
+        place where progress is earned and respected.
+      </p>
+
+      <div class="actions" style="margin-top:20px">
+        <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">
+          Book Free Trial
+        </button>
+        <a class="btn btn-secondary" href="classes.html">
+          View Classes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Rains Martial Arts • Cookeville, TN</div>
+      <div class="foot-links">
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const joinPanel = document.getElementById('joinPanel');
+    const closePanel = document.getElementById('closePanel');
+
+    menuToggle.addEventListener('click', () => joinPanel.classList.add('open'));
+    closePanel.addEventListener('click', () => joinPanel.classList.remove('open'));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
