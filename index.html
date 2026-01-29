@@ -14,27 +14,85 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://rainsmartialarts.com/">
 
-  <!-- Local business schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    "name": "Rains Martial Arts",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1277 N Washington Ave",
-      "addressLocality": "Cookeville",
-      "addressRegion": "TN",
-      "postalCode": "38501",
-      "addressCountry": "US"
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "@id": "https://rainsmartialarts.com/#business",
+  "name": "Rains Martial Arts",
+  "url": "https://rainsmartialarts.com/",
+  "logo": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
+  "image": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
+  "telephone": "+19316449963",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1227 N Washington Ave, Suite 201",
+    "addressLocality": "Cookeville",
+    "addressRegion": "TN",
+    "postalCode": "38501",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.179333541375414,
+    "longitude": -85.49655093051408
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61583813382121",
+    "https://www.instagram.com/rainsmartialarts/"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "11:00",
+      "closes": "12:00"
     },
-    "telephone": "+1-931-644-9963",
-    "url": "https://rainsmartialarts.com",
-    "priceRange": "$$",
-    "openingHours": "Mo-Th 16:00-20:00, Fr 19:00-21:00"
-  }
-  </script>
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "11:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "19:00",
+      "closes": "21:00"
+    }
+  ],
+  "description": "Rains Martial Arts in Cookeville, TN offers kids and adult martial arts programs, kickboxing, private lessons, and homeschool-friendly daytime classes focused on real skill, discipline, and fitness."
+}
+</script>
+
+
   <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -47,16 +105,16 @@
   <!-- Header -->
   <header>
     <div class="nav">
-      <a href="#home" class="brand" aria-label="Rains Martial Arts Home">
+      <a href="index.html" class="brand" aria-label="Rains Martial Arts Home">
         <img src="images/REDNWHITE.png" alt="Rains Martial Arts Logo" class="logo-img" />
         <div class="name">Rains Martial Arts</div>
       </a>
 
       <nav aria-label="Primary">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="classes.html">Classes</a></li>
-      
+          <li><a href="schedule.html">Schedule</a></li>
           <li><a href="#pricing">Memberships</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -97,26 +155,44 @@
       <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
 
       <h2>Book Your Free Trial</h2>
-      <p>Experience up to 3 classes of world-class training.</p>
+      <p>Experience up to 3 classes of world-class training FREE.</p>
 
-      <form name="join" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="join">
-        <input type="hidden" name="redirect" value="/thank-you.html">
+      <form
+  name="join"
+  method="POST"
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  action="/thank-you.html"
+>
+  <input type="hidden" name="form-name" value="join" />
 
-        <label>Name</label>
-        <input type="text" name="name" required>
+  <!-- Honeypot field (hidden from users) -->
+  <p style="display:none;">
+    <label>
+      Don’t fill this out:
+      <input name="bot-field" />
+    </label>
+  </p>
 
-        <label>Email</label>
-        <input type="email" name="email" required>
+  <label>Name</label>
+  <input type="text" name="name" required />
 
-        <label>Phone</label>
-        <input type="tel" name="phone">
+  <label>Email</label>
+  <input type="email" name="email" required />
 
-        <label>Goals</label>
-        <textarea name="message"></textarea>
+  <label>Phone</label>
+  <input type="tel" name="phone" required />
 
-        <button type="submit">Request Intro</button>
-      </form>
+
+  <label>Message</label>
+  <textarea
+    name="message"
+    placeholder="Example: I am interested in my child participating in Kids Karate"
+  ></textarea>
+
+  <button type="submit">Request Trial</button>
+</form>
+
     </div>
   </div>
 
@@ -139,7 +215,8 @@
     <div class="hero-right">
       <div class="slides">
         <div class="slide active" style="background-image: url('images/ADRIAN_1.jpg');"></div>
-        <div class="slide" style="background-image: url('images/CLASS_1.jpg');"></div>
+        <div class="slide active" style="background-image: url('images/SERGIO_1.png');"></div>
+        <div class="slide" style="background-image: url('images/FIN&ADRIAN_1.jpg');"></div>
         <div class="slide" style="background-image: url('images/IMG_4858.jpeg');"></div>
       </div>
     </div>
@@ -252,50 +329,8 @@
     </div>
   </section>
 
-  <!-- Join -->
-  <section id="join" class="section">
-    <div class="panel">
-      <span class="kicker">Start</span>
-      <h2>Ready to train?</h2>
-      <p>Send us your information and we will schedule your free trial — up to 3 classes to experience our training, coaching, and community.</p>
-      <p>Schedule not lining up with our class times? No problem. Tell us your availability and we’ll find the right fit.</p>
+  
 
-      <form name="contact" method="POST" data-netlify="true" style="margin-top:16px">
-        <input type="hidden" name="form-name" value="contact">
-        <input type="hidden" name="redirect" value="/thank-you.html">
-
-        <div class="grid">
-          <div class="col-7">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Your name"
-              style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
-          </div>
-
-          <div class="col-5">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com"
-              style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
-          </div>
-        </div>
-
-        <div class="col-5">
-          <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" required placeholder="(931) 555-1234"
-            style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)">
-        </div>
-
-        <div style="margin-top:12px">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" placeholder="How can we help you?"
-            style="width:100%; padding:12px; margin-top:6px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:var(--text)"></textarea>
-        </div>
-
-        <div class="actions" style="margin-top:14px">
-          <button class="btn btn-primary" type="submit">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </section>
 
   <!-- Contact -->
   <section id="contact" class="section">
@@ -304,11 +339,11 @@
       <h2>Get in touch</h2>
       <p><strong>Email:</strong> <a href="mailto:rainsmartial@gmail.com" class="contact-link">rainsmartial@gmail.com</a></p>
       <p><strong>Phone:</strong> <a href="tel:9316449963" class="contact-link">(931) 644-9963</a></p>
-      <p><strong>Address:</strong> 1277 N Washington Ave, Cookeville, TN</p>
+      <p><strong>Address:</strong> 1227 N Washington Ave, Cookeville, TN</p>
 
       <div style="margin-top:18px; border-radius:12px; overflow:hidden; border:1px solid var(--border);">
         <iframe
-          src="https://www.google.com/maps?q=1277%20N%20Washington%20Ave%2C%20Cookeville%2C%20TN&output=embed"
+          src="https://www.google.com/maps?q=1227%20N%20Washington%20Ave%2C%20Cookeville%2C%20TN&output=embed"
           width="100%"
           height="280"
           style="border:0;"
@@ -324,11 +359,9 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div>© <span id="year"></span> Rains Martial Arts • 1277 N Washington Ave • (931) 644-9963</div>
+      <div>© <span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
       <div class="foot-links">
         <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
       </div>
     </div>
 

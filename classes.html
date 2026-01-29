@@ -14,24 +14,99 @@
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://rainsmartialarts.com/classes.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "@id": "https://rainsmartialarts.com/#business",
+  "name": "Rains Martial Arts",
+  "url": "https://rainsmartialarts.com/",
+  "logo": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
+  "image": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
+  "telephone": "+19316449963",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1227 N Washington Ave, Suite 201",
+    "addressLocality": "Cookeville",
+    "addressRegion": "TN",
+    "postalCode": "38501",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 36.179333541375414,
+    "longitude": -85.49655093051408
+  },
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61583813382121",
+    "https://www.instagram.com/rainsmartialarts/"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "11:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Monday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Tuesday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Wednesday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "11:00",
+      "closes": "12:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Thursday",
+      "opens": "15:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "19:00",
+      "closes": "21:00"
+    }
+  ],
+  "description": "Rains Martial Arts in Cookeville, TN offers kids and adult martial arts programs, kickboxing, private lessons, and homeschool-friendly daytime classes focused on real skill, discipline, and fitness."
+}
+</script>
 
 </head>
 
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="nav">
-      <a href="index.html#home" class="brand" aria-label="Rains Martial Arts Home">
+   <div class="nav">
+      <a href="index.html" class="brand" aria-label="Rains Martial Arts Home">
         <img src="images/REDNWHITE.png" alt="Rains Martial Arts Logo" class="logo-img" />
         <div class="name">Rains Martial Arts</div>
       </a>
 
       <nav aria-label="Primary">
         <ul>
-          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="classes.html">Classes</a></li>
-          <li><a href="index.html#about">About</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
           <li><a href="index.html#pricing">Memberships</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -63,32 +138,6 @@
     </div>
   </header>
 
-  <!-- Slide-in Join Panel -->
-  <div id="joinPanel" class="panel-slide" aria-hidden="true">
-    <div class="panel-content">
-      <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
-
-      <h2>Book Your Free Trial</h2>
-      <p>Experience up to 3 classes of world-class training.</p>
-
-      <form name="join" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="join">
-        <input type="hidden" name="redirect" value="/thank-you.html">
-
-        <label>Name</label>
-        <input type="text" name="name" required>
-
-        <label>Email</label>
-        <input type="email" name="email" required>
-
-        <label>Phone</label>
-        <input type="tel" name="phone">
-
-        <label>Goals</label>
-        <textarea name="message"></textarea>
-
-        <button type="submit">Request Intro</button>
-      </form>
     </div>
   </div>
 
@@ -96,46 +145,51 @@
   <section id="classes" class="section">
     <div class="panel">
       <span class="kicker">Programs</span>
-      <h2>Choose your path</h2>
+      <h1>Martial Arts Classes in Cookeville, TN</h1>
+
 
       <div class="cards">
         <!-- Kids Karate -->
         <div class="card">
           <h3>Kids Karate</h3>
-          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 4:00 PM<br></p>
+          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 4:30 PM<br></p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="kids-karate.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
         </div>
 
         <!-- Kids Kickboxing & Muay Thai -->
         <div class="card">
           <h3>Kids Kickboxing & Muay Thai</h3>
-          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 5:00 PM<br></p>
+          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 5:30 PM<br></p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="kids-muaythai.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
         </div>
 
         <!-- Adult Kickboxing & Muay Thai -->
         <div class="card">
           <h3>Adult Kickboxing & Muay Thai</h3>
-          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 7:00 PM<br></p>
+          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 7:30 PM<br></p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="adult-kickboxing.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
         </div>
 
         <!-- Adult Karate -->
         <div class="card">
           <h3>Adult Karate</h3>
-          <p><strong>Upcoming Classes:</strong><br>Mon-Thur, 6:00 PM<br></p>
+          <p><strong>Upcoming Classes:</strong><br>Mon & Thur, 6:30 PM<br></p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="adult-karate.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
         </div>
 
@@ -145,31 +199,60 @@
           <p><strong>Upcoming Classes:</strong><br>Fri, 7:00 PM</p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="friday-club.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
         </div>
 
         <!-- Daytime Dojo -->
         <div class="card">
           <h3>Daytime Dojo</h3>
-          <p><strong>Upcoming Classes:</strong><br>Mon, 11:00 AM</p>
+          <p><strong>Upcoming Classes:</strong><br>Mon & Thur 11:00 AM</p>
           <div class="actions" style="margin-top:10px">
             <a class="btn btn-secondary" href="daytime-dojo.html">Learn More</a>
-            <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Sign Up</button>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
           </div>
+          
         </div>
+        <!-- Yound Warriors -->
+        <div class="card">
+          <h3>Young Warriors</h3>
+          <p><strong>Upcoming Classes:</strong><br>Mon & Wed 4:00 PM</p>
+          <div class="actions" style="margin-top:10px">
+            <a class="btn btn-secondary" href="young-warriors.html">Learn More</a>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
+          </div>
       </div>
+      <!-- Womens Kickboxing -->
+        <div class="card">
+          <h3>Womens Kickboxing</h3>
+          <p><strong>Upcoming Classes:</strong><br>Tues & Wed, 6:30 PM</p>
+          <div class="actions" style="margin-top:10px">
+            <a class="btn btn-secondary" href="womens-kickboxing.html">Learn More</a>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
+          </div>
     </div>
+    <!-- Private Lessons -->
+        <div class="card">
+          <h3>Private Lessons</h3>
+          <p><strong>Upcoming Slots:</strong><br>Sat & Sun</p>
+          <div class="actions" style="margin-top:10px">
+            <a class="btn btn-secondary" href="private-lessons.html">Learn More</a>
+            <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+
+          </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div>© <span id="year"></span> Rains Martial Arts • 1277 N Washington Ave • (931) 644-9963</div>
+      <div>© <span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
       <div class="foot-links">
         <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
-        <a href="index.html#privacy">Privacy</a>
-        <a href="index.html#terms">Terms</a>
+        
       </div>
     </div>
 
@@ -179,11 +262,13 @@
           <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
         </svg>
       </a>
+
       <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" aria-label="Instagram" rel="noopener">
         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
           <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
         </svg>
       </a>
+
       <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" aria-label="TikTok" rel="noopener">
         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
@@ -212,6 +297,98 @@
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   </script>
+<!-- Slide-in Join Panel + Overlay (paste right before </body>) -->
+<div id="joinOverlay" class="join-overlay" aria-hidden="true"></div>
+
+<div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Join panel">
+  <div class="panel-content">
+    <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+
+    <h2>Book Your Free Trial</h2>
+    <p>Fill this out and we’ll reach out shortly.</p>
+
+    <!-- ONE FORM, standardized for Netlify -->
+    <form
+      name="join"
+      method="POST"
+      action="/thank-you.html"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="join" />
+
+      <!-- Honeypot (hidden from users) -->
+      <p style="display:none;">
+        <label>Don’t fill this out: <input name="bot-field" /></label>
+      </p>
+
+      <label>Name</label>
+      <input type="text" name="name" required />
+
+      <label>Phone</label>
+      <input type="tel" name="phone" required />
+
+      <label>Email (optional)</label>
+      <input type="email" name="email" />
+
+      <label>Message</label>
+      <textarea name="message" placeholder="Example: I’m interested in Kids Karate for my child."></textarea>
+
+      <button type="submit">Request Trial</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Slide-in panel wiring (works on every page)
+  (function () {
+    const openers = [
+      document.getElementById('menuToggle'), // your header Join Now button
+    ].filter(Boolean);
+
+    const panel = document.getElementById('joinPanel');
+    const overlay = document.getElementById('joinOverlay');
+    const closeBtn = document.getElementById('closePanel');
+
+    if (!panel || !overlay || !closeBtn) return;
+
+    function openPanel() {
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePanel() {
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    // Open from header button
+    openers.forEach(btn => btn.addEventListener('click', openPanel));
+
+    // Open from ANY button/link you mark with data-open-join (recommended)
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-join]');
+      if (!trigger) return;
+      e.preventDefault();
+      openPanel();
+    });
+
+    // Close
+    closeBtn.addEventListener('click', closePanel);
+    overlay.addEventListener('click', closePanel);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    // Footer year (safe)
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+</script>
 
 </body>
 </html>
