@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kids Kickboxing & Muay Thai | Rains Martial Arts</title>
-  <meta name="description" content="Kids martial arts classes in Cookeville, TN focused on discipline, confidence, and fundamentals at Rains Martial Arts." />
+  <title>Kids Kickboxing Karate | Rains Martial Arts</title>
+  <meta name="description" content="Kids Kickboxing Karate classes in Cookeville, TN that blend karate structure with kickboxing fundamentals at Rains Martial Arts." />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
- <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://rainsmartialarts.com/kids-muaythai.html">
+<link rel="canonical" href="https://rainsmartialarts.com/kids-kickboxing-karate.html">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -90,8 +93,6 @@
 
 </head>
 <body>
-<!-- Header -->
-<body>
   <!-- Header -->
  <header>
   <div class="nav">
@@ -137,45 +138,62 @@
     </div>
   </div>
 </header>
-
-
-<section id="kids-kickboxing" class="section">
+    
+  </div>
+</div>
+ <section id="kids-karate" class="section">
   <div class="panel">
-    <span class="kicker">Authentic Striking Training for Kids</span>
-    <h1>Kids Kickboxing & Muay Thai</h1>
+    <span class="kicker">Kids Kickboxing Karate</span>
+    <h1>Kids Kickboxing Karate</h1>
     <p>
-      At Rains Martial Arts, our Kids Kickboxing & Muay Thai program introduces young students to 
-      dynamic striking skills rooted in authentic Muay Thai and modern kickboxing. Led by Head Instructor 
-      <strong>Will Rains</strong>, IKF World Champion, this program blends technique, conditioning, and discipline 
-      to create a safe and inspiring training environment.
+      At Rains Martial Arts, our Kids Kickboxing Karate program blends structured karate training with practical kickboxing fundamentals. 
+      Led by Head Instructor <strong>Will Rains</strong>, a 2nd Degree Black Belt and IKF World Champion, 
+      this class gives kids the discipline and technical base of traditional martial arts while also building timing, movement, and confidence through kickboxing-based drills. 
     </p>
     <p>
-      Students build confidence, respect, and resilience while learning punches, kicks, knees, and elbows. 
-      Parents often notice improved focus, stronger grades, and healthier habits — and many choose to train 
-      alongside their children, creating a shared journey of growth.
+      We believe martial arts is more than just learning techniques — it’s about building character. 
+      Students develop discipline, respect, and resilience, while parents often notice improved focus, 
+      better grades, and stronger family connections. Parents are encouraged to train alongside their 
+      children, creating a shared journey of growth and achievement.
     </p>
 
     <h3>Program Highlights</h3>
     <ul>
-      <li>Fundamentals of kickboxing and Muay Thai striking</li>
-      <li>Pad work and partner drills for skill development</li>
-      <li>Conditioning for speed, strength, and endurance</li>
-      <li>Safe, supervised sparring opportunities</li>
-      <li>Discipline and respect emphasized every class</li>
+      <li>Karate fundamentals, forms, and stance work</li>
+      <li>Kickboxing drills, pad work, and movement development</li>
+      <li>Calisthenics and conditioning for strength and endurance</li>
+      <li>Structured skill progression with clear goals</li>
+      <li>Emphasis on discipline, respect, and perseverance</li>
+      <li>Parents welcome to train with their kids</li>
     </ul>
 
-    <div class="actions" style="margin-top:20px">
-  <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
+    <h3>Why Choose Rains Martial Arts?</h3>
+    <p>
+      If you are tired of instructors who don’t give your talented children the time and energy they 
+      deserve, you’ve found the right place. I live and breathe martial arts, and I devote myself to 
+      creating better individuals through training. Every student receives the attention they need, 
+      and every family is supported in their journey.
+    </p>
 
+    <blockquote>
+      <em>
+        "The main thing martial arts teaches kids is to never give up when things get hard. 
+        In my last kickboxing match, I dislocated my shoulder in round one. I had two choices: 
+        quit and go home, or pop it back in and fight four more rounds. I choose the ladder, and that is the tenacity I bring 
+        to my teaching and it’s that kind of resilience I instill in my students.”
+        <br> - Will Rains Head Instructor
+      </em>
+    </blockquote>
+
+   <div class="actions" style="margin-top:20px">
+  <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
   <a class="btn btn-secondary" href="classes.html">Back to Classes</a>
 </div>
-    </div>
   </div>
 </section>
-</div>
-  </div>
-</section>
-<footer>
+
+  <!-- Footer -->
+  <footer>
     <div class="footer-inner">
       <div>© <span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
       <div class="foot-links">
@@ -204,27 +222,7 @@
       </a>
     </div>
   </footer>
-  <script>
-    // Slide-in panel
-    const menuToggle = document.getElementById('menuToggle');
-    const joinPanel = document.getElementById('joinPanel');
-    const closePanel = document.getElementById('closePanel');
-
-    menuToggle.addEventListener('click', () => {
-      joinPanel.classList.add('open');
-      joinPanel.setAttribute('aria-hidden', 'false');
-    });
-
-    closePanel.addEventListener('click', () => {
-      joinPanel.classList.remove('open');
-      joinPanel.setAttribute('aria-hidden', 'true');
-    });
-
-    // Footer year
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  </script>
-<!-- Slide-in Join Panel + Overlay (paste right before </body>) -->
+  <!-- Slide-in Join Panel + Overlay (paste right before </body>) -->
 <div id="joinOverlay" class="join-overlay" aria-hidden="true"></div>
 
 <div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Join panel">
@@ -259,7 +257,7 @@
       <input type="email" name="email" />
 
       <label>Message</label>
-      <textarea name="message" placeholder="Example: I’m interested in Kids Karate for my child."></textarea>
+      <textarea name="message" placeholder="Example: I’m interested in Kids Kickboxing Karate for my child."></textarea>
 
       <button type="submit">Request Trial</button>
     </form>
@@ -316,5 +314,90 @@
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   })();
 </script>
+
 </body>
+<script>
+    // Slide-in panel
+    const menuToggle = document.getElementById('menuToggle');
+    const joinPanel = document.getElementById('joinPanel');
+    const closePanel = document.getElementById('closePanel');
+
+    menuToggle.addEventListener('click', () => {
+      joinPanel.classList.add('open');
+      joinPanel.setAttribute('aria-hidden', 'false');
+    });
+
+    closePanel.addEventListener('click', () => {
+      joinPanel.classList.remove('open');
+      joinPanel.setAttribute('aria-hidden', 'true');
+    });
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+<!-- Slide-in Join Panel + Overlay (paste right before </body>) -->
+<div id="joinOverlay" class="join-overlay" aria-hidden="true"></div>
+
+<div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Join panel">
+  <div class="panel-content">
+    <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+
+    <h2>Book Your Free Trial</h2>
+    <p>Fill this out and we’ll reach out shortly.</p>
+
+    
+  </div>
+</div>
+
+<script>
+  // Slide-in panel wiring (works on every page)
+  (function () {
+    const openers = [
+      document.getElementById('menuToggle'), // your header Join Now button
+    ].filter(Boolean);
+
+    const panel = document.getElementById('joinPanel');
+    const overlay = document.getElementById('joinOverlay');
+    const closeBtn = document.getElementById('closePanel');
+
+    if (!panel || !overlay || !closeBtn) return;
+
+    function openPanel() {
+      panel.classList.add('open');
+      overlay.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      overlay.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePanel() {
+      panel.classList.remove('open');
+      overlay.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      overlay.setAttribute('aria-hidden', 'true');
+    }
+
+    // Open from header button
+    openers.forEach(btn => btn.addEventListener('click', openPanel));
+
+    // Open from ANY button/link you mark with data-open-join (recommended)
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-join]');
+      if (!trigger) return;
+      e.preventDefault();
+      openPanel();
+    });
+
+    // Close
+    closeBtn.addEventListener('click', closePanel);
+    overlay.addEventListener('click', closePanel);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    // Footer year (safe)
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  })();
+</script>
 </html>
