@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <style>:root {
+  --bg: #0a0a0a;
+  --panel: #111111;
+  --panel-2: #171717;
+  --text: #f3f3f3;
+  --muted: #a1a1aa;
+  --red: #e53935;
+  --red-dark: #a61f1c;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(229, 57, 53, 0.12), transparent 24%),
+    radial-gradient(circle at 80% 0%, rgba(229, 57, 53, 0.08), transparent 22%),
+    linear-gradient(180deg, #090909 0%, #0d0d0d 50%, #080808 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  mix-blend-mode: screen;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 20px;
+  position: relative;
+}
+
+.wrap {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.left,
+.right {
+  position: relative;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.left {
+  min-height: 700px;
+  padding: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(229, 57, 53, 0.14), transparent 28%),
+    linear-gradient(180deg, transparent 65%, rgba(229, 57, 53, 0.08) 100%);
+  pointer-events: none;
+}
+
+.right {
+  min-height: 700px;
+  position: relative;
+  background-image: url("./images/SERG_RYAN.PNG");
+  background-position: 42% center;
+  background-size: 330%;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+
+
+
+.stamp {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  width: max-content;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--red);
+  padding: 10px 14px;
+  transform: rotate(-2deg);
+  margin-bottom: 22px;
+  box-shadow: 0 10px 24px rgba(229, 57, 53, 0.35);
+}
+
+h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 18px;
+  font-size: clamp(3.1rem, 8vw, 6.3rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  max-width: 8ch;
+}
+
+.sub {
+  position: relative;
+  z-index: 2;
+  max-width: 32ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #d4d4d8;
+  margin: 0 0 28px;
+}
+
+.meta {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 30px;
+  max-width: 560px;
+}
+
+.meta-box {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+}
+
+.meta-box .label {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.meta-box .value {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.rules {
+  position: relative;
+  z-index: 2;
+  border-left: 4px solid var(--red);
+  padding: 8px 0 8px 18px;
+  margin: 0 0 30px;
+}
+
+.rules p {
+  margin: 0 0 10px;
+  color: #e4e4e7;
+  line-height: 1.7;
+}
+
+.rules p:last-child {
+  margin-bottom: 0;
+}
+
+.actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  min-height: 56px;
+  padding: 14px 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  transition: 0.18s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #ef4444 0%, #c62828 100%);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(229, 57, 53, 0.28);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(229, 57, 53, 0.34);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.poster-note {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 16px 18px;
+  max-width: 240px;
+  backdrop-filter: blur(8px);
+}
+
+.poster-note strong {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.poster-note span {
+  color: #d4d4d8;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.footer-line {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  text-align: center;
+  color: #71717a;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 920px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .left,
+  .right {
+    min-height: auto;
+  }
+
+  .right {
+    min-height: 420px;
+  }
+
+  .left {
+    padding: 32px 24px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: 10ch;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 18px;
+  }
+
+  .left {
+    padding: 26px 18px;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .sub {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .poster-note {
+    right: 14px;
+    left: 14px;
+    max-width: none;
+  }
+}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RMA Fight Night</title>
+  <meta
+    name="description"
+    content="Rains Martial Arts Friday Night Fight Night in Cookeville, TN. Underground energy. Real rounds. Real atmosphere. Every Friday at 7 PM."
+  />
+
+</head>
+<body>
+  <section class="hero">
+    <div class="wrap">
+      <div class="left">
+        <span class="stamp">Rains Martial Arts Presents</span>
+
+        <h1>Fight Night</h1>
+
+        <div class="meta">
+          <div class="meta-box">
+            <span class="label">When</span>
+            <span class="value">Every Friday<br />7:00 PM</span>
+          </div>
+
+          <div class="meta-box">
+            <span class="label">Entry</span>
+            <span class="value">$10<br />Everyone Welcome</span>
+          </div>
+
+          <div class="meta-box">
+            <span class="label">Location</span>
+            <span class="value">1227 N Washington Ave<br />Suite 201</span>
+          </div>
+
+          <div class="meta-box">
+            <span class="label">City</span>
+            <span class="value">Cookeville, TN</span>
+          </div>
+        </div>
+
+        <div class="rules">
+          <p>Fight at your own pace. Whether you are a beginner, experienced, or somewhere in between, this is the place for you.</p>
+          <p>Bring your crew and bring the energy.</p>
+        </div>
+
+        <div class="actions">
+          <a
+            href="https://maps.google.com/?q=1227+N+Washington+Ave+Suite+201+Cookeville+TN"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Get Directions
+          </a>
+
+         
+        </div>
+      </div>
+
+      <div class="right">
+      </div>
+    </div>
+
+    <div class="footer-line">RMA • Friday Night Fight Club • Cookeville</div>
+  </section>
+</body>
+
+</html>

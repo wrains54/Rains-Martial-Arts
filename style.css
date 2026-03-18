@@ -835,3 +835,127 @@ select:focus-visible{
   top: 10px;
   right: 14px;
 }
+.header-phone{
+  font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 14px;
+  white-space: nowrap;
+}
+
+.header-phone:hover{
+  color: var(--brand);
+}
+
+.hero-points{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 6px;
+}
+
+.hero-points span{
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hero-contact-row{
+  margin-top: 16px;
+}
+
+.hero-contact-link{
+  font-weight: 800;
+  color: var(--brand);
+  text-decoration: none;
+}
+
+.hero-contact-link:hover{
+  text-decoration: underline;
+}
+
+.coach-grid{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.coach-image{
+  width: 100%;
+  border-radius: 18px;
+  display: block;
+  border: 1px solid var(--border);
+}
+
+.coach-list{
+  margin: 16px 0 0;
+  padding-left: 20px;
+}
+
+.schedule-convert{
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.parent-benefits{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.parent-benefit{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px 16px;
+  font-weight: 700;
+}
+
+.faq-list{
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.faq-item{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  padding: 18px;
+}
+
+.faq-item h3{
+  margin-bottom: 8px;
+}
+
+.reviews-panel{
+  text-align: center;
+}
+
+@media (max-width: 900px){
+  .coach-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .parent-benefits{
+    grid-template-columns: 1fr;
+  }
+
+  .header-phone{
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+.reviews-panel .actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

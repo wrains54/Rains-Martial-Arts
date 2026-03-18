@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Schedule | Rains Martial Arts</title>
 
-  <meta name="description" content="Class schedule for Rains Martial Arts in Cookeville, TN. View times for Kids Kickboxing Karate, Young Warriors, adult classes, and Fight Night.">
+  <meta name="description" content="Class schedule for Rains Martial Arts in Cookeville, TN. View times for Youth Kickboxing Karate, Young Warriors, adult classes, and Fight Night.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -110,7 +110,7 @@
       </nav>
 
       <div class="header-right">
-        <button id="menuToggle" class="cta" type="button">Join Now</button>
+        <button id="menuToggle" class="cta" type="button">Start Free Trial</button>
 
         <div class="social-header">
           <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
@@ -158,22 +158,13 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <th scope="row">11:00 AM – 12:00 PM</th>
-              <td><a class="schedule-link" href="daytime-dojo.html">Daytime Dojo</a></td>
-              <td class="empty">—</td>
-              <td class="empty">—</td>
-              <td class="empty">—</td>
-              <td class="empty">—</td>
-            </tr>
-
+        
             <tr>
               <th scope="row">4:30 – 5:30 PM</th>
-              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Kids Kickboxing Karate</a></td>
-              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Kids Kickboxing Karate</a></td>
-              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Kids Kickboxing Karate</a></td>
-              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Kids Kickboxing Karate</a></td>
+              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Youth Kickboxing Karate</a></td>
+              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Youth Kickboxing Karate</a></td>
+              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Youth Kickboxing Karate</a></td>
+              <td><a class="schedule-link" href="kids-kickboxing-karate.html">Youth Kickboxing Karate</a></td>
               <td class="empty">—</td>
             </tr>
 
@@ -217,11 +208,16 @@
         </table>
       </div>
 
-      <div class="actions" style="margin-top:18px;">
-          <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
-  <a class="btn btn-secondary" href="classes.html">Choose Your Path</a>
-      </div>
-    </div>
+      <div class="schedule-convert">
+  <h3>Not sure where to start?</h3>
+  <p>
+    We’ll help you find the best class based on age, goals, and experience level. Beginners are welcome.
+  </p>
+  <div class="actions" style="margin-top:18px;">
+    <button class="btn btn-primary" type="button" data-open-join>Start Free Trial</button>
+    <a class="btn btn-secondary" href="classes.html">View Class Details</a>
+  </div>
+</div>
   </section>
 
   <!-- Footer -->
@@ -291,7 +287,7 @@
       <input type="email" name="email" />
 
       <label>Message</label>
-      <textarea name="message" placeholder="Example: I’m interested in Kids Kickboxing Karate for my child."></textarea>
+      <textarea name="message" placeholder="Example: I’m interested in Youth Kickboxing Karate for my child."></textarea>
 
       <button type="submit">Request Trial</button>
     </form>
@@ -302,7 +298,7 @@
   // Slide-in panel wiring (works on every page)
   (function () {
     const openers = [
-      document.getElementById('menuToggle'), // your header Join Now button
+      document.getElementById('menuToggle'), // your header Start Free Trial button
     ].filter(Boolean);
 
     const panel = document.getElementById('joinPanel');
