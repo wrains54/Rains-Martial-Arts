@@ -149,52 +149,82 @@
   </header>
 
   <!-- Slide-in Join Panel -->
-  <div id="joinPanel" class="panel-slide" aria-hidden="true">
-    <div class="panel-content">
-      <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+<div id="joinPanel" class="panel-slide" aria-hidden="true">
+  <div class="panel-content">
+    <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
 
-      <h2>Book Your Free Trial</h2>
-      <p>Experience up to 3 classes of world-class training FREE.</p>
+    <h2>Book Your Free Trial</h2>
+    <p>Experience up to 3 classes of world-class training FREE.</p>
 
-      <form
-  name="join"
-  method="POST"
-  data-netlify="true"
-  data-netlify-honeypot="bot-field"
-  action="/thank-you.html"
->
-  <input type="hidden" name="form-name" value="join" />
+    <form
+      id="trialForm"
+      name="join"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action="/thank-you.html"
+    >
+      <input type="hidden" name="form-name" value="join" />
 
-  <!-- Honeypot field (hidden from users) -->
-  <p style="display:none;">
-    <label>
-      Don’t fill this out:
-      <input name="bot-field" />
-    </label>
-  </p>
+      <!-- Honeypot field -->
+      <p style="display:none;">
+        <label>
+          Don’t fill this out:
+          <input name="bot-field" />
+        </label>
+      </p>
 
-  <label>Name</label>
-  <input type="text" name="name" required />
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" required />
 
-  <label>Email</label>
-  <input type="email" name="email" required />
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" required />
 
-  <label>Phone</label>
-  <input type="tel" name="phone" required />
+      <label for="phone">Phone</label>
+      <input id="phone" type="tel" name="phone" required />
 
+      <label for="trialFor">Who is trying the class?</label>
+      <select id="trialFor" name="trialFor" required>
+        <option value="">Select one</option>
+        <option value="Myself">Myself</option>
+        <option value="My Child">My Child</option>
+      </select>
 
-  <label>Message</label>
-  <textarea
-    name="message"
-    placeholder="Example: I am interested in my child participating in Kids Karate"
-  ></textarea>
+      <div id="childFields" style="display:none;">
+        <label for="studentName">Student Name</label>
+        <input id="studentName" type="text" name="studentName" />
 
-  <button type="submit">Request Trial</button>
-</form>
+        <label for="studentAge">Student Age</label>
+        <input id="studentAge" type="number" name="studentAge" min="3" max="17" />
+      </div>
 
-    </div>
+      <label for="classInterest">Which class would you like to try?</label>
+      <select id="classInterest" name="classInterest" required>
+        <option value="">Select a class</option>
+        <option value="Young Warriors">Young Warriors</option>
+        <option value="Kids Karate">Kids Karate</option>
+        <option value="Adult Karate">Adult Karate</option>
+        <option value="Adult Kickboxing">Adult Kickboxing</option>
+        <option value="Women's Kickboxing">Women's Kickboxing</option>
+        <option value="Private Lessons">Private Lessons</option>
+      </select>
+
+      <label for="classTime">Choose your class time</label>
+      <select id="classTime" name="classTime" required disabled>
+        <option value="">Select a class first</option>
+      </select>
+
+      <label for="notes">Anything we should know?</label>
+      <textarea
+        id="notes"
+        name="notes"
+        placeholder="Optional: experience level, child's age, questions, etc."
+      ></textarea>
+
+      <button type="submit">Request Trial</button>
+    </form>
   </div>
-
+</div>
   <!-- Hero -->
   <section id="home" class="hero hero-split" role="banner">
     <div class="hero-left">
@@ -248,33 +278,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
-  <div class="panel faq-section">
-    <span class="kicker">FAQ</span>
-    <h2>Common Questions</h2>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>Do beginners need experience?</h3>
-        <p>No. Beginners are welcome in all of our programs.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What age can kids start?</h3>
-        <p>We offer Young Warriors for younger students and Youth Kickboxing Karate for school-age kids.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What should students wear for the first class?</h3>
-        <p>Comfortable workout clothes are perfect for a first visit.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>How does the free trial work?</h3>
-        <p>Fill out the form, and we’ll help you get started with the right class.</p>
-      </div>
-    </div>
-  </div>
+  
 </section>
   <!-- Benefits -->
   <section id="benefits" class="section">
@@ -306,14 +310,11 @@
     </div>
   </section>
 
-
-
   <!-- Pricing -->
   <section id="pricing" class="section">
     <div class="panel">
       <span class="kicker">Memberships</span>
       <h2>Choose your plan</h2>
-
       <div class="pricing-cards">
         <article class="pricing-card">
           <div class="card-body">
@@ -329,7 +330,6 @@
             <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Start Free Trial</button>
           </div>
         </article>
-
         <article class="pricing-card">
           <div class="card-body">
             <h3>Double Trouble</h3>
@@ -341,7 +341,6 @@
             <button class="btn btn-primary" type="button" onclick="joinPanel.classList.add('open')">Start Free Trial</button>
           </div>
         </article>
-
         <article class="pricing-card">
           <div class="card-body">
             <h3>Family Plan</h3>
@@ -356,8 +355,6 @@
       </div>
     </div>
   </section>
-
-  
 <section class="section">
   <div class="panel reviews-panel">
     <span class="kicker">Reviews</span>
@@ -370,7 +367,6 @@
     </div>
   </div>
 </section>
-
   <!-- Contact -->
   <section id="contact" class="section">
     <div class="panel">
@@ -379,7 +375,6 @@
       <p><strong>Email:</strong> <a href="mailto:rainsmartial@gmail.com" class="contact-link">rainsmartial@gmail.com</a></p>
       <p><strong>Phone:</strong> <a href="tel:9316449963" class="contact-link">(931) 644-9963</a></p>
       <p><strong>Address:</strong> 1227 N Washington Ave, Cookeville, TN</p>
-
       <div style="margin-top:18px; border-radius:12px; overflow:hidden; border:1px solid var(--border);">
         <iframe
           src="https://www.google.com/maps?q=1227%20N%20Washington%20Ave%2C%20Cookeville%2C%20TN&output=embed"
@@ -390,33 +385,28 @@
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
-
       <p>Follow us on Instagram and Facebook for schedule updates and seminar announcements.</p>
     </div>
   </section>
-
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <div>© <span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
+      <div>  <span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
       <div class="foot-links">
         <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
       </div>
     </div>
-
     <div class="social-footer">
       <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
           <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
         </svg>
       </a>
-
       <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" aria-label="Instagram" rel="noopener">
         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
           <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
         </svg>
       </a>
-
       <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" aria-label="TikTok" rel="noopener">
         <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
@@ -424,44 +414,188 @@
       </a>
     </div>
   </footer>
-
   <!-- Scripts -->
-  <script>
-    // Slide-in panel
-    const menuToggle = document.getElementById('menuToggle');
-    const joinPanel = document.getElementById('joinPanel');
-    const closePanel = document.getElementById('closePanel');
-
+<script>
+  // Slide-in panel
+  const menuToggle = document.getElementById('menuToggle');
+  const joinPanel = document.getElementById('joinPanel');
+  const closePanel = document.getElementById('closePanel');
+  if (menuToggle && joinPanel) {
     menuToggle.addEventListener('click', () => {
       joinPanel.classList.add('open');
       joinPanel.setAttribute('aria-hidden', 'false');
     });
-
+  }
+  if (closePanel && joinPanel) {
     closePanel.addEventListener('click', () => {
       joinPanel.classList.remove('open');
       joinPanel.setAttribute('aria-hidden', 'true');
     });
+  }
+  // Hero slideshow
+  const slides = document.querySelectorAll('.hero-right .slide');
+  let index = 0;
 
-    // Hero slideshow
-    const slides = document.querySelectorAll('.hero-right .slide');
-    let index = 0;
+  function showSlide() {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    index = (index + 1) % slides.length;
+  }
 
-    function showSlide() {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+  if (slides.length) {
+    showSlide();
+    setInterval(showSlide, 4000);
+  }
+
+  // Footer year
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ===== Trial form logic =====
+  const trialFor = document.getElementById('trialFor');
+  const childFields = document.getElementById('childFields');
+  const studentName = document.getElementById('studentName');
+  const studentAge = document.getElementById('studentAge');
+
+  const classInterest = document.getElementById('classInterest');
+  const classTime = document.getElementById('classTime');
+
+  // Update these if your schedule changes
+  const classSchedules = {
+    "Young Warriors": [
+      { day: 2, time: "5:45 PM", label: "Tuesday - 5:45 PM to 6:15 PM" },
+      { day: 4, time: "5:45 PM", label: "Thursday - 5:45 PM to 6:15 PM" }
+    ],
+    "Kids Karate": [
+      { day: 1, time: "4:30 PM", label: "Monday - 4:30 PM to 5:30 PM" },
+      { day: 2, time: "4:30 PM", label: "Tuesday - 4:30 PM to 5:30 PM" },
+      { day: 3, time: "4:30 PM", label: "Wednesday - 4:30 PM to 5:30 PM" },
+      { day: 4, time: "4:30 PM", label: "Thursday - 4:30 PM to 5:30 PM" }
+    ],
+    "Adult Karate": [
+      { day: 2, time: "6:30 PM", label: "Tuesday - 6:30 PM to 7:30 PM" },
+      { day: 4, time: "6:30 PM", label: "Thursday - 6:30 PM to 7:30 PM" }
+    ],
+    "Adult Kickboxing": [
+      { day: 1, time: "7:30 PM", label: "Monday - 7:30 PM to 8:30 PM" },
+      { day: 2, time: "7:30 PM", label: "Tuesday - 7:30 PM to 8:30 PM" },
+      { day: 3, time: "7:30 PM", label: "Wednesday - 7:30 PM to 8:30 PM" },
+      { day: 4, time: "7:30 PM", label: "Thursday - 7:30 PM to 8:30 PM" }
+    ],
+    "Women's Kickboxing": [
+      { day: 1, time: "6:30 PM", label: "Monday - 6:30 PM to 7:30 PM" },
+      { day: 3, time: "6:30 PM", label: "Wednesday - 6:30 PM to 7:30 PM" }
+    ],
+    "Private Lessons": [
+      { day: null, time: null, label: "We will contact you to schedule a private lesson" }
+    ]
+  };
+
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  function parseTime(timeStr) {
+    const [time, modifier] = timeStr.split(" ");
+    let [hours, minutes] = time.split(":").map(Number);
+
+    if (modifier === "PM" && hours !== 12) hours += 12;
+    if (modifier === "AM" && hours === 12) hours = 0;
+
+    return { hours, minutes };
+  }
+
+  function formatDate(date) {
+    return date.toLocaleDateString("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric"
+    });
+  }
+
+  function getNextOccurrences(schedule, count = 6) {
+    const now = new Date();
+    const results = [];
+
+    let checkDate = new Date(now);
+    checkDate.setHours(0, 0, 0, 0);
+
+    while (results.length < count) {
+      const currentDay = checkDate.getDay();
+
+      schedule.forEach(item => {
+        if (item.day === currentDay) {
+          const nextDate = new Date(checkDate);
+          const parsed = parseTime(item.time);
+          nextDate.setHours(parsed.hours, parsed.minutes, 0, 0);
+
+          if (nextDate > now) {
+            results.push({
+              value: `${formatDate(nextDate)} | ${item.label}`,
+              text: `${formatDate(nextDate)} | ${item.label}`
+            });
+          }
+        }
       });
-      index = (index + 1) % slides.length;
+
+      checkDate.setDate(checkDate.getDate() + 1);
     }
 
-    if (slides.length) {
-      showSlide();
-      setInterval(showSlide, 4000);
+    return results.slice(0, count);
+  }
+
+  function populateClassTimes(selectedClass) {
+    classTime.innerHTML = "";
+
+    if (!selectedClass || !classSchedules[selectedClass]) {
+      classTime.innerHTML = '<option value="">Select a class first</option>';
+      classTime.disabled = true;
+      return;
     }
 
-    // Footer year (your HTML already had the span; this just fills it)
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  </script>
+    if (selectedClass === "Private Lessons") {
+      classTime.innerHTML = '<option value="Private Lesson - We will contact you to schedule">Private Lesson - We will contact you to schedule</option>';
+      classTime.disabled = false;
+      return;
+    }
+
+    const upcoming = getNextOccurrences(classSchedules[selectedClass], 6);
+
+    if (!upcoming.length) {
+      classTime.innerHTML = '<option value="">No upcoming classes found</option>';
+      classTime.disabled = true;
+      return;
+    }
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = "Choose an upcoming class time";
+    classTime.appendChild(placeholder);
+
+    upcoming.forEach(item => {
+      const option = document.createElement("option");
+      option.value = item.value;
+      option.textContent = item.text;
+      classTime.appendChild(option);
+    });
+
+    classTime.disabled = false;
+  }
+
+  if (trialFor) {
+    trialFor.addEventListener('change', function () {
+      const isChild = trialFor.value === "My Child";
+      childFields.style.display = isChild ? "block" : "none";
+      studentName.required = isChild;
+      studentAge.required = isChild;
+    });
+  }
+
+  if (classInterest) {
+    classInterest.addEventListener('change', function () {
+      populateClassTimes(classInterest.value);
+    });
+  }
+</script>
 
 </body>
 </html>

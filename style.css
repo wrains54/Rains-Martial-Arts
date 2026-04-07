@@ -1,37 +1,44 @@
 /* =========================================================
    RAINS MARTIAL ARTS — CLEAN LIGHT THEME STYLESHEET
-   Drop-in replacement for your current style.css
+   Consolidated / deduplicated / standardized
    ========================================================= */
 
 /* -----------------------------
    Theme
 ----------------------------- */
 :root{
-  /* Base */
-  --bg:#f5f6f8;              /* page background */
-  --panel:#ffffff;           /* panels */
-  --text:#1f2933;            /* primary text */
-  --muted:#6b7280;           /* secondary text */
+  --bg:#f5f6f8;
+  --panel:#ffffff;
+  --text:#1f2933;
+  --muted:#6b7280;
 
-  /* Brand */
-  --brand:#e53935;           /* red */
-  --brand-700:#c62828;       /* darker red */
-  --accent:#f59e0b;          /* warm accent */
+  --brand:#e53935;
+  --brand-700:#c62828;
+  --accent:#f59e0b;
 
-  /* UI */
-  --border:#e5e7eb;          /* light border */
+  --border:#e5e7eb;
   --link:#2563eb;
   --success:#16a34a;
 
-  /* Layout */
   --max:1100px;
   --radius:16px;
   --radius-sm:14px;
   --shadow:0 10px 25px rgba(0,0,0,0.06);
+  --shadow-soft:0 6px 16px rgba(0,0,0,0.04);
+  --shadow-strong:0 16px 36px rgba(0,0,0,0.08);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+/* -----------------------------
+   Base
+----------------------------- */
+*{ box-sizing:border-box; }
+
+html,body{ height:100%; }
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   background:var(--bg);
@@ -40,9 +47,123 @@ body{
   line-height:1.6;
 }
 
-/* Remove default button quirks */
-button{ font-family:inherit; }
-img{ max-width:100%; display:block; }
+img{
+  max-width:100%;
+  display:block;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+button{
+  font-family:inherit;
+}
+
+textarea{
+  resize:vertical;
+}
+
+a{
+  color:inherit;
+}
+
+p{
+  margin:0 0 12px;
+}
+
+ul{
+  margin:0;
+}
+
+h1,
+h2,
+h3{
+  margin:0 0 12px;
+  line-height:1.1;
+  color:var(--text);
+}
+
+h1,
+h2{
+  font-family:"League Spartan",Inter,sans-serif;
+  letter-spacing:0.2px;
+}
+
+h1{
+  font-size:46px;
+}
+
+h2{
+  font-size:34px;
+}
+
+h3{
+  font-size:18px;
+  font-weight:900;
+}
+
+/* -----------------------------
+   Accessibility
+----------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible{
+  outline:3px solid rgba(37,99,235,0.35);
+  outline-offset:2px;
+  border-radius:10px;
+}
+
+/* -----------------------------
+   Layout Helpers
+----------------------------- */
+.section{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:48px 20px;
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.kicker{
+  color:var(--brand);
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:0.45px;
+  text-transform:uppercase;
+}
+
+.eyebrow{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  color:var(--brand);
+  background:rgba(229,57,53,0.07);
+  font-weight:900;
+  font-size:12px;
+  letter-spacing:0.4px;
+}
+
+.grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns:repeat(12, 1fr);
+}
+
+.col-7{ grid-column:span 7; }
+.col-5{ grid-column:span 5; }
 
 /* -----------------------------
    Header / Nav
@@ -91,7 +212,10 @@ header{
   white-space:nowrap;
 }
 
-nav{ justify-self:center; }
+nav{
+  justify-self:center;
+}
+
 nav ul{
   display:flex;
   gap:18px;
@@ -99,6 +223,7 @@ nav ul{
   margin:0;
   padding:0;
 }
+
 nav a{
   color:var(--muted);
   text-decoration:none;
@@ -108,6 +233,7 @@ nav a{
   border-radius:10px;
   transition:background 0.15s ease,color 0.15s ease;
 }
+
 nav a:hover{
   color:var(--text);
   background:rgba(17,24,39,0.06);
@@ -120,38 +246,38 @@ nav a:hover{
   justify-self:end;
 }
 
-.cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  background:var(--brand);
-  color:#fff;
-  text-decoration:none;
-  padding:10px 14px;
-  border-radius:12px;
+.header-phone{
   font-weight:800;
-  border:none;
-  cursor:pointer;
-  box-shadow:0 6px 16px rgba(229,57,53,0.22);
-  transition:transform 0.15s ease, background 0.15s ease;
+  color:var(--text);
+  text-decoration:none;
+  white-space:nowrap;
 }
-.cta:hover{ background:var(--brand-700); transform:translateY(-1px); }
-.cta:active{ transform:translateY(0); }
 
+.header-phone:hover{
+  color:var(--brand);
+}
+
+/* -----------------------------
+   Social Icons
+----------------------------- */
 .social-header,
 .social-footer{
   display:flex;
-  gap:12px;
   align-items:center;
+  gap:12px;
 }
+
 .social-header a,
 .social-footer a{
   color:var(--muted);
   transition:color 0.2s ease;
 }
+
 .social-header a:hover,
-.social-footer a:hover{ color:var(--brand); }
+.social-footer a:hover{
+  color:var(--brand);
+}
+
 .social-header svg,
 .social-footer svg{
   width:22px;
@@ -160,30 +286,129 @@ nav a:hover{
 }
 
 /* -----------------------------
-   Slide-in Panel (Join)
+   Buttons / Actions
 ----------------------------- */
+.actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  align-items:center;
+}
+
+.cta,
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  border-radius:12px;
+  font-weight:900;
+  text-decoration:none;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta{
+  background:var(--brand);
+  color:#fff;
+  padding:10px 14px;
+  box-shadow:0 6px 16px rgba(229,57,53,0.22);
+}
+
+.cta:hover{
+  background:var(--brand-700);
+  transform:translateY(-1px);
+}
+
+.cta:active{
+  transform:translateY(0);
+}
+
+.btn{
+  padding:12px 16px;
+}
+
+.btn-primary{
+  background:var(--brand);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(229,57,53,0.20);
+}
+
+.btn-primary:hover{
+  background:var(--brand-700);
+  transform:translateY(-1px);
+}
+
+.btn-primary:active{
+  transform:translateY(0);
+}
+
+.btn-secondary{
+  background:#f3f4f6;
+  color:var(--text);
+  border-color:var(--border);
+}
+
+.btn-secondary:hover{
+  background:#eceef1;
+  transform:translateY(-1px);
+}
+
+.btn-secondary:active{
+  transform:translateY(0);
+}
+
+/* -----------------------------
+   Slide-in Join Panel
+----------------------------- */
+.join-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.25s ease;
+  z-index:999;
+}
+
+.join-overlay.open{
+  opacity:1;
+  pointer-events:auto;
+}
+
 .panel-slide{
   position:fixed;
   top:0;
-  right:-100%;
-  width:340px;
-  height:100%;
-  background:#ffffff;
-  color:var(--text);
-  box-shadow:-20px 0 45px rgba(0,0,0,0.14);
-  border-left:1px solid var(--border);
-  transition:right 0.28s ease;
-  z-index:200;
-  padding:20px;
+  right:0;
+  width:420px;
+  max-width:92vw;
+  height:100dvh;
+  transform:translateX(110%);
+  transition:transform 0.25s ease;
+  z-index:1000;
 }
-.panel-slide.open{ right:0; }
+
+.panel-slide.open{
+  transform:translateX(0);
+}
+
+.panel-slide .panel-content{
+  position:relative;
+  height:100%;
+  overflow:auto;
+  background:#fff;
+  color:var(--text);
+  padding:24px;
+  border-left:1px solid rgba(0,0,0,0.08);
+  box-shadow:-10px 0 30px rgba(0,0,0,0.25);
+}
 
 .panel-content h2{
   margin:8px 0 6px;
-  font-family:"League Spartan",Inter,sans-serif;
   font-size:26px;
-  letter-spacing:0.2px;
 }
+
 .panel-content p{
   margin:0 0 12px;
   color:var(--muted);
@@ -191,16 +416,21 @@ nav a:hover{
 }
 
 .close-btn{
-  font-size:28px;
-  background:none;
-  border:none;
-  color:var(--muted);
-  float:right;
-  cursor:pointer;
+  position:absolute;
+  top:10px;
+  right:14px;
+  padding:0;
+  background:transparent;
+  border:0;
+  font-size:34px;
   line-height:1;
-  padding:4px 8px;
+  color:var(--muted);
+  cursor:pointer;
 }
-.close-btn:hover{ color:var(--text); }
+
+.close-btn:hover{
+  color:var(--text);
+}
 
 .panel-content label{
   display:block;
@@ -209,18 +439,20 @@ nav a:hover{
   font-size:13px;
   color:var(--text);
 }
+
 .panel-content input,
 .panel-content textarea,
 .panel-content select{
   width:100%;
-  padding:12px;
   margin-top:6px;
-  border-radius:12px;
+  padding:12px;
   border:1px solid var(--border);
+  border-radius:12px;
   background:#fff;
   color:var(--text);
   outline:none;
 }
+
 .panel-content input:focus,
 .panel-content textarea:focus,
 .panel-content select:focus{
@@ -232,8 +464,8 @@ nav a:hover{
   width:100%;
   margin-top:16px;
   padding:14px;
-  border-radius:12px;
   border:none;
+  border-radius:12px;
   background:var(--brand);
   color:#fff;
   font-weight:900;
@@ -242,14 +474,18 @@ nav a:hover{
   cursor:pointer;
   transition:background 0.15s ease, transform 0.15s ease;
 }
+
 .panel-content button[type="submit"]:hover{
   background:var(--brand-700);
   transform:translateY(-1px);
 }
-.panel-content button[type="submit"]:active{ transform:translateY(0); }
+
+.panel-content button[type="submit"]:active{
+  transform:translateY(0);
+}
 
 /* -----------------------------
-   Hero (Split)
+   Hero Split
 ----------------------------- */
 .hero{
   position:relative;
@@ -258,20 +494,20 @@ nav a:hover{
 
 .hero-split{
   display:flex;
-  height:70vh;
   width:100%;
+  height:70vh;
   overflow:hidden;
 }
 
 .hero-left{
   width:38%;
-  background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.98));
   display:flex;
   align-items:center;
   justify-content:flex-start;
   padding:48px 32px;
-  z-index:2;
+  background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.98));
   border-bottom:1px solid var(--border);
+  z-index:2;
 }
 
 .hero-left .hero-inner{
@@ -280,29 +516,30 @@ nav a:hover{
 }
 
 .hero-right{
-  width:62%;
   position:relative;
+  width:62%;
   height:100%;
   min-height:400px;
 }
 
 .hero-right .slides{
   position:absolute;
-  top:0; left:0;
-  height:100%; width:100%;
+  inset:0;
 }
+
 .hero-right .slide{
   position:absolute;
-  top:0; left:0;
-  height:100%; width:100%;
+  inset:0;
   background-size:cover;
   background-position:center;
   opacity:0;
   transition:opacity 1.2s ease-in-out;
 }
-.hero-right .slide.active{ opacity:1; }
 
-/* subtle overlay to keep photos consistent */
+.hero-right .slide.active{
+  opacity:1;
+}
+
 .hero-right::after{
   content:"";
   position:absolute;
@@ -313,120 +550,45 @@ nav a:hover{
   pointer-events:none;
 }
 
-.eyebrow{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid var(--border);
-  border-radius:999px;
-  color:var(--brand);
-  font-weight:900;
-  font-size:12px;
-  letter-spacing:0.4px;
-  background:rgba(229,57,53,0.07);
-}
-
-h1{
-  font-family:"League Spartan",Inter,sans-serif;
-  font-size:46px;
-  line-height:1.05;
-  margin:14px 0 10px;
-  letter-spacing:0.2px;
-}
-
 .sub{
+  max-width:520px;
+  margin:0 0 18px;
   color:var(--muted);
   font-size:16px;
-  margin:0 0 18px;
-  max-width:520px;
 }
 
-.actions{
+.hero-points{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;
-  align-items:center;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
   gap:10px;
-  padding:12px 16px;
-  border-radius:12px;
-  font-weight:900;
-  text-decoration:none;
-  transition:transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
-  border:1px solid transparent;
-  cursor:pointer;
+  margin:18px 0 6px;
 }
 
-.btn-primary{
-  background:var(--brand);
-  color:#fff;
-  box-shadow:0 8px 18px rgba(229,57,53,0.20);
-}
-.btn-primary:hover{ background:var(--brand-700); transform:translateY(-1px); }
-.btn-primary:active{ transform:translateY(0); }
-
-.btn-secondary{
-  background:#f3f4f6;
-  color:var(--text);
-  border-color:var(--border);
-}
-.btn-secondary:hover{
-  background:#eceef1;
-  transform:translateY(-1px);
-}
-.btn-secondary:active{ transform:translateY(0); }
-
-/* -----------------------------
-   Sections / Panels
------------------------------ */
-.section{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:48px 20px;
-}
-
-.panel{
-  background:var(--panel);
+.hero-points span{
+  padding:8px 12px;
   border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:28px;
-  box-shadow:var(--shadow);
-}
-
-.kicker{
-  color:var(--brand);
-  font-weight:900;
+  border-radius:999px;
+  background:#fff;
   font-size:13px;
-  letter-spacing:0.45px;
-  text-transform:uppercase;
+  font-weight:700;
 }
 
-h2{
-  font-family:"League Spartan",Inter,sans-serif;
-  font-size:34px;
-  margin:10px 0 14px;
-  letter-spacing:0.2px;
+.hero-contact-row{
+  margin-top:16px;
 }
 
-p{ margin:0 0 12px; }
+.hero-contact-link{
+  color:var(--brand);
+  text-decoration:none;
+  font-weight:800;
+}
+
+.hero-contact-link:hover{
+  text-decoration:underline;
+}
 
 /* -----------------------------
-   Grid helpers (Contact form)
------------------------------ */
-.grid{
-  display:grid;
-  gap:16px;
-  grid-template-columns:repeat(12, 1fr);
-}
-.col-7{ grid-column:span 7; }
-.col-5{ grid-column:span 5; }
-
-/* -----------------------------
-   Cards (Programs / Benefits)
+   Generic Cards
 ----------------------------- */
 .cards{
   display:grid;
@@ -439,14 +601,11 @@ p{ margin:0 0 12px; }
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
   padding:18px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.04);
+  box-shadow:var(--shadow-soft);
 }
 
 .card h3{
   margin:6px 0 8px;
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:0.1px;
 }
 
 .pill{
@@ -461,6 +620,27 @@ p{ margin:0 0 12px; }
 }
 
 /* -----------------------------
+   Coach Section
+----------------------------- */
+.coach-grid{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:28px;
+  align-items:center;
+}
+
+.coach-image{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.coach-list{
+  margin:16px 0 0;
+  padding-left:20px;
+}
+
+/* -----------------------------
    Pricing
 ----------------------------- */
 #pricing .panel{
@@ -469,7 +649,9 @@ p{ margin:0 0 12px; }
 }
 
 #pricing .panel > .kicker,
-#pricing .panel > h2{ text-align:center; }
+#pricing .panel > h2{
+  text-align:center;
+}
 
 #pricing .pricing-cards{
   display:grid;
@@ -486,21 +668,20 @@ p{ margin:0 0 12px; }
   border:1px solid var(--border);
   border-radius:var(--radius-sm);
   padding:18px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.04);
+  box-shadow:var(--shadow-soft);
 }
 
 #pricing .pricing-card h3{
-  text-align:center;
   margin:0 0 10px;
-  font-weight:900;
+  text-align:center;
 }
 
 #pricing .price{
-  font-weight:900;
-  font-size:18px;
   margin:0 0 10px;
   text-align:center;
   color:var(--text);
+  font-size:18px;
+  font-weight:900;
 }
 
 #pricing .card-actions{
@@ -512,18 +693,14 @@ p{ margin:0 0 12px; }
 /* -----------------------------
    Testimonials
 ----------------------------- */
-.testimonials .panel{ text-align:center; }
+.testimonials .panel{
+  text-align:center;
+}
 
 .testimonials-grid{
   display:grid;
   gap:16px;
   margin-top:22px;
-}
-
-@media (min-width: 768px){
-  .testimonials-grid{
-    grid-template-columns:repeat(3, 1fr);
-  }
 }
 
 .testimonial{
@@ -532,223 +709,106 @@ p{ margin:0 0 12px; }
   border-radius:var(--radius-sm);
   padding:22px;
   text-align:left;
-  box-shadow:0 6px 16px rgba(0,0,0,0.04);
+  box-shadow:var(--shadow-soft);
 }
 
 .testimonial .quote{
   margin:0;
+  color:var(--text);
   font-size:15px;
   line-height:1.6;
-  color:var(--text);
 }
 
 .testimonial .author{
   margin-top:14px;
+  color:var(--muted);
   font-size:13px;
   font-weight:900;
-  color:var(--muted);
 }
 
 /* -----------------------------
-   Contact links
+   FAQ / Reviews / Parent Benefits
 ----------------------------- */
-.contact-link{
-  color:inherit;
-  text-decoration:none;
-  font-weight:900;
-}
-.contact-link:hover{ color:var(--brand); }
-
-/* -----------------------------
-   Footer
------------------------------ */
-footer{
-  margin-top:26px;
-  border-top:1px solid var(--border);
-  background:#ffffff;
+.parent-benefits{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:12px;
+  margin-top:18px;
 }
 
-.footer-inner{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:22px 20px;
+.parent-benefit{
+  padding:14px 16px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:#fff;
+  font-weight:700;
+}
+
+.faq-list{
+  display:grid;
+  gap:14px;
+  margin-top:18px;
+}
+
+.faq-item{
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:#fff;
+}
+
+.faq-item h3{
+  margin-bottom:8px;
+}
+
+.reviews-panel{
+  text-align:center;
+}
+
+.reviews-panel .actions{
   display:flex;
-  gap:20px;
-  align-items:center;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:14px;
-}
-
-.foot-links{
-  display:flex;
-  gap:16px;
-  align-items:center;
-}
-
-footer .foot-links a{
-  color:inherit;
-  text-decoration:none;
-  font-weight:900;
-}
-footer .foot-links a:hover{ color:var(--brand); }
-
-.social-footer{
-  margin-top:8px;
-  padding-bottom:18px;
   justify-content:center;
+  margin-top:20px;
 }
 
 /* -----------------------------
-   Forms (general polish)
------------------------------ */
-label{
-  font-weight:900;
-  color:var(--text);
-}
-input, textarea, select{ font:inherit; }
-textarea{ resize:vertical; }
-
-/* -----------------------------
-   Focus states (accessibility)
------------------------------ */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible{
-  outline:3px solid rgba(37,99,235,0.35);
-  outline-offset:2px;
-  border-radius:10px;
-}
-
-/* -----------------------------
-   Responsive
------------------------------ */
-@media (max-width: 900px){
-  h1{ font-size:40px; }
-  h2{ font-size:30px; }
-
-  .grid{ grid-template-columns:repeat(6, 1fr); }
-  .col-7{ grid-column:1 / -1; }
-  .col-5{ grid-column:1 / -1; }
-
-  .hero-left{ width:44%; padding:40px 26px; }
-  .hero-right{ width:56%; }
-}
-
-@media (max-width: 700px){
-  /* Header */
-  .nav{
-    grid-template-columns:1fr;
-    padding:10px 12px;
-    gap:10px;
-  }
-  nav ul{ display:none; }
-
-  .brand{ justify-content:center; }
-  .logo-img{ height:54px; }
-  .brand .name{ font-size:15px; }
-
-  .header-right{
-    width:100%;
-    justify-content:space-between;
-  }
-
-  /* optional: keep icons visible on mobile */
-  .social-header{ display:flex; }
-
-  .cta{
-    padding:9px 12px;
-    font-size:14px;
-    border-radius:12px;
-  }
-
-  /* Hero */
-  .hero-split{
-    flex-direction:column;
-    height:auto;
-  }
-  .hero-left, .hero-right{ width:100%; }
-  .hero-left{
-    padding:28px 18px;
-    border-bottom:1px solid var(--border);
-  }
-  .hero-right{ min-height:320px; }
-
-  h1{ font-size:34px; }
-  .sub{ font-size:15px; }
-
-  /* Sections */
-  .section{ padding:38px 14px; }
-  .panel{ padding:20px; }
-
-  /* Footer */
-  .footer-inner{
-    flex-direction:column;
-    text-align:center;
-    gap:12px;
-  }
-  .foot-links{
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-  }
-
-  /* Slide-in panel */
-  .panel-slide{
-    width:min(360px, 92vw);
-  }
-}
-
-/* -----------------------------
-   Accessibility / Preference
------------------------------ */
-@media (prefers-reduced-motion: reduce){
-  *{
-    transition:none !important;
-    scroll-behavior:auto !important;
-  }
-}
-
-/* -----------------------------
-   Schedule Table
+   Schedule
 ----------------------------- */
 .schedule-wrap{
   margin-top:16px;
+  overflow:auto;
+  background:#fff;
   border:1px solid var(--border);
   border-radius:14px;
-  overflow:auto; /* allows horizontal scroll on mobile */
-  background:#fff;
 }
 
 .schedule-table{
   width:100%;
+  min-width:780px;
   border-collapse:separate;
   border-spacing:0;
-  min-width:780px; /* keeps columns readable; scrolls on mobile */
 }
 
 .schedule-table thead th{
   position:sticky;
   top:0;
-  z-index:2; /* important for sticky header rendering */
-  background:#ffffff;
-  border-bottom:1px solid var(--border);
+  z-index:2;
   padding:14px 12px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
   text-align:left;
-  font-weight:900;
-  font-size:13px;
   color:var(--muted);
+  font-size:13px;
+  font-weight:900;
 }
 
 .schedule-table tbody th{
   padding:14px 12px;
+  background:rgba(17,24,39,0.02);
   border-bottom:1px solid var(--border);
   text-align:left;
-  font-weight:900;
   white-space:nowrap;
-  background:rgba(17,24,39,0.02);
+  font-weight:900;
 }
 
 .schedule-table td{
@@ -765,12 +825,12 @@ select:focus-visible{
 .schedule-link{
   display:block;
   padding:10px 12px;
+  border:1px solid rgba(229,57,53,0.18);
   border-radius:12px;
+  background:rgba(229,57,53,0.06);
+  color:var(--text);
   text-decoration:none;
   font-weight:900;
-  color:var(--text);
-  border:1px solid rgba(229,57,53,0.18);
-  background:rgba(229,57,53,0.06);
   transition:transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
 }
 
@@ -784,178 +844,428 @@ select:focus-visible{
   color:var(--muted);
   text-align:center;
 }
-/* Slide-in Join Panel */
-.join-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 999;
-}
-
-.join-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.panel-slide {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100dvh;
-  width: 420px;
-  max-width: 92vw;
-  transform: translateX(110%);
-  transition: transform 0.25s ease;
-  z-index: 1000;
-}
-
-.panel-slide.open {
-  transform: translateX(0);
-}
-
-.panel-slide .panel-content {
-  height: 100%;
-  overflow: auto;
-  background: #fff;
-  padding: 24px;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.25);
-  border-left: 1px solid rgba(0,0,0,0.08);
-}
-
-.close-btn {
-  background: transparent;
-  border: 0;
-  font-size: 34px;
-  line-height: 1;
-  cursor: pointer;
-  position: absolute;
-  top: 10px;
-  right: 14px;
-}
-.header-phone{
-  font-weight: 800;
-  color: var(--text);
-  text-decoration: none;
-  margin-right: 14px;
-  white-space: nowrap;
-}
-
-.header-phone:hover{
-  color: var(--brand);
-}
-
-.hero-points{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0 6px;
-}
-
-.hero-points span{
-  border: 1px solid var(--border);
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-}
-
-.hero-contact-row{
-  margin-top: 16px;
-}
-
-.hero-contact-link{
-  font-weight: 800;
-  color: var(--brand);
-  text-decoration: none;
-}
-
-.hero-contact-link:hover{
-  text-decoration: underline;
-}
-
-.coach-grid{
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
-  align-items: center;
-}
-
-.coach-image{
-  width: 100%;
-  border-radius: 18px;
-  display: block;
-  border: 1px solid var(--border);
-}
-
-.coach-list{
-  margin: 16px 0 0;
-  padding-left: 20px;
-}
 
 .schedule-convert{
-  margin-top: 22px;
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: #fff;
+  margin-top:22px;
+  padding:22px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fff;
 }
 
-.parent-benefits{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
+/* -----------------------------
+   Contact Links
+----------------------------- */
+.contact-link{
+  color:inherit;
+  text-decoration:none;
+  font-weight:900;
 }
 
-.parent-benefit{
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: #fff;
-  padding: 14px 16px;
-  font-weight: 700;
+.contact-link:hover{
+  color:var(--brand);
 }
 
-.faq-list{
-  display: grid;
-  gap: 14px;
-  margin-top: 18px;
+/* -----------------------------
+   Kids Class Page
+----------------------------- */
+.kids-page{
+  max-width:1100px;
+  margin:0 auto;
 }
 
-.faq-item{
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: #fff;
-  padding: 18px;
+.kids-intro{
+  max-width:600px;
+  margin-bottom:30px;
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.75;
 }
 
-.faq-item h3{
-  margin-bottom: 8px;
+.kids-grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:32px;
+  align-items:start;
 }
 
-.reviews-panel{
-  text-align: center;
+.kids-copy h3,
+.kids-info-card h3{
+  margin-top:0;
 }
 
-@media (max-width: 900px){
+.kids-list{
+  padding-left:20px;
+  line-height:1.8;
+}
+
+.kids-info-card{
+  padding:24px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+
+.kids-image-wrap{
+  position:relative;
+}
+
+.kids-side-image{
+  width:100%;
+  height:100%;
+  max-height:520px;
+  object-fit:cover;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:20px;
+}
+
+.kids-image-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.25));
+  pointer-events:none;
+}
+
+/* -----------------------------
+   Image-Based Classes Page
+----------------------------- */
+.classes-intro{
+  max-width:760px;
+  margin-bottom:26px;
+  color:var(--muted);
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+.class-cards{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:26px;
+  align-items:start;
+}
+
+.class-card{
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+  transition:transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.class-card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-strong);
+}
+
+.class-card-image-link{
+  position:relative;
+  display:block;
+  overflow:hidden;
+}
+
+.class-card-image-link::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, transparent 55%, rgba(0,0,0,0.18));
+  pointer-events:none;
+}
+
+.class-card-image{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  display:block;
+}
+
+.class-card-body{
+  padding:22px;
+}
+
+.class-card-body h3{
+  margin:0 0 10px;
+}
+
+.class-card-time{
+  margin:0 0 12px;
+  color:var(--text);
+  font-size:0.98rem;
+}
+
+.class-card-text{
+  margin:0 0 18px;
+  color:var(--muted);
+  line-height:1.65;
+}
+
+.class-card .actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.class-card-center{
+  grid-column:1 / -1;
+  max-width:420px;
+  margin:0 auto;
+}
+
+/* -----------------------------
+   Footer
+----------------------------- */
+footer{
+  margin-top:26px;
+  background:#fff;
+  border-top:1px solid var(--border);
+}
+
+.footer-inner{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:22px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.foot-links{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+footer .foot-links a{
+  color:inherit;
+  text-decoration:none;
+  font-weight:900;
+}
+
+footer .foot-links a:hover{
+  color:var(--brand);
+}
+
+.social-footer{
+  justify-content:center;
+  margin-top:8px;
+  padding-bottom:18px;
+}
+
+/* -----------------------------
+   Responsive
+----------------------------- */
+@media (min-width:768px){
+  .testimonials-grid{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+@media (max-width:1050px){
+  .class-cards{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .class-card-center{
+    grid-column:auto;
+    max-width:none;
+    margin:0;
+  }
+}
+
+@media (max-width:900px){
+  h1{ font-size:40px; }
+  h2{ font-size:30px; }
+
+  .grid{
+    grid-template-columns:repeat(6, 1fr);
+  }
+
+  .col-7,
+  .col-5{
+    grid-column:1 / -1;
+  }
+
+  .hero-left{
+    width:44%;
+    padding:40px 26px;
+  }
+
+  .hero-right{
+    width:56%;
+  }
+
   .coach-grid{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .parent-benefits{
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .header-phone{
-    font-size: 14px;
-    margin-right: 10px;
+    font-size:14px;
+  }
+
+  .kids-grid{
+    grid-template-columns:1fr;
+  }
+
+  .kids-side-image{
+    max-height:350px;
   }
 }
-.reviews-panel .actions{
+
+@media (max-width:720px){
+  .class-cards{
+    grid-template-columns:1fr;
+  }
+
+  .class-card-image{
+    height:220px;
+  }
+}
+
+@media (max-width:700px){
+  .nav{
+    grid-template-columns:1fr;
+    padding:10px 12px;
+    gap:10px;
+  }
+
+  nav ul{
+    display:none;
+  }
+
+  .brand{
+    justify-content:center;
+  }
+
+  .logo-img{
+    height:54px;
+  }
+
+  .brand .name{
+    font-size:15px;
+  }
+
+  .header-right{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .social-header{
+    display:flex;
+  }
+
+  .cta{
+    padding:9px 12px;
+    font-size:14px;
+    border-radius:12px;
+  }
+
+  .hero-split{
+    flex-direction:column;
+    height:auto;
+  }
+
+  .hero-left,
+  .hero-right{
+    width:100%;
+  }
+
+  .hero-left{
+    padding:28px 18px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .hero-right{
+    min-height:320px;
+  }
+
+  h1{
+    font-size:34px;
+  }
+
+  .sub{
+    font-size:15px;
+  }
+
+  .section{
+    padding:38px 14px;
+  }
+
+  .panel{
+    padding:20px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+
+  .foot-links{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .panel-slide{
+    width:min(360px, 92vw);
+  }
+}
+
+/* -----------------------------
+   Reduced Motion
+----------------------------- */
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition:none !important;
+    scroll-behavior:auto !important;
+  }
+}
+/* =========================================================
+   CLASSES PAGE TWEAKS ONLY
+   Keeps the rest of the site unchanged
+   ========================================================= */
+
+.classes-cards{
+  margin-top: 18px;
+}
+
+.class-card{
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.class-card p{
+  margin-bottom: 0;
+}
+
+.class-card .card-actions{
+  margin-top: 14px;
+}
+
+.class-card .card-actions .btn{
+  width: 100%;
+}
+
+.class-card .card-actions .btn.btn-primary{
   justify-content: center;
-  margin-top: 20px;
+}
+
+@media (max-width: 640px){
+  .class-card .card-actions{
+    width: 100%;
+  }
+
+  .class-card .card-actions .btn{
+    width: 100%;
+  }
 }
