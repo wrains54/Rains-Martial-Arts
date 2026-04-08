@@ -296,16 +296,12 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .left,
   .right {
-    min-height: auto;
-  }
-
-  .right {
-    min-height: 420px;
+    display: none;
   }
 
   .left {
+    min-height: auto;
     padding: 32px 24px;
   }
 
@@ -315,6 +311,11 @@ h1 {
 
   h1 {
     max-width: 10ch;
+  }
+
+  .topbar {
+    position: static;
+    padding: 0 0 18px;
   }
 }
 

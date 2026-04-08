@@ -1269,3 +1269,6 @@ footer .foot-links a:hover{
     width: 100%;
   }
 }
+.thank-you-panel ul li + li{
+  margin-top: 4px;
+}

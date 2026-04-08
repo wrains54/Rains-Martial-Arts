@@ -466,5 +466,43 @@
       }
     })();
   </script>
+  <script>
+  (function () {
+    const form = document.getElementById('trialForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const name = formData.get('name') || '';
+      const classInterest = formData.get('classInterest') || '';
+      const classTime = formData.get('classTime') || '';
+      const trialFor = formData.get('trialFor') || '';
+      const studentName = formData.get('studentName') || '';
+
+      try {
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        const params = new URLSearchParams({
+          name: name,
+          class: classInterest,
+          time: classTime,
+          trialFor: trialFor,
+          studentName: studentName
+        });
+
+        window.location.href = '/thank-you.html?' + params.toString();
+      } catch (err) {
+        alert('There was a problem submitting the form. Please try again.');
+      }
+    });
+  })();
+</script>
 </body>
 </html>
