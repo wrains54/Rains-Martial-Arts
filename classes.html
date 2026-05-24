@@ -144,7 +144,7 @@
 
       <div class="cards classes-cards">
         <div class="card class-card">
-          <h3>Youth Kickboxing Karate</h3>
+          <h3>Kids Karate</h3>
           <p><strong>Upcoming Classes:</strong><br>Mon-Thu, 4:30 PM</p>
           <div class="actions card-actions">
             <a class="btn btn-primary" href="kids-kickboxing-karate.html">Learn More</a>
@@ -177,9 +177,17 @@
 
         <div class="card class-card">
           <h3>Young Warriors</h3>
-          <p><strong>Upcoming Classes:</strong><br>Tue & Thu, 5:45 PM</p>
+          <p><strong>Upcoming Classes:</strong><br>Mon & Wed, 5:45 PM</p>
           <div class="actions card-actions">
             <a class="btn btn-primary" href="young-warriors.html">Learn More</a>
+          </div>
+        </div>
+
+        <div class="card class-card">
+          <h3>Kids Kickboxing</h3>
+          <p><strong>Upcoming Classes:</strong><br>Tue & Thu, 5:30 PM</p>
+          <div class="actions card-actions">
+            <a class="btn btn-primary" href="kids-kickboxing.html">Learn More</a>
           </div>
         </div>
 
@@ -272,6 +280,7 @@
         <select id="classInterest" name="classInterest" required>
           <option value="">Select a class</option>
           <option value="Young Warriors">Young Warriors</option>
+          <option value="Kids Kickboxing">Kids Kickboxing</option>
           <option value="Kids Karate">Kids Karate</option>
           <option value="Adult Karate">Adult Karate</option>
           <option value="Adult Kickboxing">Adult Kickboxing</option>
@@ -360,8 +369,12 @@
 
       const classSchedules = {
         "Young Warriors": [
-          { day: 2, time: "5:45 PM", label: "Tuesday - 5:45 PM to 6:15 PM" },
-          { day: 4, time: "5:45 PM", label: "Thursday - 5:45 PM to 6:15 PM" }
+          { day: 1, time: "5:45 PM", label: "Monday - 5:45 PM to 6:15 PM" },
+          { day: 3, time: "5:45 PM", label: "Wednesday - 5:45 PM to 6:15 PM" }
+        ],
+        "Kids Kickboxing": [
+          { day: 2, time: "5:30 PM", label: "Tuesday - 5:30 PM to 6:30 PM" },
+          { day: 4, time: "5:30 PM", label: "Thursday - 5:30 PM to 6:30 PM" }
         ],
         "Kids Karate": [
           { day: 1, time: "4:30 PM", label: "Monday - 4:30 PM to 5:30 PM" },
