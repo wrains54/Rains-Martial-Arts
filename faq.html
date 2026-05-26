@@ -266,19 +266,68 @@
   <div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book Your Free Trial">
     <div class="panel-content">
       <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+
       <h2>Book Your Free Trial</h2>
-      <p>Fill this out and we'll reach out shortly.</p>
-      <form name="join" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field">
+      <p>Choose your class and preferred upcoming class time.</p>
+
+      <form
+        id="trialForm"
+        name="join"
+        method="POST"
+        action="/thank-you.html"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
         <input type="hidden" name="form-name" value="join" />
-        <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
-        <label>Name</label>
-        <input type="text" name="name" required />
-        <label>Phone</label>
-        <input type="tel" name="phone" required />
-        <label>Email (optional)</label>
-        <input type="email" name="email" />
-        <label>Message</label>
-        <textarea name="message" placeholder="Which class are you interested in?"></textarea>
+
+        <p style="display:none;">
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required />
+
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" name="phone" required />
+
+        <label for="trialFor">Who is trying the class?</label>
+        <select id="trialFor" name="trialFor" required>
+          <option value="">Select one</option>
+          <option value="Me">Me</option>
+          <option value="My Child">My Child</option>
+        </select>
+
+        <div id="childFields" style="display:none;">
+          <label for="studentName">Student Name</label>
+          <input id="studentName" type="text" name="studentName" />
+
+          <label for="studentAge">Student Age</label>
+          <input id="studentAge" type="number" name="studentAge" min="3" max="17" />
+        </div>
+
+        <label for="classInterest">Which class would you like to try?</label>
+        <select id="classInterest" name="classInterest" required>
+          <option value="">Select a class</option>
+          <option value="Young Warriors">Young Warriors</option>
+          <option value="Kids Kickboxing">Kids Kickboxing</option>
+          <option value="Kids Karate">Kids Karate</option>
+          <option value="Adult Karate">Adult Karate</option>
+          <option value="Adult Kickboxing">Adult Kickboxing</option>
+          <option value="Women's Kickboxing">Women's Kickboxing</option>
+          <option value="Private Lessons">Private Lessons</option>
+        </select>
+
+        <label for="classTime">Choose your class time</label>
+        <select id="classTime" name="classTime" required>
+          <option value="">Choose an upcoming class time</option>
+        </select>
+
+        <label for="notes">Anything we should know?</label>
+        <textarea id="notes" name="notes" placeholder="Optional: experience, goals, questions, etc."></textarea>
+
         <button type="submit">Request Trial</button>
       </form>
     </div>
@@ -291,6 +340,14 @@
       const joinOverlay = document.getElementById('joinOverlay');
       const closePanel = document.getElementById('closePanel');
       const yearEl = document.getElementById('year');
+
+      const trialFor = document.getElementById('trialFor');
+      const childFields = document.getElementById('childFields');
+      const studentName = document.getElementById('studentName');
+      const studentAge = document.getElementById('studentAge');
+
+      const classInterest = document.getElementById('classInterest');
+      const classTime = document.getElementById('classTime');
 
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
@@ -309,20 +366,132 @@
       }
 
       if (headerBtn) headerBtn.addEventListener('click', openPanel);
-
-      document.addEventListener('click', function (e) {
-        const trigger = e.target.closest('[data-open-join]');
-        if (!trigger) return;
-        e.preventDefault();
-        openPanel();
-      });
-
       if (closePanel) closePanel.addEventListener('click', closePanelFn);
       if (joinOverlay) joinOverlay.addEventListener('click', closePanelFn);
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePanelFn(); });
 
-      const yearEl2 = document.getElementById('year');
-      if (yearEl2) yearEl2.textContent = new Date().getFullYear();
+      document.addEventListener('click', function (e) {
+        if (e.target.closest('[data-open-join]')) { e.preventDefault(); openPanel(); }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePanelFn();
+      });
+
+      if (trialFor) {
+        trialFor.addEventListener('change', function () {
+          const isChild = trialFor.value === 'My Child';
+          childFields.style.display = isChild ? 'block' : 'none';
+          studentName.required = isChild;
+          studentAge.required = isChild;
+          if (!isChild) { studentName.value = ''; studentAge.value = ''; }
+        });
+      }
+
+      const classSchedules = {
+        "Young Warriors": [
+          { day: 1, time: "5:45 PM", label: "Monday - 5:45 PM to 6:15 PM" },
+          { day: 3, time: "5:45 PM", label: "Wednesday - 5:45 PM to 6:15 PM" }
+        ],
+        "Kids Kickboxing": [
+          { day: 2, time: "5:30 PM", label: "Tuesday - 5:30 PM to 6:30 PM" },
+          { day: 4, time: "5:30 PM", label: "Thursday - 5:30 PM to 6:30 PM" }
+        ],
+        "Kids Karate": [
+          { day: 1, time: "4:30 PM", label: "Monday - 4:30 PM to 5:30 PM" },
+          { day: 2, time: "4:30 PM", label: "Tuesday - 4:30 PM to 5:30 PM" },
+          { day: 3, time: "4:30 PM", label: "Wednesday - 4:30 PM to 5:30 PM" },
+          { day: 4, time: "4:30 PM", label: "Thursday - 4:30 PM to 5:30 PM" }
+        ],
+        "Adult Karate": [
+          { day: 2, time: "6:30 PM", label: "Tuesday - 6:30 PM to 7:30 PM" },
+          { day: 4, time: "6:30 PM", label: "Thursday - 6:30 PM to 7:30 PM" }
+        ],
+        "Adult Kickboxing": [
+          { day: 1, time: "7:30 PM", label: "Monday - 7:30 PM to 8:30 PM" },
+          { day: 2, time: "7:30 PM", label: "Tuesday - 7:30 PM to 8:30 PM" },
+          { day: 3, time: "7:30 PM", label: "Wednesday - 7:30 PM to 8:30 PM" },
+          { day: 4, time: "7:30 PM", label: "Thursday - 7:30 PM to 8:30 PM" }
+        ],
+        "Women's Kickboxing": [
+          { day: 1, time: "6:30 PM", label: "Monday - 6:30 PM to 7:30 PM" },
+          { day: 3, time: "6:30 PM", label: "Wednesday - 6:30 PM to 7:30 PM" }
+        ],
+        "Private Lessons": [
+          { day: null, time: null, label: "We will contact you to schedule a private lesson" }
+        ]
+      };
+
+      function parseTime(timeStr) {
+        const parts = timeStr.split(' ');
+        let [h, m] = parts[0].split(':').map(Number);
+        if (parts[1] === 'PM' && h !== 12) h += 12;
+        if (parts[1] === 'AM' && h === 12) h = 0;
+        return { hours: h, minutes: m };
+      }
+
+      function formatDate(date) {
+        return date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+      }
+
+      function getNextOccurrences(schedule, count) {
+        const now = new Date();
+        const results = [];
+        const checkDate = new Date(now);
+        checkDate.setHours(0, 0, 0, 0);
+
+        while (results.length < count) {
+          const currentDay = checkDate.getDay();
+          schedule.forEach(function (item) {
+            if (item.day === currentDay) {
+              const nextDate = new Date(checkDate);
+              const t = parseTime(item.time);
+              nextDate.setHours(t.hours, t.minutes, 0, 0);
+              if (nextDate > now) {
+                results.push({ value: formatDate(nextDate) + ' | ' + item.label, text: formatDate(nextDate) + ' | ' + item.label });
+              }
+            }
+          });
+          checkDate.setDate(checkDate.getDate() + 1);
+        }
+        return results.slice(0, count);
+      }
+
+      function populateClassTimes(selectedClass) {
+        classTime.innerHTML = '';
+        if (!selectedClass || !classSchedules[selectedClass]) {
+          classTime.disabled = true;
+          classTime.innerHTML = '<option value="">Select a class first</option>';
+          return;
+        }
+        if (selectedClass === 'Private Lessons') {
+          classTime.disabled = false;
+          classTime.innerHTML = '<option value="Private Lesson - We will contact you to schedule">Private Lesson - We will contact you to schedule</option>';
+          return;
+        }
+        const upcoming = getNextOccurrences(classSchedules[selectedClass], 6);
+        if (!upcoming.length) {
+          classTime.disabled = true;
+          classTime.innerHTML = '<option value="">No upcoming classes found</option>';
+          return;
+        }
+        const placeholder = document.createElement('option');
+        placeholder.value = '';
+        placeholder.textContent = 'Choose an upcoming class time';
+        classTime.appendChild(placeholder);
+        upcoming.forEach(function (item) {
+          const option = document.createElement('option');
+          option.value = item.value;
+          option.textContent = item.text;
+          classTime.appendChild(option);
+        });
+        classTime.disabled = false;
+      }
+
+      if (classInterest) {
+        classInterest.addEventListener('change', function () {
+          populateClassTimes(classInterest.value);
+        });
+      }
     })();
   </script>
 </body>
