@@ -111,7 +111,7 @@
       </nav>
 
       <div class="header-right">
-        <button id="menuToggle" class="cta" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Start Free Trial</button>
+        <button id="menuToggle" class="cta" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Book Free Trial</button>
 
         <div class="social-header">
           <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
@@ -218,7 +218,7 @@
     We’ll help you find the best class based on age, goals, and experience level. Beginners are welcome.
   </p>
   <div class="actions" style="margin-top:18px;">
-    <button class="btn btn-primary" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Start Free Trial</button>
+    <button class="btn btn-primary" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Book Free Trial</button>
     <a class="btn btn-secondary" href="classes.html">View Class Details</a>
   </div>
 </div>
@@ -239,7 +239,7 @@
 
   <div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book Your Free Trial">
     <div class="panel-content">
-      <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
+      <button id="closePanel" class="close-btn" type="button" aria-label="Close" onclick="document.getElementById('joinPanel').classList.remove('open');document.getElementById('joinOverlay').classList.remove('open');">&times;</button>
 
       <h2>Book Your Free Trial</h2>
       <p>Choose your class and preferred upcoming class time.</p>
