@@ -62,7 +62,6 @@
           <li><a href="classes.html">Classes</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -91,25 +90,24 @@
     </div>
   </header>
 
-  <section class="section">
+  <section id="pricing" class="section">
     <div class="panel">
       <span class="kicker">Memberships</span>
       <h1>Simple, Transparent Pricing</h1>
-      <p class="sub">Straightforward pricing with a 3-month commitment. Start with a free trial class — no payment required.</p>
+      <p class="sub">3-month commitment. No hidden fees. Start with a free trial class — no payment required.</p>
 
-      <div class="pricing-cards" style="margin-top:32px;">
+      <div class="pricing-cards">
 
         <article class="pricing-card">
           <div class="card-body">
             <h3>Membership</h3>
-            <p class="price">$100 <span style="font-size:1rem; font-weight:400;">/ month</span></p>
-            <p>Our core training plan — perfect for individuals who want structure, consistency, and real progress.</p>
-            <ul style="margin:16px 0 0; padding-left:18px; line-height:2;">
+            <p class="price">$100 <span style="font-size:1rem;font-weight:400;">/ mo</span></p>
+            <p>Perfect for individuals who want structure, consistency, and real progress.</p>
+            <ul>
               <li>Up to 4 classes per week</li>
-              <li>All skill levels welcome</li>
               <li>Kids &amp; adult programs</li>
+              <li>All skill levels welcome</li>
               <li>Discounted private lessons</li>
-              <li>3-month commitment</li>
             </ul>
           </div>
           <div class="card-actions">
@@ -118,17 +116,16 @@
         </article>
 
         <article class="pricing-card" style="border:2px solid var(--brand); position:relative;">
-          <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--brand); color:#fff; font-size:0.75rem; font-weight:700; padding:4px 14px; border-radius:20px; white-space:nowrap; letter-spacing:0.05em;">BEST VALUE</div>
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--brand);color:#fff;font-size:0.75rem;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap;letter-spacing:0.05em;">BEST VALUE</div>
           <div class="card-body">
             <h3>Double Trouble</h3>
-            <p class="price"><del style="font-size:1.1rem; color:var(--brand); font-weight:400; text-decoration-thickness:2px;">$180</del> $150 <span style="font-size:1rem; font-weight:400;">/ month</span></p>
-            <p>Train with a partner and save. Ideal for friends, couples, or siblings who want to stay motivated together.</p>
-            <ul style="margin:16px 0 0; padding-left:18px; line-height:2;">
+            <p class="price"><del style="font-size:1rem;color:var(--brand);font-weight:400;">$180</del> $150 <span style="font-size:1rem;font-weight:400;">/ mo</span></p>
+            <p>Train with a partner and save. Ideal for couples, friends, or siblings.</p>
+            <ul>
               <li>2 students, one price</li>
               <li>Up to 4 classes per week each</li>
               <li>All programs included</li>
               <li>Discounted private lessons</li>
-              <li>3-month commitment</li>
             </ul>
           </div>
           <div class="card-actions">
@@ -139,14 +136,13 @@
         <article class="pricing-card">
           <div class="card-body">
             <h3>Family Plan</h3>
-            <p class="price">$250 <span style="font-size:1rem; font-weight:400;">/ month</span></p>
-            <p>One powerful membership for the whole family. Up to 4 students. Build discipline, confidence, and fitness together.</p>
-            <ul style="margin:16px 0 0; padding-left:18px; line-height:2;">
+            <p class="price">$250 <span style="font-size:1rem;font-weight:400;">/ mo</span></p>
+            <p>One membership for the whole family. Build discipline, confidence, and fitness together.</p>
+            <ul>
               <li>Up to 4 family members</li>
               <li>Up to 4 classes per week each</li>
               <li>Mix of kids &amp; adult classes</li>
               <li>Discounted private lessons</li>
-              <li>3-month commitment</li>
             </ul>
           </div>
           <div class="card-actions">
@@ -156,15 +152,12 @@
 
       </div>
 
-      <div style="margin-top:40px; padding:24px; background:var(--bg); border:1px solid var(--border); border-radius:12px;">
-        <h2 style="margin-bottom:8px;">Private Lessons</h2>
-        <p>Want personalized 1-on-1 coaching? Private lessons are available for kids and adults at any skill level. Members receive discounted rates. <a href="private-lessons.html" style="color:var(--brand);">Learn more about private lessons →</a></p>
+      <div class="pricing-note">
+        <strong>Private Lessons</strong> — 1-on-1 coaching available for kids and adults at any level. Members receive discounted rates. <a href="private-lessons.html">Learn more →</a>
       </div>
 
-      <div style="margin-top:32px; text-align:center;">
-        <p style="color:var(--text-muted); margin-bottom:16px;">Questions about which plan is right for you?</p>
+      <div class="actions" style="margin-top:32px;justify-content:center;">
         <a class="btn btn-secondary" href="index.html#contact">Contact Us</a>
-        
       </div>
     </div>
   </section>
@@ -418,27 +411,6 @@
         classInterest.addEventListener('change', function () { populateClassTimes(classInterest.value); });
       }
     })();
-  </script>
-  <script>
-  (function () {
-    const form = document.getElementById('trialForm');
-    if (!form) return;
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const name = formData.get('name') || '';
-      const classInterest = formData.get('classInterest') || '';
-      const classTime = formData.get('classTime') || '';
-      const trialFor = formData.get('trialFor') || '';
-      const studentName = formData.get('studentName') || '';
-      try {
-        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(formData).toString() });
-        window.location.href = '/thank-you.html?' + new URLSearchParams({ name, class: classInterest, time: classTime, trialFor, studentName }).toString();
-      } catch (err) {
-        alert('There was a problem submitting the form. Please try again.');
-      }
-    });
-  })();
   </script>
 </body>
 </html>

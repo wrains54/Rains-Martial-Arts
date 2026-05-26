@@ -690,6 +690,20 @@ nav a:hover{
   justify-content:center;
 }
 
+.pricing-note{
+  margin-top:32px;
+  padding:20px 24px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.pricing-note a{
+  color:var(--brand);
+}
+
 /* -----------------------------
    Testimonials
 ----------------------------- */
