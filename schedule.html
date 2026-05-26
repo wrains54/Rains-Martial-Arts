@@ -105,13 +105,13 @@
           <li><a href="classes.html">Classes</a></li>
           <li><a href="schedule.html">Schedule</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-right">
-        <button id="menuToggle" class="cta" type="button">Start Free Trial</button>
+        <button id="menuToggle" class="cta" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Start Free Trial</button>
 
         <div class="social-header">
           <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
@@ -133,11 +133,6 @@
       </div>
     </div>
   </header>
-
-
-
-    </div>
-  </div>
 
   <!-- Schedule -->
   <section class="section">
@@ -223,7 +218,7 @@
     We’ll help you find the best class based on age, goals, and experience level. Beginners are welcome.
   </p>
   <div class="actions" style="margin-top:18px;">
-    <button class="btn btn-primary" type="button" data-open-join>Start Free Trial</button>
+    <button class="btn btn-primary" type="button" onclick="document.getElementById('joinPanel').classList.add('open');document.getElementById('joinOverlay').classList.add('open');">Start Free Trial</button>
     <a class="btn btn-secondary" href="classes.html">View Class Details</a>
   </div>
 </div>
