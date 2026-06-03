@@ -49,9 +49,6 @@
 
   <header class="site-header scrolled" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <img src="images/REDNWHITE.png" alt="Rains Martial Arts" width="160" height="50">
-      </a>
       <nav id="mainNav">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -124,6 +121,14 @@
               <td><a href="womens-kickboxing.html" class="sched-class">Women's Kickboxing</a></td>
               <td><a href="adult-karate.html" class="sched-class">Adult Karate</a></td>
               <td><span class="sched-empty">—</span></td>
+            </tr>
+            <tr>
+              <td>7:00 PM</td>
+              <td><span class="sched-empty">—</span></td>
+              <td><span class="sched-empty">—</span></td>
+              <td><span class="sched-empty">—</span></td>
+              <td><span class="sched-empty">—</span></td>
+              <td><a href="fight-night.html" class="sched-class">Fight Night</a></td>
             </tr>
             <tr>
               <td>7:30–8:30 PM</td>
@@ -213,8 +218,8 @@
   <section class="cta-band">
     <div class="container">
       <h2>READY TO START?</h2>
-      <p>Your first class is free. No gear needed — just show up.</p>
-      <a href="#" class="btn btn-white" data-open-join>Claim Your Free Trial</a>
+      <p>Your first 3 classes are free. No gear needed — just show up.</p>
+      <a href="#" class="btn" data-open-join>Claim Your Free Trial</a>
     </div>
   </section>
 
@@ -268,7 +273,7 @@
   <aside class="panel-slide" id="joinPanel" role="dialog" aria-modal="true" aria-label="Start Your Free Trial">
     <button class="panel-close" id="closePanel" aria-label="Close panel">&times;</button>
     <div class="panel-body">
-      <span class="kicker" style="display:block;margin-bottom:8px">First Class Free</span>
+      <span class="kicker" style="display:block;margin-bottom:8px">First 3 Classes Free</span>
       <h2 style="font-size:2rem;margin:0 0 6px">LET'S GET STARTED</h2>
       <p style="color:var(--muted);font-size:.9rem;margin:0 0 28px">Fill out the form and we'll be in touch to confirm your spot.</p>
       <form name="free-trial" id="trialForm" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
@@ -332,8 +337,8 @@
     var yr=document.getElementById('year');if(yr)yr.textContent=new Date().getFullYear();
 
     var overlay=document.getElementById('joinOverlay'),panel=document.getElementById('joinPanel'),closeBtn=document.getElementById('closePanel');
-    function openPanel(){panel.classList.add('active');overlay.classList.add('active');document.body.style.overflow='hidden';}
-    function closePanel(){panel.classList.remove('active');overlay.classList.remove('active');document.body.style.overflow='';}
+    function openPanel(){panel.classList.add('open');overlay.classList.add('open');document.body.style.overflow='hidden';}
+    function closePanel(){panel.classList.remove('open');overlay.classList.remove('open');document.body.style.overflow='';}
     document.querySelectorAll('[data-open-join]').forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();openPanel();});});
     if(closeBtn)closeBtn.addEventListener('click',closePanel);
     if(overlay)overlay.addEventListener('click',closePanel);
