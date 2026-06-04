@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request Received | Rains Martial Arts</title>
+  <meta name="description" content="Your free trial request has been received. Rains Martial Arts will be in touch shortly.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/favicon.ico">
+</head>
+<body>
+
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="header-inner">
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="classes.html">Classes</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-right">
+        <a href="index.html" class="btn btn-secondary" style="padding:10px 20px;font-size:.875rem">← Back to Home</a>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="thankyou-page">
+    <div class="thankyou-inner">
+      <div class="ty-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+
+      <span class="kicker" style="margin-bottom:16px">Request Received</span>
+      <h1 id="tyHeading">YOU'RE IN.</h1>
+      <p id="tyMessage">We've received your free trial request and will be reaching out shortly to confirm your spot.</p>
+
+      <div class="ty-summary" id="tySummary" style="display:none">
+        <div class="ty-row" id="tyNameRow" style="display:none">
+          <span class="ty-label">Name</span>
+          <span class="ty-val" id="tyName"></span>
+        </div>
+        <div class="ty-row" id="tyClassRow" style="display:none">
+          <span class="ty-label">Class</span>
+          <span class="ty-val" id="tyClass"></span>
+        </div>
+        <div class="ty-row" id="tyTimeRow" style="display:none">
+          <span class="ty-label">Requested Time</span>
+          <span class="ty-val" id="tyTime"></span>
+        </div>
+        <div class="ty-row" id="tyForRow" style="display:none">
+          <span class="ty-label">Training For</span>
+          <span class="ty-val" id="tyFor"></span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="schedule.html" class="btn btn-secondary">View Schedule</a>
+      </div>
+
+      <p style="margin-top:32px;font-size:.875rem">
+        Questions? Call us at <a href="tel:9316449963" style="color:var(--brand)">(931) 644-9963</a> or email <a href="mailto:rainsmartial@gmail.com" style="color:var(--brand)">rainsmartial@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var mBtn=document.getElementById('mobileMenuBtn'),nav=document.getElementById('mainNav');
+    var yr=document.getElementById('year');
+    if(yr) yr.textContent=new Date().getFullYear();
+    if(mBtn&&nav){mBtn.addEventListener('click',function(){var o=nav.classList.toggle('open');mBtn.setAttribute('aria-expanded',o);});}
+
+    var p=new URLSearchParams(window.location.search);
+    var name=p.get('name')||'';
+    var cls=p.get('class')||'';
+    var time=p.get('time')||'';
+    var trialFor=p.get('trialFor')||'';
+    var studentName=p.get('studentName')||'';
+
+    var summary=document.getElementById('tySummary');
+    var hasData=name||cls||time;
+
+    if(hasData) summary.style.display='block';
+
+    function showRow(rowId,valId,val){
+      if(val){
+        document.getElementById(rowId).style.display='flex';
+        document.getElementById(valId).textContent=val;
+      }
+    }
+
+    var displayName=trialFor==='My Child'&&studentName?studentName:name;
+    showRow('tyNameRow','tyName',displayName);
+    showRow('tyClassRow','tyClass',cls);
+    if(time&&time.indexOf('contact')===-1){
+      showRow('tyTimeRow','tyTime',time);
+    }
+    if(trialFor){
+      var forText=trialFor==='My Child'&&studentName?'My Child ('+studentName+')':trialFor;
+      showRow('tyForRow','tyFor',forText);
+    }
+
+    if(displayName){
+      document.getElementById('tyHeading').textContent=displayName.toUpperCase()+', YOU\'RE IN.';
+    }
+    if(cls){
+      document.getElementById('tyMessage').textContent='We\'ve received your '+(cls||'free trial')+' request and will be reaching out shortly to confirm your spot. See you on the mat.';
+    }
+  })();
+  </script>
+</body>
+</html>
