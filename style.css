@@ -85,11 +85,14 @@ p{line-height:1.7;color:var(--muted)}
   backdrop-filter:blur(12px);
 }
 .header-inner{
-  height:100%;
-  display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;
+  position:relative;
+  height:100%;display:flex;align-items:center;
   max-width:1200px;margin:0 auto;padding:0 24px;
+}
+
+nav#mainNav{
+  position:absolute;left:50%;transform:translateX(-50%);
+  z-index:1;
 }
 
 nav#mainNav ul{display:flex;align-items:center;gap:28px}
@@ -105,7 +108,7 @@ nav#mainNav a:hover,nav#mainNav a.active{color:var(--text)}
 .site-header:not(.scrolled) nav#mainNav a:hover,
 .site-header:not(.scrolled) nav#mainNav a.active{color:#fff}
 
-.header-right{display:flex;align-items:center;gap:14px;justify-self:end}
+.header-right{display:flex;align-items:center;gap:14px;margin-left:auto}
 .social-header{display:flex;align-items:center;gap:10px}
 .social-header a{
   color:var(--muted);transition:color var(--t);
@@ -177,8 +180,8 @@ button.cta:hover,#menuToggle:hover{background:var(--brand-dark);border-color:var
   overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
-  background-size:cover;background-position:center 20%;
+  position:absolute;inset:-3%;
+  background-size:cover;background-position:center 22%;
   background-repeat:no-repeat;
 }
 .hero-bg::after{
@@ -709,13 +712,10 @@ form button[type="submit"]:hover{background:var(--brand-dark);box-shadow:var(--s
 @media(max-width:768px){
   :root{--header-h:60px}
 
-  .header-inner{
-    grid-template-columns:auto 1fr;
-  }
-
   nav#mainNav{
     display:none;position:fixed;
     top:var(--header-h);left:0;right:0;
+    transform:none;
     background:rgba(255,255,255,0.99);
     border-bottom:1px solid var(--border);
     box-shadow:0 8px 24px rgba(0,0,0,0.08);

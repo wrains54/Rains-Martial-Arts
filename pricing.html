@@ -35,7 +35,7 @@
     .plan-features li svg{flex-shrink:0;margin-top:2px;color:var(--brand);}
     .plan-cta{margin-top:auto;}
 
-    .pricing-note{max-width:1000px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+    .pricing-note{max-width:1000px;margin:48px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
     .pnote-card{background:var(--bg-2);border:1px solid var(--border);border-radius:12px;padding:28px 32px;}
     .pnote-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.25rem;font-weight:700;letter-spacing:.04em;margin:0 0 12px;}
     .pnote-card p{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0;}
@@ -60,6 +60,9 @@
 
     @media(max-width:900px){
       .pricing-grid-pg{grid-template-columns:1fr;max-width:420px;}
+      .pricing-note{grid-template-columns:1fr 1fr;}
+    }
+    @media(max-width:600px){
       .pricing-note{grid-template-columns:1fr;}
       .private-banner{flex-direction:column;align-items:flex-start;gap:24px;}
     }
@@ -91,7 +94,7 @@
     <div class="container">
       <span class="kicker">Transparent Pricing</span>
       <h1>SIMPLE MEMBERSHIP</h1>
-      <p>Just show up and train. Your first 3 classes are free — no gear needed, no experience required.</p>
+      <p>Just show up and train. Your first 3 classes are free. No gear needed, no experience required.</p>
     </div>
   </section>
 
@@ -202,7 +205,11 @@
         </div>
         <div class="pnote-card">
           <h3>Private Lessons</h3>
-          <p>One-on-one coaching available for all ages and skill levels. Flexible scheduling tailored around your goals. Contact us to discuss rates and availability.</p>
+          <p>One-on-one coaching for all ages and skill levels. <strong>$45/session</strong> for non-members, <strong>$20/session</strong> for members. Sessions run 1 to 3 hours based on endurance. Contact us to schedule.</p>
+        </div>
+        <div class="pnote-card">
+          <h3>Fight Night</h3>
+          <p>Monthly in-house sparring event every Friday at 7:00 PM. <strong>Free for members.</strong> <strong>$10</strong> for non-members. Come watch, compete, or just soak in the atmosphere.</p>
         </div>
       </div>
     </div>
@@ -213,7 +220,7 @@
       <div class="private-banner reveal">
         <div>
           <h3>PRIVATE LESSONS</h3>
-          <p>Looking for focused, one-on-one coaching? Private lessons are available for all ages and experience levels. Contact us to discuss rates and availability.</p>
+          <p>One-on-one coaching for all ages. <strong>$45/session</strong> for non-members · <strong>$20/session</strong> for members. Sessions run 1 to 3 hours based on endurance.</p>
         </div>
         <div class="private-banner-cta">
           <a href="private-lessons.html" class="btn btn-secondary">Learn More</a>
@@ -244,7 +251,7 @@
             <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
           </button>
           <div class="faq-a">
-            <p>Athletic clothing works great for your first class — shorts and a t-shirt are perfect. You don't need a uniform or any gear until you decide to become a regular member.</p>
+            <p>Athletic clothing works great for your first class. Shorts and a t-shirt are perfect. You don't need a uniform or any gear until you decide to become a regular member.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -253,7 +260,7 @@
             <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
           </button>
           <div class="faq-a">
-            <p>Monthly membership includes rank progression. Ask us about testing fees when you're ready to advance — we keep it fair and transparent.</p>
+            <p>Monthly membership includes rank progression. Ask us about testing fees when you're ready to advance. We keep it fair and transparent.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -271,7 +278,7 @@
             <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
           </button>
           <div class="faq-a">
-            <p>Your membership covers unlimited group classes across all programs on the weekly schedule, plus discounted rates on private lessons. Rank testing opportunities are included as you advance.</p>
+            <p>Your membership covers up to 4 classes per week across any of our programs, plus free admission to Fight Night every Friday. Private lessons are discounted to $20/session for members. Rank testing opportunities are included as you advance.</p>
           </div>
         </div>
       </div>
@@ -290,7 +297,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="images/REDNWHITE.png" alt="Rains Martial Arts" width="140" height="44" style="margin-bottom:16px">
+          <img src="images/REDSIMPLELOGO.png" alt="Rains Martial Arts" width="140" height="44" style="margin-bottom:16px">
           <p style="color:var(--muted);font-size:.875rem;line-height:1.6;max-width:240px">Cookeville's premier martial arts studio. Training warriors of all ages since day one.</p>
         </div>
         <div class="footer-col">
