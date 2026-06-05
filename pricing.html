@@ -229,62 +229,6 @@
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:48px" class="reveal">
-        <span class="kicker">Got Questions?</span>
-        <h2 style="font-size:clamp(2rem,4vw,3rem);margin:8px 0 0">FREQUENTLY ASKED</h2>
-      </div>
-      <div class="faq-list reveal">
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Do I need any experience to start?
-            <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          </button>
-          <div class="faq-a">
-            <p>None at all. All of our programs accept complete beginners. Instructors will work with you at your level and help you progress at a comfortable pace.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            What should I wear to my first class?
-            <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          </button>
-          <div class="faq-a">
-            <p>Athletic clothing works great for your first class. Shorts and a t-shirt are perfect. You don't need a uniform or any gear until you decide to become a regular member.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Are there any registration or belt testing fees?
-            <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          </button>
-          <div class="faq-a">
-            <p>Monthly membership includes rank progression. Ask us about testing fees when you're ready to advance. We keep it fair and transparent.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            Can my child and I train at the same time?
-            <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          </button>
-          <div class="faq-a">
-            <p>Kids and adult classes run at different times, so you may not always be on the mat simultaneously. The Family Plan gives everyone unlimited access regardless of which class they attend.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false">
-            What's included in my membership?
-            <span class="icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="1" x2="5" y2="9" stroke="white" stroke-width="1.5" stroke-linecap="round"/><line x1="1" y1="5" x2="9" y2="5" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-          </button>
-          <div class="faq-a">
-            <p>Your membership covers up to 4 classes per week across any of our programs, plus free admission to Fight Night every Friday. Private lessons are discounted to $20/session for members. Rank testing opportunities are included as you advance.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="cta-band">
     <div class="container">
       <h2>TRY IT FREE</h2>
@@ -445,5 +389,8 @@
     if(form){form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()}).then(function(){var p=new URLSearchParams({name:fd.get('name')||'',class:fd.get('classInterest')||'',time:fd.get('classTime')||'',trialFor:fd.get('trialFor')||'',studentName:fd.get('studentName')||''});window.location.href='/thank-you.html?'+p.toString();}).catch(function(){alert('There was a problem submitting. Please try again.');});});}
   })();
   </script>
+  <div class="mobile-cta-bar">
+    <button type="button" data-open-join>Book Your Free Trial</button>
+  </div>
 </body>
 </html>

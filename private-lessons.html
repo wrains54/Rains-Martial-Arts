@@ -74,18 +74,21 @@
     .join-panel select option{background:#fff;}
     .join-panel textarea{min-height:90px;resize:vertical;}
     @media(max-width:900px){
-      .class-detail-grid{grid-template-columns:1fr;gap:40px;}
+      .class-detail-grid{grid-template-columns:1fr;gap:32px;}
       .class-detail-image{order:-1;}
-      .class-detail-image img{height:340px;}
+      .class-detail-image img{height:280px;}
       .for-grid{grid-template-columns:1fr 1fr;}
       .footer-inner{grid-template-columns:1fr 1fr;gap:32px;}
       .footer-brand{grid-column:1/-1;}
     }
     @media(max-width:640px){
-      .section{padding:64px 0;}
-      .page-hero{min-height:400px;}
+      .section{padding:40px 16px;}
+      .page-hero{min-height:320px;}
       .for-grid{grid-template-columns:1fr;}
       .footer-inner{grid-template-columns:1fr;}
+    }
+    @media(max-width:480px){
+      .class-detail-image img{height:220px;}
     }
     @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;}}
   </style>
@@ -376,5 +379,8 @@
     var mBtn=document.getElementById('mobileMenuBtn'),mNav=document.getElementById('mainNav');
     if(mBtn&&mNav){mBtn.addEventListener('click',function(){var o=mNav.classList.toggle('open');mBtn.setAttribute('aria-expanded',String(o));});mNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mNav.classList.remove('open');mBtn.setAttribute('aria-expanded','false');});});}
   </script>
+  <div class="mobile-cta-bar">
+    <button type="button" class="open-join">Book Your Free Trial</button>
+  </div>
 </body>
 </html>

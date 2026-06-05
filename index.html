@@ -253,6 +253,9 @@
     <div class="text-center" style="margin-top:32px">
       <a href="schedule.html" class="btn btn-secondary">Full Schedule &amp; Details</a>
     </div>
+    <div class="schedule-mobile-link">
+      <a href="schedule.html">View Full Schedule &rarr;</a>
+    </div>
   </section>
 
   <!-- PRICING -->
@@ -554,5 +557,8 @@
     if(form){form.addEventListener('submit',function(e){e.preventDefault();var fd=new FormData(form);fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(fd).toString()}).then(function(){var p=new URLSearchParams({name:fd.get('name')||'',class:fd.get('classInterest')||'',time:fd.get('classTime')||'',trialFor:fd.get('trialFor')||'',studentName:fd.get('studentName')||''});window.location.href='/thank-you.html?'+p.toString();}).catch(function(){alert('There was a problem submitting. Please try again.');});});}
   })();
   </script>
+  <div class="mobile-cta-bar">
+    <button type="button" data-open-join>Book Your Free Trial</button>
+  </div>
 </body>
 </html>

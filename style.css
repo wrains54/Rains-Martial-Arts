@@ -295,6 +295,20 @@ button.cta:hover,#menuToggle:hover{background:var(--brand-dark);border-color:var
   color:rgba(255,255,255,0.6);
 }
 
+/* Hidden by default; revealed on mobile via media query */
+.schedule-mobile-link{
+  display:none;text-align:center;margin-top:8px;
+}
+.schedule-mobile-link a{
+  display:inline-block;
+  font-family:var(--font-h);font-weight:700;font-size:1rem;
+  letter-spacing:.05em;text-transform:uppercase;
+  color:var(--brand);text-decoration:none;
+  padding:14px 28px;border:2px solid var(--brand);
+  border-radius:8px;transition:background .18s,color .18s;
+}
+.schedule-mobile-link a:hover{background:var(--brand);color:#fff}
+
 /* ============================
    WHY RAINS
    ============================ */
@@ -709,8 +723,30 @@ form button[type="submit"]:hover{background:var(--brand-dark);box-shadow:var(--s
   .why-image{display:none}
 }
 
+/* Mobile sticky CTA bar */
+.mobile-cta-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:200;
+  background:var(--brand);
+  box-shadow:0 -2px 16px rgba(0,0,0,0.18);
+}
+.mobile-cta-bar button,.mobile-cta-bar a{
+  display:block;width:100%;padding:17px 20px;
+  background:var(--brand);color:#fff;
+  font-family:var(--font-h);font-weight:700;
+  font-size:1.05rem;letter-spacing:.06em;
+  text-transform:uppercase;border:none;
+  cursor:pointer;text-align:center;
+  text-decoration:none;
+  transition:background .15s;
+}
+.mobile-cta-bar button:hover,.mobile-cta-bar a:hover{background:var(--brand-dark)}
+
 @media(max-width:768px){
   :root{--header-h:60px}
+
+  body{padding-bottom:60px}
 
   nav#mainNav{
     display:none;position:fixed;
@@ -730,25 +766,37 @@ form button[type="submit"]:hover{background:var(--brand-dark);box-shadow:var(--s
   }
   .mobile-menu-btn{display:flex}
 
-  .hero-content{padding:100px 20px 80px}
+  .hero-content{padding:90px 20px 70px}
   .hero h1{font-size:clamp(2.2rem,9vw,3.8rem)}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .btn{text-align:center;justify-content:center}
 
-  .section{padding:56px 20px}
+  .section{padding:44px 20px}
   .panel-slide{max-width:100%}
   .panel-content{padding:32px 20px}
   .panel-body{padding:32px 20px 48px}
 
   .footer-main{padding:40px 20px 32px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+
+  /* Hide wide schedule table on mobile homepage — show link instead */
+  #schedule-preview .schedule-wrap{display:none}
+  #schedule-preview .schedule-mobile-link{display:block}
+
+  .mobile-cta-bar{display:block}
 }
 
 @media(max-width:580px){
-  .classes-grid{grid-template-columns:1fr}
+  /* Keep 2-col class cards on phones */
+  .classes-grid{grid-template-columns:repeat(2,1fr)}
+  .class-card{height:200px}
+  .class-card-title{font-size:1.1rem}
+  .class-card-sub{font-size:0.65rem}
+  .class-card-body{padding:12px 14px}
   .stats-grid{grid-template-columns:1fr 1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-brand{grid-column:auto}
+  .section{padding:36px 16px}
 }
 
 @media(max-width:440px){
