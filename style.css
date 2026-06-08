@@ -1,30 +1,32 @@
 /* ================================================================
-   RAINS MARTIAL ARTS — MOBILE-FIRST DARK REDESIGN
+   RAINS MARTIAL ARTS — MOBILE-FIRST LIGHT REDESIGN
    ================================================================ */
 
 /* ----------------------------------------------------------------
    Variables
 ---------------------------------------------------------------- */
 :root {
-  --bg:        #0a0a0a;
-  --bg-2:      #111111;
-  --bg-3:      #181818;
-  --surface:   #1a1a1a;
-  --surface-2: #222222;
-  --text:      #f0f0f0;
-  --text-2:    #aaaaaa;
-  --text-3:    #666666;
+  --bg:        #f4f4f5;
+  --bg-2:      #ffffff;
+  --bg-3:      #eeeeee;
+  --surface:   #ffffff;
+  --surface-2: #f9f9f9;
+  --text:      #111111;
+  --text-2:    #555555;
+  --text-3:    #999999;
   --red:       #e53935;
   --red-dark:  #c62828;
-  --red-glow:  rgba(229, 57, 53, 0.25);
-  --gold:      #f59e0b;
-  --border:    rgba(255, 255, 255, 0.08);
-  --border-2:  rgba(255, 255, 255, 0.04);
+  --red-glow:  rgba(229, 57, 53, 0.18);
+  --gold:      #d97706;
+  --border:    rgba(0, 0, 0, 0.09);
+  --border-2:  rgba(0, 0, 0, 0.05);
   --radius:    16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
   --max:       520px;
   --easing:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --shadow:    0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 6px 28px rgba(0, 0, 0, 0.10);
 }
 
 /* ----------------------------------------------------------------
@@ -150,13 +152,14 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   height: 64px;
-  background: rgba(10, 10, 10, 0.82);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: saturate(180%) blur(16px);
   -webkit-backdrop-filter: saturate(180%) blur(16px);
   border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   transition: background 0.3s;
 }
-.site-header.scrolled { background: rgba(10, 10, 10, 0.97); }
+.site-header.scrolled { background: rgba(255, 255, 255, 0.99); }
 
 .hdr-inner {
   max-width: 680px;
@@ -518,9 +521,11 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow);
   transition: transform 0.22s var(--easing), box-shadow 0.22s;
   -webkit-tap-highlight-color: transparent;
 }
+.class-card:hover { box-shadow: var(--shadow-lg); }
 .class-card:active { transform: scale(0.98); }
 
 .class-card-img {
@@ -596,6 +601,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .sched-day-btn {
@@ -689,9 +695,10 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 22px 18px;
-  transition: border-color 0.2s, transform 0.22s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, transform 0.22s, box-shadow 0.22s;
 }
-.benefit-card:hover { border-color: rgba(229,57,53,0.3); transform: translateY(-3px); }
+.benefit-card:hover { border-color: rgba(229,57,53,0.35); transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
 .benefit-icon {
   font-size: 1.9rem;
@@ -728,10 +735,11 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 26px 22px;
-  transition: border-color 0.22s, transform 0.22s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.22s, transform 0.22s, box-shadow 0.22s;
   position: relative;
 }
-.pricing-card:hover { transform: translateY(-3px); border-color: rgba(229,57,53,0.25); }
+.pricing-card:hover { transform: translateY(-3px); border-color: rgba(229,57,53,0.35); box-shadow: var(--shadow-lg); }
 
 .pricing-card.featured {
   border-color: rgba(229,57,53,0.4);
@@ -798,6 +806,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 28px 24px;
+  box-shadow: var(--shadow);
 }
 
 .testi-stars {
@@ -880,8 +889,8 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 }
 
 .cta-banner-inner {
-  background: linear-gradient(135deg, #1c0707 0%, #1f0a0a 60%, #150505 100%);
-  border: 1px solid rgba(229,57,53,0.28);
+  background: linear-gradient(135deg, var(--red) 0%, #c0170e 60%, var(--red-dark) 100%);
+  border: none;
   border-radius: var(--radius-xl);
   padding: 52px 28px;
   text-align: center;
@@ -916,7 +925,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 }
 
 .cta-banner-inner p {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.78);
   font-size: 1rem;
   margin-bottom: 30px;
   position: relative;
@@ -926,6 +935,15 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   font-size: 1.05rem;
   padding: 18px 38px;
   position: relative;
+  background: #fff;
+  color: var(--red);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+.cta-banner-inner .btn-primary:hover {
+  background: #f5f5f5;
+  color: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(0,0,0,0.2);
 }
 
 /* ----------------------------------------------------------------
@@ -941,9 +959,10 @@ h3 { font-size: 1.15rem; font-weight: 700; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px 18px;
-  transition: border-color 0.2s;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
+a.contact-item:hover { border-color: rgba(229,57,53,0.35); box-shadow: var(--shadow-lg); }
 
 .ci-icon {
   width: 42px;
@@ -1040,7 +1059,7 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
    Footer
 ---------------------------------------------------------------- */
 .site-footer {
-  background: var(--bg-2);
+  background: var(--bg-3);
   border-top: 1px solid var(--border);
   padding: 36px 20px 110px;
   text-align: center;
@@ -1070,7 +1089,7 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
   z-index: 90;
   padding: 12px 20px;
   padding-bottom: max(12px, env(safe-area-inset-bottom));
-  background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.88) 25%, rgba(10,10,10,0.99) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(244,244,245,0.9) 25%, rgba(244,244,245,0.99) 100%);
   transition: transform 0.3s var(--easing);
 }
 .sticky-bar.hidden { transform: translateY(110%); }
@@ -1119,9 +1138,10 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
 .sheet-panel {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: var(--bg-3);
+  background: var(--surface);
   border-radius: 28px 28px 0 0;
   border-top: 1px solid var(--border);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.12);
   max-height: 94dvh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -1200,13 +1220,13 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
 .form-group textarea::placeholder { color: var(--text-3); }
 
 .form-group select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 42px;
-  color-scheme: dark;
+  color-scheme: light;
 }
-.form-group select option { background: #1a1a1a; color: var(--text); }
+.form-group select option { background: #ffffff; color: var(--text); }
 
 .form-group input:focus,
 .form-group select:focus,
@@ -1352,6 +1372,7 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
   border-radius: var(--radius);
   padding: 22px 20px;
   margin-bottom: 12px;
+  box-shadow: var(--shadow);
 }
 
 .prog-detail-label {
@@ -1404,6 +1425,7 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); }
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
 .prog-sched-dot {
