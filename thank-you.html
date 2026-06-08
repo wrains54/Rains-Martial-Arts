@@ -2,194 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You | Rains Martial Arts</title>
-
-  <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Thanks for reaching out to Rains Martial Arts. Your free trial request has been received." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="canonical" href="https://rainsmartialarts.com/thank-you.html">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    "@id": "https://rainsmartialarts.com/#business",
-    "name": "Rains Martial Arts",
-    "url": "https://rainsmartialarts.com/",
-    "logo": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
-    "image": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
-    "telephone": "+19316449963",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1227 N Washington Ave, Suite 201",
-      "addressLocality": "Cookeville",
-      "addressRegion": "TN",
-      "postalCode": "38501",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.179333541375414,
-      "longitude": -85.49655093051408
-    },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61583813382121",
-      "https://www.instagram.com/rainsmartialarts/"
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Monday",
-        "opens": "11:00",
-        "closes": "12:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Monday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Tuesday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Wednesday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Thursday",
-        "opens": "11:00",
-        "closes": "12:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Thursday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Friday",
-        "opens": "19:00",
-        "closes": "21:00"
-      }
-    ],
-    "description": "Rains Martial Arts in Cookeville, TN offers kids and adult martial arts programs, kickboxing, private lessons, and homeschool-friendly daytime classes focused on real skill, discipline, and fitness."
-  }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>You're In! | Rains Martial Arts</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    .ty-page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+      background: var(--bg);
+    }
+    .ty-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 48px 32px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .ty-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(229,57,53,0.12), transparent 70%);
+      pointer-events: none;
+    }
+    .ty-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+      filter: drop-shadow(0 4px 12px rgba(229,57,53,0.3));
+    }
+    .ty-card h1 {
+      font-size: clamp(1.8rem, 6vw, 2.2rem);
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .ty-card p {
+      color: var(--text-2);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .ty-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 24px 0;
+    }
+    .ty-details {
+      background: rgba(229,57,53,0.07);
+      border: 1px solid rgba(229,57,53,0.2);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .ty-details li {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      padding: 6px 0;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .ty-details li::before {
+      content: '✓';
+      color: var(--red);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .ty-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-3);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: color 0.15s;
+      margin-top: 20px;
+    }
+    .ty-home:hover { color: var(--red); }
+  </style>
 </head>
-
 <body>
-  <header>
-    <div class="nav">
-      <a href="index.html" class="brand" aria-label="Rains Martial Arts Home">
-        <img src="images/REDNWHITE.png" alt="Rains Martial Arts Logo" class="logo-img" />
-        <div class="name">Rains Martial Arts</div>
-      </a>
+  <div class="ty-page">
+    <div class="ty-card">
+      <span class="ty-icon">🥋</span>
+      <h1>You're All Set!</h1>
+      <p>Your free trial request has been received. We'll reach out shortly to confirm your class time.</p>
 
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="classes.html">Classes</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="index.html#pricing">Memberships</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="ty-divider"></div>
 
-      <div class="header-right">
-        <a class="cta" href="tel:9316449963">(931) 644-9963</a>
+      <ul class="ty-details" style="list-style:none;padding:0;">
+        <li>No gear or experience needed</li>
+        <li>Show up a few minutes early</li>
+        <li>Wear comfortable workout clothes</li>
+        <li>We'll handle the rest — welcome to RMA!</li>
+      </ul>
+
+      <a href="/" class="btn-primary" style="width:100%;display:flex;justify-content:center;">Back to Home</a>
+
+      <div style="margin-top:28px;display:flex;gap:16px;justify-content:center;">
+        <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" style="color:var(--text-3);font-size:0.82rem;font-weight:700;transition:color 0.15s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--text-3)'">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" style="color:var(--text-3);font-size:0.82rem;font-weight:700;transition:color 0.15s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--text-3)'">Facebook</a>
+        <a href="tel:9316449963" style="color:var(--text-3);font-size:0.82rem;font-weight:700;transition:color 0.15s;" onmouseover="this.style.color='var(--red)'" onmouseout="this.style.color='var(--text-3)'">(931) 644-9963</a>
       </div>
     </div>
-  </header>
-
-  <main style="padding: 56px 20px; text-align: center;">
-    <span class="kicker">You’re all set</span>
-    <h1>You’re booked.</h1>
-
-    <p class="sub" id="thankYouMessage" style="margin-left:auto; margin-right:auto;">
-      We’ve got your class and time locked in. We’ll see you soon at Rains Martial Arts.
-    </p>
-
-    <div id="bookingDetails" style="margin:18px auto 0; max-width:560px; text-align:left; display:none; padding:16px; border:1px solid var(--border); border-radius:14px; background:#fff;">
-      <p style="margin:0 0 8px;"><strong>Your booking details:</strong></p>
-      <p style="margin:0 0 6px;"><strong>Class:</strong> <span id="detailClass"></span></p>
-      <p style="margin:0 0 6px;"><strong>Time:</strong> <span id="detailTime"></span></p>
-      <p style="margin:0;" id="detailStudentWrap"><strong>Student:</strong> <span id="detailStudent"></span></p>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-      <div><span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
-      <div class="foot-links">
-        <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      const params = new URLSearchParams(window.location.search);
-
-      const name = params.get('name');
-      const className = params.get('class');
-      const time = params.get('time');
-      const trialFor = params.get('trialFor');
-      const studentName = params.get('studentName');
-
-      const thankYouMessage = document.getElementById('thankYouMessage');
-      const bookingDetails = document.getElementById('bookingDetails');
-      const detailClass = document.getElementById('detailClass');
-      const detailTime = document.getElementById('detailTime');
-      const detailStudent = document.getElementById('detailStudent');
-      const detailStudentWrap = document.getElementById('detailStudentWrap');
-
-      if (name && thankYouMessage) {
-        thankYouMessage.textContent = `Thanks, ${name}. We’ve got your class and time locked in. We’ll see you soon at Rains Martial Arts.`;
-      }
-
-      if ((className || time) && bookingDetails) {
-        bookingDetails.style.display = 'block';
-      }
-
-      if (className && detailClass) {
-        detailClass.textContent = className;
-      }
-
-      if (time && detailTime) {
-        detailTime.textContent = time;
-      }
-
-      if (detailStudentWrap && detailStudent) {
-        if (trialFor === 'My Child' && studentName) {
-          detailStudent.textContent = studentName;
-        } else if (trialFor === 'Me') {
-          detailStudent.textContent = name || 'You';
-        } else {
-          detailStudentWrap.style.display = 'none';
-        }
-      }
-    })();
-  </script>
+  </div>
 </body>
 </html>
