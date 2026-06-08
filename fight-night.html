@@ -1,417 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  
 <head>
-  <style>:root {
-  --bg: #0a0a0a;
-  --panel: #111111;
-  --panel-2: #171717;
-  --text: #f3f3f3;
-  --muted: #a1a1aa;
-  --red: #e53935;
-  --red-dark: #a61f1c;
-  --border: rgba(255, 255, 255, 0.08);
-  --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  position: relative;
-  overflow-x: hidden;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(229, 57, 53, 0.12), transparent 24%),
-    radial-gradient(circle at 80% 0%, rgba(229, 57, 53, 0.08), transparent 22%),
-    linear-gradient(180deg, #090909 0%, #0d0d0d 50%, #080808 100%);
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.14;
-  mix-blend-mode: screen;
-  background-image: repeating-linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.05) 0px,
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-}
-
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.55) 100%);
-}
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 64px 20px;
-  position: relative;
-}
-
-.wrap {
-  width: min(1100px, 100%);
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: stretch;
-}
-
-.left,
-.right {
-  position: relative;
-  border: 1px solid var(--border);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-.left {
-  min-height: 700px;
-  padding: 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.left::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(229, 57, 53, 0.14), transparent 28%),
-    linear-gradient(180deg, transparent 65%, rgba(229, 57, 53, 0.08) 100%);
-  pointer-events: none;
-}
-
-.right {
-  min-height: 700px;
-  position: relative;
-  background-image: url("./images/SERG_RYAN.webp");
-  background-position: 42% center;
-  background-size: 330%;
-  background-repeat: no-repeat;
-  background-color: #000;
-}
-
-
-
-
-.stamp {
-  position: relative;
-  z-index: 2;
-  display: inline-block;
-  width: max-content;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #fff;
-  background: var(--red);
-  padding: 10px 14px;
-  transform: rotate(-2deg);
-  margin-bottom: 22px;
-  box-shadow: 0 10px 24px rgba(229, 57, 53, 0.35);
-}
-
-h1 {
-  position: relative;
-  z-index: 2;
-  margin: 0 0 18px;
-  font-size: clamp(3.1rem, 8vw, 6.3rem);
-  line-height: 0.9;
-  text-transform: uppercase;
-  letter-spacing: -0.04em;
-  max-width: 8ch;
-}
-
-.sub {
-  position: relative;
-  z-index: 2;
-  max-width: 32ch;
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #d4d4d8;
-  margin: 0 0 28px;
-}
-
-.meta {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 30px;
-  max-width: 560px;
-}
-
-.meta-box {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 16px;
-}
-
-.meta-box .label {
-  display: block;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-
-.meta-box .value {
-  display: block;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.4;
-}
-
-.rules {
-  position: relative;
-  z-index: 2;
-  border-left: 4px solid var(--red);
-  padding: 8px 0 8px 18px;
-  margin: 0 0 30px;
-}
-
-.rules p {
-  margin: 0 0 10px;
-  color: #e4e4e7;
-  line-height: 1.7;
-}
-
-.rules p:last-child {
-  margin-bottom: 0;
-}
-
-.actions {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 180px;
-  min-height: 56px;
-  padding: 14px 22px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  transition: 0.18s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: linear-gradient(180deg, #ef4444 0%, #c62828 100%);
-  color: #fff;
-  box-shadow: 0 14px 30px rgba(229, 57, 53, 0.28);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 36px rgba(229, 57, 53, 0.34);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: translateY(-2px);
-}
-
-.poster-note {
-  position: absolute;
-  right: 22px;
-  bottom: 22px;
-  z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(0, 0, 0, 0.55);
-  padding: 16px 18px;
-  max-width: 240px;
-  backdrop-filter: blur(8px);
-}
-
-.poster-note strong {
-  display: block;
-  text-transform: uppercase;
-  font-size: 0.92rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
-}
-
-.poster-note span {
-  color: #d4d4d8;
-  line-height: 1.55;
-  font-size: 0.95rem;
-}
-
-.footer-line {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 16px;
-  text-align: center;
-  color: #71717a;
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 920px) {
-  .wrap {
-    grid-template-columns: 1fr;
-  }
-
-  .right {
-    display: none;
-  }
-
-  .left {
-    min-height: auto;
-    padding: 32px 24px;
-  }
-
-  .meta {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    max-width: 10ch;
-  }
-
-  .topbar {
-    position: static;
-    padding: 0 0 18px;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero {
-    padding: 18px;
-  }
-
-  .left {
-    padding: 26px 18px;
-  }
-
-  h1 {
-    font-size: 2.7rem;
-  }
-
-  .sub {
-    font-size: 1rem;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  .poster-note {
-    right: 14px;
-    left: 14px;
-    max-width: none;
-  }
-}</style>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RMA Fight Night</title>
-  <meta
-    name="description"
-    content="Rains Martial Arts Friday Night Fight Night in Cookeville, TN. Underground energy. Real rounds. Real atmosphere. Every Friday at 7 PM."
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Fight Night | Rains Martial Arts</title>
+  <meta name="description" content="Fight Night at Rains Martial Arts in Cookeville, TN. Weekly sparring event — test your skills, sharpen your game, and compete in a safe, supervised environment. Every Friday." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-  <section class="hero">
-    <div class="wrap">
-      <div class="left">
-        <span class="stamp">Rains Martial Arts Presents</span>
 
-        <h1>Fight Night</h1>
-
-        <div class="meta">
-          <div class="meta-box">
-            <span class="label">When</span>
-            <span class="value">Every Friday<br />7:00 PM</span>
-          </div>
-
-          <div class="meta-box">
-            <span class="label">Entry</span>
-            <span class="value">$10<br />Everyone Welcome</span>
-          </div>
-
-          <div class="meta-box">
-            <span class="label">Location</span>
-            <span class="value">1227 N Washington Ave<br />Suite 201</span>
-          </div>
-
-          <div class="meta-box">
-            <span class="label">City</span>
-            <span class="value">Cookeville, TN</span>
-          </div>
-        </div>
-
-        <div class="rules">
-          <p>Fight at your own pace. Whether you are a beginner, experienced, or somewhere in between, this is the place for you.</p>
-          <p>Bring your crew and bring the energy.</p>
-        </div>
-
-        <div class="actions">
-          <a
-            href="https://maps.google.com/?q=1227+N+Washington+Ave+Suite+201+Cookeville+TN"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener"
-          >
-            Get Directions
-          </a>
-<a href="classes.html" class="btn btn-secondary">
-            Back to Classes
-          </a>
-         
-        </div>
-      </div>
-
-      <div class="right">
+  <header class="site-header" id="siteHeader">
+    <div class="hdr-inner">
+      <a href="/" class="hdr-logo" aria-label="Rains Martial Arts">
+        <img src="SIMPLELTRANSWHITETEXT.png" alt="Rains Martial Arts" />
+      </a>
+      <div class="hdr-right">
+        <button class="hdr-trial" id="openSheet" type="button">Sign Up</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
+  </header>
 
-    <div class="footer-line">RMA • Friday Night Fight Club • Cookeville</div>
-  </section>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <nav class="nav-drawer" id="navDrawer" aria-label="Main navigation">
+    <div class="drawer-head">
+      <img src="SIMPLELTRANSWHITETEXT.png" alt="RMA" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
+    </div>
+    <div class="drawer-links">
+      <a href="/" class="drawer-link">Home</a>
+      <a href="/#programs" class="drawer-link">Programs</a>
+      <a href="/#schedule" class="drawer-link">Schedule</a>
+      <a href="/#pricing" class="drawer-link">Pricing</a>
+      <a href="/#contact" class="drawer-link">Contact</a>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn-primary drawer-trial" id="drawerTrial" type="button">Sign Up for Fight Night</button>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p class="drawer-address">1227 N Washington Ave, Suite 201<br>Cookeville, TN 38501</p>
+    </div>
+  </nav>
+
+  <div class="prog-hero">
+    <img src="images/FIGHT_NIGHT.jpeg" alt="Fight Night at Rains Martial Arts" class="prog-hero-img" loading="eager" />
+    <div class="prog-hero-overlay"></div>
+    <div class="prog-hero-content">
+      <span class="prog-tag">Sparring · Competition · Every Friday</span>
+      <h1 class="prog-hero-title">Fight Night</h1>
+      <p class="prog-hero-sub">RMA's weekly sparring event — test your skills in a competitive but supportive environment</p>
+    </div>
+  </div>
+
+  <main>
+    <div class="section">
+      <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Programs
+      </a>
+
+      <div class="reveal section-head">
+        <span class="kicker">About Fight Night</span>
+        <h2>Where Skills Are Tested.</h2>
+        <p class="section-sub">Fight Night is RMA's weekly combat sports event. Open to practitioners who want to push themselves in a competitive but controlled setting. Whether you're prepping for a tournament or just want to see where you stand — Fight Night is where it happens.</p>
+      </div>
+
+      <div class="reveal" data-d="1">
+        <div class="prog-detail-card">
+          <span class="prog-detail-label">What Happens</span>
+          <div class="prog-bullets">
+            <div class="prog-bullet">Live sparring in kickboxing and karate formats</div>
+            <div class="prog-bullet">Point fighting and full-contact divisions</div>
+            <div class="prog-bullet">Safe, instructor-supervised competitive rounds</div>
+            <div class="prog-bullet">Build mental toughness under real pressure</div>
+            <div class="prog-bullet">Ideal prep for those pursuing competition</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" data-d="2">
+        <div class="prog-detail-card">
+          <span class="prog-detail-label">Who Can Participate</span>
+          <p class="prog-detail-text">Open to any RMA student who has been cleared by the instructor. Some prior training experience is required — Fight Night is not recommended for complete beginners. If you've been training and are ready to test yourself, this is your venue.</p>
+        </div>
+      </div>
+
+      <div class="reveal" data-d="3" style="margin-top:32px">
+        <span class="kicker">When It Happens</span>
+        <h3 style="margin-top:6px;margin-bottom:16px">Weekly Schedule</h3>
+        <div class="prog-sched-times">
+          <div class="prog-sched-row">
+            <span class="prog-sched-dot"></span>
+            <span class="prog-sched-day">Every Friday</span>
+            <span class="prog-sched-time">7:00 – 9:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" data-d="4" style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn-primary" id="progTrial" type="button" style="flex:1;min-width:200px">Sign Up for Fight Night</button>
+        <a href="/" class="btn-ghost" style="min-width:120px;justify-content:center">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <img src="SIMPLELTRANSWHITETEXT.png" alt="Rains Martial Arts" class="footer-logo" />
+    <p class="footer-text">1227 N Washington Ave, Suite 201 · Cookeville, TN 38501</p>
+    <div class="footer-links">
+      <a href="tel:9316449963" class="footer-link">(931) 644-9963</a>
+      <a href="mailto:rainsmartial@gmail.com" class="footer-link">Email Us</a>
+      <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" class="footer-link">Facebook</a>
+    </div>
+    <p class="footer-text" style="margin-top:14px">© <span id="year"></span> Rains Martial Arts. All rights reserved.</p>
+  </footer>
+
+  <div class="sticky-bar" id="stickyBar">
+    <button class="sticky-btn" id="stickyBtn" type="button">Sign Up for Fight Night →</button>
+  </div>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Sign Up for Fight Night">
+      <div class="sheet-handle"></div>
+      <div class="sheet-body">
+        <div class="sheet-header">
+          <div>
+            <h2>Sign Up for Fight Night</h2>
+            <p class="sheet-desc">Submit your info and we'll confirm your spot for the next event.</p>
+          </div>
+          <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
+        </div>
+        <form name="join" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" id="trialForm">
+          <input type="hidden" name="form-name" value="join" />
+          <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+          <div class="form-group"><label for="fname">Full Name</label><input type="text" id="fname" name="name" required placeholder="Your name" /></div>
+          <div class="form-group"><label for="femail">Email</label><input type="email" id="femail" name="email" required placeholder="you@example.com" /></div>
+          <div class="form-group"><label for="fphone">Phone</label><input type="tel" id="fphone" name="phone" required placeholder="(555) 000-0000" /></div>
+          <div class="form-group"><label for="ffor">Who is signing up?</label><select id="ffor" name="trialFor" required><option value="">Select one</option><option value="Me">Me</option><option value="My Child">My Child</option></select></div>
+          <div class="form-group" id="childNameWrap" style="display:none"><label for="fsname">Child's Name</label><input type="text" id="fsname" name="studentName" placeholder="Child's name" /></div>
+          <div class="form-group" id="childAgeWrap" style="display:none"><label for="fsage">Child's Age</label><input type="number" id="fsage" name="studentAge" min="3" max="17" placeholder="Age" /></div>
+          <div class="form-group"><label for="fclass">Which class?</label><select id="fclass" name="classInterest" required><option value="">Select a class</option><option value="Young Warriors">Young Warriors (Ages 4–7)</option><option value="Kids Karate">Kids Karate</option><option value="Kids Kickboxing">Kids Kickboxing</option><option value="Women's Kickboxing">Women's Kickboxing</option><option value="Adult Karate">Adult Karate</option><option value="Adult Kickboxing">Adult Kickboxing</option><option value="Private Lessons">Private Lessons</option><option value="Fight Night">Fight Night</option></select></div>
+          <div class="form-group"><label for="ftime">Preferred class time</label><select id="ftime" name="classTime" required><option value="">Select a class first</option></select></div>
+          <div class="form-group"><label for="fnotes">Anything we should know?</label><textarea id="fnotes" name="notes" placeholder="Experience, background, questions…"></textarea></div>
+          <button type="submit" class="btn-primary form-submit">Sign Up →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const ham=document.getElementById('hamburger'),bd=document.getElementById('navBackdrop'),dr=document.getElementById('navDrawer');
+    function openD(){ham.classList.add('open');bd.classList.add('open');dr.classList.add('open');ham.setAttribute('aria-expanded','true');}
+    function closeD(){ham.classList.remove('open');bd.classList.remove('open');dr.classList.remove('open');ham.setAttribute('aria-expanded','false');}
+    ham.addEventListener('click',openD);bd.addEventListener('click',closeD);document.getElementById('drawerClose').addEventListener('click',closeD);
+    const sheet=document.getElementById('sheet');
+    function openS(){closeD();sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
+    function closeS(){sheet.classList.remove('open');sheet.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    ['openSheet','progTrial','stickyBtn','drawerTrial'].forEach(function(id){document.getElementById(id).addEventListener('click',openS);});
+    document.getElementById('sheetBackdrop').addEventListener('click',closeS);document.getElementById('sheetClose').addEventListener('click',closeS);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeS();closeD();}});
+    const sb=document.getElementById('stickyBar');sb.classList.add('hidden');window.addEventListener('scroll',function(){sb.classList.toggle('hidden',window.scrollY<300);},{passive:true});
+    window.addEventListener('scroll',function(){document.getElementById('siteHeader').classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+    const io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    const ffor=document.getElementById('ffor'),cnw=document.getElementById('childNameWrap'),caw=document.getElementById('childAgeWrap'),fsn=document.getElementById('fsname'),fsa=document.getElementById('fsage');
+    ffor.addEventListener('change',function(){var c=ffor.value==='My Child';cnw.style.display=c?'block':'none';caw.style.display=c?'block':'none';fsn.required=c;fsa.required=c;});
+    const SCHED={'Young Warriors':[{day:1,time:'5:45 PM',label:'Monday — 5:45–6:15 PM'},{day:3,time:'5:45 PM',label:'Wednesday — 5:45–6:15 PM'}],'Kids Karate':[{day:1,time:'4:30 PM',label:'Monday — 4:30–5:30 PM'},{day:2,time:'4:30 PM',label:'Tuesday — 4:30–5:30 PM'},{day:3,time:'4:30 PM',label:'Wednesday — 4:30–5:30 PM'},{day:4,time:'4:30 PM',label:'Thursday — 4:30–5:30 PM'}],'Kids Kickboxing':[{day:2,time:'5:30 PM',label:'Tuesday — 5:30–6:30 PM'},{day:4,time:'5:30 PM',label:'Thursday — 5:30–6:30 PM'}],"Women's Kickboxing":[{day:1,time:'6:30 PM',label:'Monday — 6:30–7:30 PM'},{day:3,time:'6:30 PM',label:'Wednesday — 6:30–7:30 PM'}],'Adult Karate':[{day:2,time:'6:30 PM',label:'Tuesday — 6:30–7:30 PM'},{day:4,time:'6:30 PM',label:'Thursday — 6:30–7:30 PM'}],'Adult Kickboxing':[{day:1,time:'7:30 PM',label:'Monday — 7:30–8:30 PM'},{day:2,time:'7:30 PM',label:'Tuesday — 7:30–8:30 PM'},{day:3,time:'7:30 PM',label:'Wednesday — 7:30–8:30 PM'},{day:4,time:'7:30 PM',label:'Thursday — 7:30–8:30 PM'}],'Private Lessons':[{day:null,time:null,label:'Contact us to schedule'}],'Fight Night':[{day:5,time:'7:00 PM',label:'Friday — 7:00–9:00 PM'}]};
+    function pt(t){var p=t.split(' '),c=p[0].split(':'),m=p[1],h=+c[0],mn=+c[1];if(m==='PM'&&h!==12)h+=12;if(m==='AM'&&h===12)h=0;return{h:h,m:mn};}
+    function nxt(s,n){var now=new Date(),res=[],d=new Date(now),t=0;d.setHours(0,0,0,0);while(res.length<n&&t<60){var dw=d.getDay();s.forEach(function(x){if(x.day===dw){var nd=new Date(d),p=pt(x.time);nd.setHours(p.h,p.m,0,0);if(nd>now)res.push(d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' · '+x.label);}});d.setDate(d.getDate()+1);t++;}return res.slice(0,n);}
+    const fc=document.getElementById('fclass'),ft=document.getElementById('ftime');
+    function upd(cls){ft.innerHTML='';if(!cls||!SCHED[cls]){ft.innerHTML='<option value="">Select a class first</option>';return;}if(cls==='Private Lessons'){ft.innerHTML='<option value="Private Lesson — will contact to schedule">Private Lesson — will contact to schedule</option>';return;}var o=nxt(SCHED[cls],6);ft.innerHTML='<option value="">Choose a time</option>';o.forEach(function(x){var op=document.createElement('option');op.value=op.textContent=x;ft.appendChild(op);});}
+    fc.value='Fight Night';upd('Fight Night');fc.addEventListener('change',function(){upd(fc.value);});
+  })();
+  </script>
 </body>
-
 </html>

@@ -2,496 +2,279 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Young Warriors | Rains Martial Arts</title>
-  <meta name="description" content="Young Warriors (Ages 4–7) in Cookeville, TN at Rains Martial Arts. A structured, fun intro to martial arts focused on coordination, confidence, and discipline." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="canonical" href="https://rainsmartialarts.com/young-warriors.html">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsActivityLocation",
-    "@id": "https://rainsmartialarts.com/#business",
-    "name": "Rains Martial Arts",
-    "url": "https://rainsmartialarts.com/",
-    "logo": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
-    "image": "https://rainsmartialarts.com/SIMPLELTRANSWHITETEXT.png",
-    "telephone": "+19316449963",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "1227 N Washington Ave, Suite 201",
-      "addressLocality": "Cookeville",
-      "addressRegion": "TN",
-      "postalCode": "38501",
-      "addressCountry": "US"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 36.179333541375414,
-      "longitude": -85.49655093051408
-    },
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61583813382121",
-      "https://www.instagram.com/rainsmartialarts/"
-    ],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Monday",
-        "opens": "11:00",
-        "closes": "12:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Monday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Tuesday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Wednesday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Thursday",
-        "opens": "11:00",
-        "closes": "12:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Thursday",
-        "opens": "15:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Friday",
-        "opens": "19:00",
-        "closes": "21:00"
-      }
-    ],
-    "description": "Rains Martial Arts in Cookeville, TN offers kids and adult martial arts programs, kickboxing, private lessons, and homeschool-friendly daytime classes focused on real skill, discipline, and fitness."
-  }
-  </script>
+  <meta name="description" content="Young Warriors (Ages 4–7) at Rains Martial Arts in Cookeville, TN. A fun, structured intro to martial arts focused on coordination, confidence, and listening skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
 
-  <header>
-    <div class="nav">
-      <a href="index.html" class="brand" aria-label="Rains Martial Arts Home">
-        <img src="images/REDNWHITE.png" alt="Rains Martial Arts Logo" class="logo-img" />
-        <div class="name">Rains Martial Arts</div>
+  <header class="site-header" id="siteHeader">
+    <div class="hdr-inner">
+      <a href="/" class="hdr-logo" aria-label="Rains Martial Arts">
+        <img src="SIMPLELTRANSWHITETEXT.png" alt="Rains Martial Arts" />
       </a>
-
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="classes.html">Classes</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="index.html#pricing">Memberships</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-right">
-        <button id="menuToggle" class="cta" type="button">Start Free Trial</button>
+      <div class="hdr-right">
+        <button class="hdr-trial" id="openSheet" type="button">Free Trial</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="panel">
-      <span class="kicker">Martial Arts Foundations</span>
-      <h1>Young Warriors Martial Arts Program (Ages 4+)</h1>
+  <div class="nav-backdrop" id="navBackdrop"></div>
+  <nav class="nav-drawer" id="navDrawer" aria-label="Main navigation">
+    <div class="drawer-head">
+      <img src="SIMPLELTRANSWHITETEXT.png" alt="RMA" class="drawer-logo" />
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
+    </div>
+    <div class="drawer-links">
+      <a href="/" class="drawer-link">Home</a>
+      <a href="/#programs" class="drawer-link">Programs</a>
+      <a href="/#schedule" class="drawer-link">Schedule</a>
+      <a href="/#pricing" class="drawer-link">Pricing</a>
+      <a href="/#contact" class="drawer-link">Contact</a>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn-primary drawer-trial" id="drawerTrial" type="button">Book Free Trial</button>
+      <div class="drawer-socials">
+        <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/></svg>
+        </a>
+      </div>
+      <p class="drawer-address">1227 N Washington Ave, Suite 201<br>Cookeville, TN 38501</p>
+    </div>
+  </nav>
 
-      <p class="sub">
-        A fun, structured introduction to martial arts for younger kids. Young Warriors helps students build coordination, confidence, listening skills, and strong beginner habits in a way they can actually enjoy.
-      </p>
+  <div class="prog-hero">
+    <img src="images/YOUNG_WARRIORS_1.jpeg" alt="Young Warriors martial arts class" class="prog-hero-img" loading="eager" />
+    <div class="prog-hero-overlay"></div>
+    <div class="prog-hero-content">
+      <span class="prog-tag">Ages 4–7 · Beginner</span>
+      <h1 class="prog-hero-title">Young Warriors</h1>
+      <p class="prog-hero-sub">A fun, structured intro to martial arts built for younger kids</p>
+    </div>
+  </div>
 
-      <div class="cards" style="margin-top:16px;">
-        <div class="card">
-          <h3>What they learn</h3>
-          <p>Balance, stance, beginner strikes, simple combos, movement, and body control through repetition and age-appropriate drills.</p>
-        </div>
+  <main>
+    <div class="section">
+      <a href="/" class="back-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Programs
+      </a>
 
-        <div class="card">
-          <h3>What parents notice</h3>
-          <p>Better focus, improved discipline, more confidence, and a positive outlet for energy.</p>
-        </div>
+      <div class="reveal section-head">
+        <span class="kicker">About This Program</span>
+        <h2>Building Champions from the Start</h2>
+        <p class="section-sub">Young Warriors is designed for our youngest students — kids ages 4 to 7 who are just beginning their martial arts journey. Classes focus on the fundamentals that matter most at this age: coordination, listening, and confidence in their own bodies.</p>
+      </div>
 
-        <div class="card">
-          <h3>Built for beginners</h3>
-          <p>This program gives younger kids a strong foundation before moving into more advanced classes later on.</p>
+      <div class="reveal" data-d="1">
+        <div class="prog-detail-card">
+          <span class="prog-detail-label">What They'll Learn</span>
+          <div class="prog-bullets">
+            <div class="prog-bullet">Basic stances, movement, and balance</div>
+            <div class="prog-bullet">Beginner strikes and kicks</div>
+            <div class="prog-bullet">Listening skills and following instruction</div>
+            <div class="prog-bullet">Coordination and body control through repetition</div>
+            <div class="prog-bullet">Confidence through positive reinforcement</div>
+          </div>
         </div>
       </div>
 
-      <div class="actions" style="margin-top:18px;">
-        <button class="btn btn-primary" type="button" data-open-join>Sign Up</button>
-        <a class="btn btn-secondary" href="classes.html">Back to Classes</a>
+      <div class="reveal" data-d="2">
+        <div class="prog-detail-card">
+          <span class="prog-detail-label">Who It's For</span>
+          <p class="prog-detail-text">Perfect for kids ages 4–7 with no prior experience. No gear required for your first class — just comfortable clothes and an open mind. This program gives younger kids a strong foundation before moving into more advanced classes later on.</p>
+        </div>
+      </div>
+
+      <div class="reveal" data-d="3" style="margin-top:32px">
+        <span class="kicker">Class Schedule</span>
+        <h3 style="margin-top:6px;margin-bottom:16px">Weekly Times</h3>
+        <div class="prog-sched-times">
+          <div class="prog-sched-row">
+            <span class="prog-sched-dot"></span>
+            <span class="prog-sched-day">Monday</span>
+            <span class="prog-sched-time">5:45 – 6:15 PM</span>
+          </div>
+          <div class="prog-sched-row">
+            <span class="prog-sched-dot"></span>
+            <span class="prog-sched-day">Wednesday</span>
+            <span class="prog-sched-time">5:45 – 6:15 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" data-d="4" style="margin-top:36px;display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn-primary" id="progTrial" type="button" style="flex:1;min-width:200px">Book Your Free Class</button>
+        <a href="/" class="btn-ghost" style="min-width:120px;justify-content:center">Back to Home</a>
       </div>
     </div>
-  </section>
+  </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div><span id="year"></span> Rains Martial Arts • 1227 N Washington Ave • (931) 644-9963</div>
-      <div class="foot-links">
-        <a href="mailto:rainsmartial@gmail.com" class="contact-link">Email</a>
-      </div>
+  <footer class="site-footer">
+    <img src="SIMPLELTRANSWHITETEXT.png" alt="Rains Martial Arts" class="footer-logo" />
+    <p class="footer-text">1227 N Washington Ave, Suite 201 · Cookeville, TN 38501</p>
+    <div class="footer-links">
+      <a href="tel:9316449963" class="footer-link">(931) 644-9963</a>
+      <a href="mailto:rainsmartial@gmail.com" class="footer-link">Email Us</a>
+      <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" class="footer-link">Facebook</a>
     </div>
-
-    <div class="social-footer">
-      <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" aria-label="Facebook" rel="noopener">
-        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
-        </svg>
-      </a>
-
-      <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" aria-label="Instagram" rel="noopener">
-        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
-        </svg>
-      </a>
-
-      <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" aria-label="TikTok" rel="noopener">
-        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
-        </svg>
-      </a>
-    </div>
+    <p class="footer-text" style="margin-top:14px">© <span id="year"></span> Rains Martial Arts. All rights reserved.</p>
   </footer>
 
-  <div id="joinOverlay" class="join-overlay" aria-hidden="true"></div>
+  <div class="sticky-bar" id="stickyBar">
+    <button class="sticky-btn" id="stickyBtn" type="button">Book Your Free Class →</button>
+  </div>
 
-  <div id="joinPanel" class="panel-slide" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book Your Free Trial">
-    <div class="panel-content">
-      <button id="closePanel" class="close-btn" type="button" aria-label="Close">&times;</button>
-
-      <h2>Book Your Free Trial</h2>
-      <p>Choose your class and preferred upcoming class time.</p>
-
-      <form
-        id="trialForm"
-        name="join"
-        method="POST"
-        action="/thank-you.html"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="join" />
-
-        <p style="display:none;">
-          <label>Don’t fill this out: <input name="bot-field" /></label>
-        </p>
-
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" required />
-
-        <label for="email">Email</label>
-        <input id="email" type="email" name="email" required />
-
-        <label for="phone">Phone</label>
-        <input id="phone" type="tel" name="phone" required />
-
-        <label for="trialFor">Who is trying the class?</label>
-        <select id="trialFor" name="trialFor" required>
-          <option value="">Select one</option>
-          <option value="Me">Me</option>
-          <option value="My Child" selected>My Child</option>
-        </select>
-
-        <div id="childFields">
-          <label for="studentName">Student Name</label>
-          <input id="studentName" type="text" name="studentName" required />
-
-          <label for="studentAge">Student Age</label>
-          <input id="studentAge" type="number" name="studentAge" min="3" max="17" required />
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-label="Book Your Free Trial">
+      <div class="sheet-handle"></div>
+      <div class="sheet-body">
+        <div class="sheet-header">
+          <div>
+            <h2>Book Your Free Class</h2>
+            <p class="sheet-desc">One free trial, zero commitment. We'll reach out to confirm your time.</p>
+          </div>
+          <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
         </div>
-
-        <label for="classInterest">Which class would you like to try?</label>
-        <select id="classInterest" name="classInterest" required>
-          <option value="">Select a class</option>
-          <option value="Young Warriors" selected>Young Warriors</option>
-          <option value="Kids Kickboxing">Kids Kickboxing</option>
-          <option value="Kids Karate">Kids Karate</option>
-          <option value="Adult Karate">Adult Karate</option>
-          <option value="Adult Kickboxing">Adult Kickboxing</option>
-          <option value="Women's Kickboxing">Women's Kickboxing</option>
-          <option value="Private Lessons">Private Lessons</option>
-        </select>
-
-        <label for="classTime">Choose your class time</label>
-        <select id="classTime" name="classTime" required>
-          <option value="">Choose an upcoming class time</option>
-        </select>
-
-        <label for="notes">Anything we should know?</label>
-        <textarea id="notes" name="notes" placeholder="Optional: age, experience, questions, etc."></textarea>
-
-        <button type="submit">Request Trial</button>
-      </form>
+        <form name="join" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" id="trialForm">
+          <input type="hidden" name="form-name" value="join" />
+          <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+          <div class="form-group">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone</label>
+            <input type="tel" id="fphone" name="phone" required placeholder="(555) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label for="ffor">Who is signing up?</label>
+            <select id="ffor" name="trialFor" required>
+              <option value="">Select one</option>
+              <option value="Me">Me</option>
+              <option value="My Child">My Child</option>
+            </select>
+          </div>
+          <div class="form-group" id="childNameWrap" style="display:none">
+            <label for="fsname">Child's Name</label>
+            <input type="text" id="fsname" name="studentName" placeholder="Child's name" />
+          </div>
+          <div class="form-group" id="childAgeWrap" style="display:none">
+            <label for="fsage">Child's Age</label>
+            <input type="number" id="fsage" name="studentAge" min="3" max="17" placeholder="Age" />
+          </div>
+          <div class="form-group">
+            <label for="fclass">Which class?</label>
+            <select id="fclass" name="classInterest" required>
+              <option value="">Select a class</option>
+              <option value="Young Warriors">Young Warriors (Ages 4–7)</option>
+              <option value="Kids Karate">Kids Karate</option>
+              <option value="Kids Kickboxing">Kids Kickboxing</option>
+              <option value="Women's Kickboxing">Women's Kickboxing</option>
+              <option value="Adult Karate">Adult Karate</option>
+              <option value="Adult Kickboxing">Adult Kickboxing</option>
+              <option value="Private Lessons">Private Lessons</option>
+              <option value="Fight Night">Fight Night</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ftime">Preferred class time</label>
+            <select id="ftime" name="classTime" required>
+              <option value="">Select a class first</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fnotes">Anything we should know?</label>
+            <textarea id="fnotes" name="notes" placeholder="Experience, questions, goals…"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">Request Free Trial →</button>
+        </form>
+      </div>
     </div>
   </div>
 
   <script>
-    (function () {
-      const headerBtn = document.getElementById('menuToggle');
-      const joinPanel = document.getElementById('joinPanel');
-      const joinOverlay = document.getElementById('joinOverlay');
-      const closePanel = document.getElementById('closePanel');
-      const yearEl = document.getElementById('year');
-
-      const trialFor = document.getElementById('trialFor');
-      const childFields = document.getElementById('childFields');
-      const studentName = document.getElementById('studentName');
-      const studentAge = document.getElementById('studentAge');
-
-      const classInterest = document.getElementById('classInterest');
-      const classTime = document.getElementById('classTime');
-
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-
-      function openPanel() {
-        joinPanel.classList.add('open');
-        joinOverlay.classList.add('open');
-        joinPanel.setAttribute('aria-hidden', 'false');
-        joinOverlay.setAttribute('aria-hidden', 'false');
-      }
-
-      function closePanelFn() {
-        joinPanel.classList.remove('open');
-        joinOverlay.classList.remove('open');
-        joinPanel.setAttribute('aria-hidden', 'true');
-        joinOverlay.setAttribute('aria-hidden', 'true');
-      }
-
-      if (headerBtn) {
-        headerBtn.addEventListener('click', openPanel);
-      }
-
-      document.addEventListener('click', function (e) {
-        const trigger = e.target.closest('[data-open-join]');
-        if (!trigger) return;
-        e.preventDefault();
-        openPanel();
-      });
-
-      if (closePanel) {
-        closePanel.addEventListener('click', closePanelFn);
-      }
-
-      if (joinOverlay) {
-        joinOverlay.addEventListener('click', closePanelFn);
-      }
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          closePanelFn();
-        }
-      });
-
-      if (trialFor) {
-        trialFor.addEventListener('change', function () {
-          const isChild = trialFor.value === 'My Child';
-          childFields.style.display = isChild ? 'block' : 'none';
-          studentName.required = isChild;
-          studentAge.required = isChild;
-
-          if (!isChild) {
-            studentName.value = '';
-            studentAge.value = '';
-          }
-        });
-      }
-
-      const classSchedules = {
-        "Young Warriors": [
-          { day: 1, time: "5:45 PM", label: "Monday - 5:45 PM to 6:15 PM" },
-          { day: 3, time: "5:45 PM", label: "Wednesday - 5:45 PM to 6:15 PM" }
-        ],
-        "Kids Kickboxing": [
-          { day: 2, time: "5:30 PM", label: "Tuesday - 5:30 PM to 6:30 PM" },
-          { day: 4, time: "5:30 PM", label: "Thursday - 5:30 PM to 6:30 PM" }
-        ],
-        "Kids Karate": [
-          { day: 1, time: "4:30 PM", label: "Monday - 4:30 PM to 5:30 PM" },
-          { day: 2, time: "4:30 PM", label: "Tuesday - 4:30 PM to 5:30 PM" },
-          { day: 3, time: "4:30 PM", label: "Wednesday - 4:30 PM to 5:30 PM" },
-          { day: 4, time: "4:30 PM", label: "Thursday - 4:30 PM to 5:30 PM" }
-        ],
-        "Adult Karate": [
-          { day: 2, time: "6:30 PM", label: "Tuesday - 6:30 PM to 7:30 PM" },
-          { day: 4, time: "6:30 PM", label: "Thursday - 6:30 PM to 7:30 PM" }
-        ],
-        "Adult Kickboxing": [
-          { day: 1, time: "7:30 PM", label: "Monday - 7:30 PM to 8:30 PM" },
-          { day: 2, time: "7:30 PM", label: "Tuesday - 7:30 PM to 8:30 PM" },
-          { day: 3, time: "7:30 PM", label: "Wednesday - 7:30 PM to 8:30 PM" },
-          { day: 4, time: "7:30 PM", label: "Thursday - 7:30 PM to 8:30 PM" }
-        ],
-        "Women's Kickboxing": [
-          { day: 1, time: "6:30 PM", label: "Monday - 6:30 PM to 7:30 PM" },
-          { day: 3, time: "6:30 PM", label: "Wednesday - 6:30 PM to 7:30 PM" }
-        ],
-        "Private Lessons": [
-          { day: null, time: null, label: "We will contact you to schedule a private lesson" }
-        ]
-      };
-
-      function parseTime(timeStr) {
-        const parts = timeStr.split(' ');
-        const clock = parts[0];
-        const modifier = parts[1];
-        let timeParts = clock.split(':');
-        let hours = parseInt(timeParts[0], 10);
-        let minutes = parseInt(timeParts[1], 10);
-
-        if (modifier === 'PM' && hours !== 12) hours += 12;
-        if (modifier === 'AM' && hours === 12) hours = 0;
-
-        return { hours: hours, minutes: minutes };
-      }
-
-      function formatDate(date) {
-        return date.toLocaleDateString('en-US', {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric'
-        });
-      }
-
-      function getNextOccurrences(schedule, count) {
-        const now = new Date();
-        const results = [];
-        const checkDate = new Date(now);
-
-        checkDate.setHours(0, 0, 0, 0);
-
-        while (results.length < count) {
-          const currentDay = checkDate.getDay();
-
-          schedule.forEach(function (item) {
-            if (item.day === currentDay) {
-              const nextDate = new Date(checkDate);
-              const parsedTime = parseTime(item.time);
-
-              nextDate.setHours(parsedTime.hours, parsedTime.minutes, 0, 0);
-
-              if (nextDate > now) {
-                results.push({
-                  value: formatDate(nextDate) + ' | ' + item.label,
-                  text: formatDate(nextDate) + ' | ' + item.label
-                });
-              }
-            }
-          });
-
-          checkDate.setDate(checkDate.getDate() + 1);
-        }
-
-        return results.slice(0, count);
-      }
-
-      function populateClassTimes(selectedClass) {
-        classTime.innerHTML = '';
-
-        if (!selectedClass || !classSchedules[selectedClass]) {
-          classTime.disabled = true;
-          classTime.innerHTML = '<option value="">Select a class first</option>';
-          return;
-        }
-
-        if (selectedClass === 'Private Lessons') {
-          classTime.disabled = false;
-          classTime.innerHTML = '<option value="Private Lesson - We will contact you to schedule">Private Lesson - We will contact you to schedule</option>';
-          return;
-        }
-
-        const upcoming = getNextOccurrences(classSchedules[selectedClass], 6);
-
-        if (!upcoming.length) {
-          classTime.disabled = true;
-          classTime.innerHTML = '<option value="">No upcoming classes found</option>';
-          return;
-        }
-
-        const placeholder = document.createElement('option');
-        placeholder.value = '';
-        placeholder.textContent = 'Choose an upcoming class time';
-        classTime.appendChild(placeholder);
-
-        upcoming.forEach(function (item) {
-          const option = document.createElement('option');
-          option.value = item.value;
-          option.textContent = item.text;
-          classTime.appendChild(option);
-        });
-
-        classTime.disabled = false;
-      }
-
-      if (classInterest) {
-        classInterest.addEventListener('change', function () {
-          populateClassTimes(classInterest.value);
-        });
-
-        populateClassTimes(classInterest.value);
-      }
-    })();
-  </script>
-  <script>
   (function () {
-    const form = document.getElementById('trialForm');
-    if (!form) return;
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
+    const ham = document.getElementById('hamburger');
+    const backdrop = document.getElementById('navBackdrop');
+    const drawer = document.getElementById('navDrawer');
+    function openDrawer() { ham.classList.add('open'); backdrop.classList.add('open'); drawer.classList.add('open'); ham.setAttribute('aria-expanded','true'); }
+    function closeDrawer() { ham.classList.remove('open'); backdrop.classList.remove('open'); drawer.classList.remove('open'); ham.setAttribute('aria-expanded','false'); }
+    ham.addEventListener('click', openDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.getElementById('drawerClose').addEventListener('click', closeDrawer);
 
-      const formData = new FormData(form);
+    const sheet = document.getElementById('sheet');
+    function openSheet() { closeDrawer(); sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function closeSheet() { sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    document.getElementById('openSheet').addEventListener('click', openSheet);
+    document.getElementById('progTrial').addEventListener('click', openSheet);
+    document.getElementById('stickyBtn').addEventListener('click', openSheet);
+    document.getElementById('drawerTrial').addEventListener('click', openSheet);
+    document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
+    document.getElementById('sheetClose').addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){closeSheet();closeDrawer();} });
 
-      const name = formData.get('name') || '';
-      const classInterest = formData.get('classInterest') || '';
-      const classTime = formData.get('classTime') || '';
-      const trialFor = formData.get('trialFor') || '';
-      const studentName = formData.get('studentName') || '';
+    const stickyBar = document.getElementById('stickyBar');
+    stickyBar.classList.add('hidden');
+    window.addEventListener('scroll', function(){ stickyBar.classList.toggle('hidden', window.scrollY < 300); }, {passive:true});
 
-      try {
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        });
+    const header = document.getElementById('siteHeader');
+    window.addEventListener('scroll', function(){ header.classList.toggle('scrolled', window.scrollY > 40); }, {passive:true});
 
-        const params = new URLSearchParams({
-          name: name,
-          class: classInterest,
-          time: classTime,
-          trialFor: trialFor,
-          studentName: studentName
-        });
+    const io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);} }); }, {threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-        window.location.href = '/thank-you.html?' + params.toString();
-      } catch (err) {
-        alert('There was a problem submitting the form. Please try again.');
-      }
+    const ffor = document.getElementById('ffor');
+    const childNameWrap = document.getElementById('childNameWrap');
+    const childAgeWrap = document.getElementById('childAgeWrap');
+    const fsname = document.getElementById('fsname');
+    const fsage = document.getElementById('fsage');
+    ffor.addEventListener('change', function(){
+      const c = ffor.value === 'My Child';
+      childNameWrap.style.display = c ? 'block' : 'none';
+      childAgeWrap.style.display = c ? 'block' : 'none';
+      fsname.required = c; fsage.required = c;
     });
+
+    const SCHED = {
+      'Young Warriors':     [{day:1,time:'5:45 PM',label:'Monday — 5:45–6:15 PM'},{day:3,time:'5:45 PM',label:'Wednesday — 5:45–6:15 PM'}],
+      'Kids Karate':        [{day:1,time:'4:30 PM',label:'Monday — 4:30–5:30 PM'},{day:2,time:'4:30 PM',label:'Tuesday — 4:30–5:30 PM'},{day:3,time:'4:30 PM',label:'Wednesday — 4:30–5:30 PM'},{day:4,time:'4:30 PM',label:'Thursday — 4:30–5:30 PM'}],
+      'Kids Kickboxing':    [{day:2,time:'5:30 PM',label:'Tuesday — 5:30–6:30 PM'},{day:4,time:'5:30 PM',label:'Thursday — 5:30–6:30 PM'}],
+      "Women's Kickboxing": [{day:1,time:'6:30 PM',label:'Monday — 6:30–7:30 PM'},{day:3,time:'6:30 PM',label:'Wednesday — 6:30–7:30 PM'}],
+      'Adult Karate':       [{day:2,time:'6:30 PM',label:'Tuesday — 6:30–7:30 PM'},{day:4,time:'6:30 PM',label:'Thursday — 6:30–7:30 PM'}],
+      'Adult Kickboxing':   [{day:1,time:'7:30 PM',label:'Monday — 7:30–8:30 PM'},{day:2,time:'7:30 PM',label:'Tuesday — 7:30–8:30 PM'},{day:3,time:'7:30 PM',label:'Wednesday — 7:30–8:30 PM'},{day:4,time:'7:30 PM',label:'Thursday — 7:30–8:30 PM'}],
+      'Private Lessons':    [{day:null,time:null,label:'Contact us to schedule'}],
+      'Fight Night':        [{day:5,time:'7:00 PM',label:'Friday — 7:00–9:00 PM'}]
+    };
+    function parseTime(t){var p=t.split(' '),c=p[0].split(':'),m=p[1],h=+c[0],mn=+c[1];if(m==='PM'&&h!==12)h+=12;if(m==='AM'&&h===12)h=0;return{h:h,m:mn};}
+    function nextOccurrences(sched,n){var now=new Date(),res=[],d=new Date(now);d.setHours(0,0,0,0);var tries=0;while(res.length<n&&tries<60){var dow=d.getDay();sched.forEach(function(s){if(s.day===dow){var nd=new Date(d),pt=parseTime(s.time);nd.setHours(pt.h,pt.m,0,0);if(nd>now)res.push(d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})+' · '+s.label);}});d.setDate(d.getDate()+1);tries++;}return res.slice(0,n);}
+    const fclass = document.getElementById('fclass');
+    const ftime = document.getElementById('ftime');
+    function updateTimes(cls){ftime.innerHTML='';if(!cls||!SCHED[cls]){ftime.innerHTML='<option value="">Select a class first</option>';return;}if(cls==='Private Lessons'){ftime.innerHTML='<option value="Private Lesson — will contact to schedule">Private Lesson — will contact to schedule</option>';return;}var occ=nextOccurrences(SCHED[cls],6);if(!occ.length){ftime.innerHTML='<option value="">No upcoming times</option>';return;}ftime.innerHTML='<option value="">Choose a time</option>';occ.forEach(function(o){var opt=document.createElement('option');opt.value=opt.textContent=o;ftime.appendChild(opt);});}
+    fclass.value = 'Young Warriors';
+    updateTimes('Young Warriors');
+    fclass.addEventListener('change', function(){ updateTimes(fclass.value); });
   })();
-</script>
+  </script>
 </body>
 </html>
