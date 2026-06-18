@@ -1623,6 +1623,104 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); box-shadow: var(--sha
 }
 
 /* ----------------------------------------------------------------
+   Coaches
+---------------------------------------------------------------- */
+.coach-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.coach-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+}
+.coach-photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.coach-body { padding: 22px 22px 26px; }
+.coach-name {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--text);
+}
+.coach-role {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 6px 0 14px;
+}
+.coach-bio {
+  color: var(--text-2);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+@media (min-width: 880px) {
+  .coach-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .coach-photo { height: 380px; }
+}
+
+/* ----------------------------------------------------------------
+   FAQ
+---------------------------------------------------------------- */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 50px 18px 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text);
+  position: relative;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--red);
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--text-2);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+/* ----------------------------------------------------------------
    Reduced Motion
 ---------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
