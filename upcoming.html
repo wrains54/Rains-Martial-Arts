@@ -1,52 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
-<title>Upcoming Sales | Cottagelady Estate Moving &amp; Sales</title>
-<meta name="description" content="View upcoming estate and moving sales from Cottagelady in Cookeville, TN. Sign up to be notified of new sales."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Upcoming Estate Sales | Cottagelady Estate Moving &amp; Sales</title>
+  <meta name="description" content="Browse upcoming estate sales in Middle Tennessee hosted by Cottagelady. Sign up to be notified when new sales are announced." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Dancing+Script:wght@600;700&family=Lato:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="site-header" id="siteHeader">
-  <div class="hdr-inner">
-    <a href="index.html" class="hdr-logo"><span class="hdr-logo-name">Cottagelady</span><span class="hdr-logo-sub">Estate Moving &amp; Sales</span></a>
-    <nav class="hdr-nav" aria-label="Primary"><a href="for-customers.html">For Customers</a><a href="upcoming.html" class="active">Upcoming Sales</a><a href="previous.html">Previous Sales</a><a href="faq.html">FAQ</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a></nav>
-    <div class="hdr-right"><a href="contact.html" class="hdr-cta">Free Consultation</a><button class="hamburger" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
-  </div>
+
+<div class="utility-bar"><div class="wrap"><div class="utility-inner"><span>Serving Middle Tennessee Since 2014 &nbsp;·&nbsp; Member ASEL</span><div class="utility-links"><a href="tel:9316449963">&#128222; (931) 644-9963</a><span>·</span><a href="mailto:donna@cottagelady.com">donna@cottagelady.com</a></div></div></div></div>
+
+<header class="site-header" id="site-header">
+  <div class="wrap"><div class="header-inner">
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="header-logo"><div class="logo-name">Cottagelady</div><div class="logo-sub">Estate Moving &amp; Sales &nbsp;·&nbsp; Donna Long</div></a>
+    <div class="header-nav-wrap"><nav class="header-nav">
+      <a href="for-customers.html">For Buyers</a><a href="upcoming.html" class="active">Upcoming</a><a href="previous.html">Past Sales</a><a href="testimonials.html">Reviews</a><a href="faq.html">FAQ</a><a href="contact.html" class="nav-cta">Free Consultation</a>
+    </nav></div>
+  </div></div>
 </header>
-<div class="nav-backdrop" id="navBackdrop"></div>
-<nav class="nav-drawer" id="navDrawer" aria-label="Main navigation" aria-hidden="true">
-  <div class="drawer-head"><span class="drawer-logo-name">Cottagelady</span><button class="drawer-close" id="navClose" type="button">&times;</button></div>
-  <div class="drawer-links"><a href="index.html" class="drawer-link">Home</a><a href="for-customers.html" class="drawer-link">For Customers</a><a href="upcoming.html" class="drawer-link">Upcoming Sales</a><a href="previous.html" class="drawer-link">Previous Sales</a><a href="faq.html" class="drawer-link">FAQ</a><a href="testimonials.html" class="drawer-link">Testimonials</a><a href="contract.html" class="drawer-link">Contract</a><a href="contact.html" class="drawer-link">Contact</a></div>
-  <div class="drawer-footer"><a href="contact.html" class="btn-primary">Free Consultation</a><div class="drawer-info"><a href="tel:9319791617">(931) 979-1617</a><br><a href="mailto:Cottagelady438@gmail.com">Cottagelady438@gmail.com</a><br>Cookeville, Tennessee</div></div>
-</nav>
-<div class="page-header">
-  <span class="kicker">Sales Calendar</span>
-  <h1>Upcoming Sales</h1>
-  <p class="section-sub">Check back regularly — new sales are added often. Contact us to be added to our notification list.</p>
-</div>
-<div class="section">
-  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:52px 32px;text-align:center;box-shadow:var(--shadow);" class="reveal">
-    <div style="font-size:2.5rem;margin-bottom:16px;">📅</div>
-    <h2 style="margin-bottom:12px;">No Sales Currently Scheduled</h2>
-    <p style="color:var(--text-2);font-size:1rem;line-height:1.7;max-width:400px;margin:0 auto 28px;">We don't have any upcoming sales posted at the moment. New sales are announced regularly — contact us to be added to our notification list and never miss one.</p>
-    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn-primary">Get Notified</a>
-      <a href="previous.html" class="btn-ghost">View Previous Sales</a>
+
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="drawer-header"><span class="drawer-logo">Cottagelady</span><button class="drawer-close" id="drawer-close" aria-label="Close">&#10005;</button></div>
+  <nav><a href="index.html">Home</a><a href="for-customers.html">For Buyers</a><a href="upcoming.html">Upcoming Sales</a><a href="previous.html">Past Sales</a><a href="testimonials.html">Reviews</a><a href="faq.html">FAQ</a><a href="contract.html">Our Agreement</a><a href="contact.html">Contact Us</a></nav>
+  <div class="drawer-contact"><p>Call Donna Directly</p><a href="tel:9316449963">(931) 644-9963</a><a href="mailto:donna@cottagelady.com">donna@cottagelady.com</a></div>
+</aside>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>&#8250;</span>Upcoming Sales</div>
+    <span class="eyebrow">Mark Your Calendar</span>
+    <h1>Upcoming Estate Sales</h1>
+    <p>Check back regularly &#8212; sales are announced as they&#8217;re scheduled. Sign up below to be notified first.</p>
+  </div>
+</section>
+
+<section class="upcoming-section">
+  <div class="wrap">
+    <div class="empty-box reveal">
+      <span class="empty-icon">&#128197;</span>
+      <h3>No Sales Currently Scheduled</h3>
+      <p>We don&#8217;t have any sales on the calendar at this moment. New sales are announced regularly &#8212; often with just 1&#8211;2 weeks&#8217; notice. The best way to stay informed is to contact Donna directly so she can add you to her notification list.</p>
+    </div>
+
+    <div style="max-width:560px;margin:0 auto;" class="reveal">
+      <h3 style="font-family:'Cormorant Garamond',serif;text-align:center;margin-bottom:8px;">Get Notified About New Sales</h3>
+      <p style="text-align:center;margin-bottom:28px;font-size:0.98rem;">Send Donna a quick message and she&#8217;ll add you to the list. You&#8217;ll hear about upcoming sales as soon as they&#8217;re announced.</p>
+      <form name="notify" method="POST" data-netlify="true" style="background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;">
+        <input type="hidden" name="form-name" value="notify" />
+        <div class="f-group"><label for="notify-name">Your Name</label><input type="text" id="notify-name" name="name" placeholder="Jane Smith" required /></div>
+        <div class="f-group"><label for="notify-email">Email Address</label><input type="email" id="notify-email" name="email" placeholder="jane@email.com" required /></div>
+        <div class="f-group"><label for="notify-phone">Phone (optional)</label><input type="tel" id="notify-phone" name="phone" placeholder="(931) 555-0100" /></div>
+        <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;">Notify Me of New Sales</button>
+      </form>
+    </div>
+
+    <div style="margin-top:72px;border-top:1px solid var(--border);padding-top:64px;" class="reveal">
+      <div style="text-align:center;margin-bottom:40px;">
+        <span class="eyebrow">Thinking About Holding a Sale?</span>
+        <h2 style="font-family:'Cormorant Garamond',serif;margin-bottom:14px;">We&#8217;d Love to Help</h2>
+        <p style="max-width:500px;margin:0 auto 28px;">Estate sales aren&#8217;t just for buyers &#8212; if you&#8217;re ready to downsize or clear a home, Donna offers free consultations with no obligation to proceed.</p>
+        <div class="btn-row">
+          <a href="contact.html" class="btn btn-green">Get a Free Consultation</a>
+          <a href="previous.html" class="btn btn-outline-green">See How Past Sales Went</a>
+        </div>
+      </div>
     </div>
   </div>
-  <div style="margin-top:48px;" class="reveal">
-    <div class="cta-banner">
-      <h2>Planning an Estate Sale?</h2>
-      <p>If you are thinking about holding an estate or moving sale, Donna would love to help. Reach out for a free, no-obligation consultation.</p>
-      <a href="contact.html" class="btn-primary">Contact Donna</a>
-    </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap reveal">
+    <span class="eyebrow">For Buyers</span>
+    <div class="orn"><span>&#10023;</span></div>
+    <h2>Never Miss a Cottagelady Sale</h2>
+    <p>Donna&#8217;s sales draw buyers from across the region. Sign up to be first on the list &#8212; or check out the buyer&#8217;s guide to know exactly what to expect when you arrive.</p>
+    <div class="btn-row"><a href="for-customers.html" class="btn btn-green">Buyer&#8217;s Guide</a><a href="previous.html" class="btn btn-outline-green">Browse Past Sales</a></div>
   </div>
-</div>
-<footer class="site-footer"><div class="footer-name">Cottagelady</div><div class="footer-tagline">Estate Moving &amp; Sales</div><div class="footer-links"><a class="footer-link" href="index.html">Home</a><a class="footer-link" href="for-customers.html">For Customers</a><a class="footer-link" href="upcoming.html">Upcoming</a><a class="footer-link" href="previous.html">Previous</a><a class="footer-link" href="faq.html">FAQ</a><a class="footer-link" href="testimonials.html">Testimonials</a><a class="footer-link" href="contract.html">Contract</a><a class="footer-link" href="contact.html">Contact</a></div><div class="footer-sep"></div><div class="footer-info"><a href="tel:9319791617">(931) 979-1617</a> &bull; <a href="mailto:Cottagelady438@gmail.com">Cottagelady438@gmail.com</a><br>Cookeville, Tennessee</div><div class="footer-copy">&copy; <span id="footerYear"></span> Cottagelady Estate Moving &amp; Sales &bull; Member, American Society of Estate Liquidators</div></footer>
-<script>document.getElementById('footerYear').textContent=new Date().getFullYear();const hdr=document.getElementById('siteHeader');window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',window.scrollY>40),{passive:true});const toggle=document.getElementById('navToggle'),navClose=document.getElementById('navClose'),drawer=document.getElementById('navDrawer'),backdrop=document.getElementById('navBackdrop');function openDrawer(){drawer.classList.add('open');backdrop.classList.add('open');toggle.classList.add('open');toggle.setAttribute('aria-expanded','true');drawer.setAttribute('aria-hidden','false');}function closeDrawer(){drawer.classList.remove('open');backdrop.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded','false');drawer.setAttribute('aria-hidden','true');}toggle.addEventListener('click',openDrawer);navClose.addEventListener('click',closeDrawer);backdrop.addEventListener('click',closeDrawer);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
-</body></html>
+</section>
+
+<footer class="site-footer"><div class="wrap">
+  <div class="footer-grid">
+    <div class="f-brand"><div class="logo-name">Cottagelady</div><div class="logo-sub">Estate Moving &amp; Sales</div><span class="f-tagline">Turning treasures into new beginnings</span><p class="f-desc">Serving Middle Tennessee families with honest, compassionate estate sale services since 2014. Commission-only &#8212; no upfront costs.</p></div>
+    <div class="f-col"><h4>Explore</h4><a href="index.html">Home</a><a href="for-customers.html">For Buyers</a><a href="upcoming.html">Upcoming Sales</a><a href="previous.html">Past Sales</a><a href="testimonials.html">Reviews</a><a href="faq.html">FAQ</a><a href="contract.html">Our Agreement</a><a href="contact.html">Contact</a></div>
+    <div class="f-col"><h4>Services</h4><a href="contact.html">Full Estate Sales</a><a href="contact.html">Moving Assistance</a><a href="contact.html">Free Estimates</a><a href="contract.html">Commission Info</a><a href="for-customers.html">Buyer Information</a></div>
+    <div class="f-col"><h4>Contact Donna</h4><div class="f-contact-row">&#128222; <a href="tel:9316449963">(931) 644-9963</a></div><div class="f-contact-row">&#9993; <a href="mailto:donna@cottagelady.com">donna@cottagelady.com</a></div><div class="f-contact-row">&#128205; Middle Tennessee</div><div class="f-contact-row">&#128336; Mon&#8211;Sat by appointment</div></div>
+  </div>
+  <div class="footer-bar"><span>&#169; <span class="footer-year"></span> Cottagelady Estate Moving &amp; Sales &nbsp;&#183;&nbsp; Donna Long &nbsp;&#183;&nbsp; Member ASEL</span><div class="footer-links"><a href="contact.html">Contact</a><a href="contract.html">Terms</a><a href="faq.html">FAQ</a></div></div>
+</div></footer>
+
+<script>
+document.querySelectorAll('.footer-year').forEach(el=>el.textContent=new Date().getFullYear());
+const hdr=document.getElementById('site-header');
+window.addEventListener('scroll',()=>{hdr.classList.toggle('scrolled',window.scrollY>30);},{passive:true});
+const ham=document.getElementById('hamburger'),drw=document.getElementById('drawer'),ovl=document.getElementById('drawer-overlay'),dcl=document.getElementById('drawer-close');
+function openD(){drw.classList.add('open');ovl.classList.add('open');document.body.style.overflow='hidden';}
+function closeD(){drw.classList.remove('open');ovl.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',openD);dcl.addEventListener('click',closeD);ovl.addEventListener('click',closeD);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeD();});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
