@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Contact | Rains Martial Arts – Cookeville, TN</title>
+  <meta name="description" content="Reach out to Rains Martial Arts in Cookeville, TN. Ask about our programs, schedule a visit, or book your free trial. We'd love to hear from you." />
+  <link rel="canonical" href="https://rainsmartialarts.com/contact.html" />
+  <meta property="og:title" content="Contact | Rains Martial Arts" />
+  <meta property="og:description" content="Reach out to Rains Martial Arts in Cookeville, TN. Ask about our programs, schedule a visit, or book your free trial." />
+  <meta property="og:image" content="https://rainsmartialarts.com/images/STUDIO_1.webp" />
+  <meta property="og:url" content="https://rainsmartialarts.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#f4f4f5" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <style>
+    /* =====================================================
+       CONTACT PAGE — page-specific styles
+       ===================================================== */
+
+    /* Page hero */
+    .cp-hero {
+      padding: 140px 24px 56px;
+      text-align: center;
+    }
+
+    .cp-hero h1 {
+      font-size: clamp(2.6rem, 9vw, 4rem);
+      line-height: 1.0;
+      margin-bottom: 18px;
+    }
+
+    .cp-hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      max-width: 420px;
+      margin: 0 auto 0;
+    }
+
+    .cp-rule {
+      width: 44px;
+      height: 3px;
+      background: var(--red);
+      border-radius: 3px;
+      margin: 22px auto 22px;
+    }
+
+    /* Two-column layout */
+    .cp-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px 88px;
+    }
+
+    @media (min-width: 740px) {
+      .cp-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 40px;
+        align-items: start;
+      }
+    }
+
+    /* ---- Form panel ---- */
+    .cp-form-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 36px 30px 32px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cp-form-panel::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(229,57,53,0.06), transparent 70%);
+      pointer-events: none;
+    }
+
+    .cp-form-panel h2 {
+      font-size: 1.55rem;
+      margin-bottom: 6px;
+    }
+
+    .cp-form-intro {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+    }
+
+    .cp-submit {
+      width: 100%;
+      margin-top: 6px;
+      padding: 16px;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.03em;
+    }
+
+    /* ---- Info panel ---- */
+    .cp-info-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* Info card */
+    .cp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .cp-card-title {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    /* Info items */
+    .cp-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-2);
+      color: inherit;
+      text-decoration: none;
+      transition: none;
+    }
+    .cp-item:first-of-type { padding-top: 0; }
+    .cp-item:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+    a.cp-item { transition: opacity 0.15s; }
+    a.cp-item:hover { opacity: 0.72; }
+    a.cp-item:hover .cp-item-val { color: var(--red); }
+
+    .cp-item-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(229,57,53,0.09);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--red);
+    }
+
+    .cp-item-label {
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .cp-item-val {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.5;
+      transition: color 0.15s;
+    }
+
+    /* Hours */
+    .cp-hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border-2);
+      font-size: 0.88rem;
+    }
+    .cp-hours-row:first-of-type { padding-top: 0; }
+    .cp-hours-row:last-of-type  { border-bottom: none; padding-bottom: 0; }
+
+    .cp-hours-day  { font-weight: 700; color: var(--text); }
+    .cp-hours-time { font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
+    .cp-hours-off  { font-weight: 600; color: var(--text-3); }
+
+    /* Social card */
+    .cp-social-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px 22px 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .cp-social-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .cp-trial-btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Map */
+    .cp-map-wrap {
+      max-width: 980px;
+      margin: 0 auto 80px;
+      padding: 0 20px;
+    }
+
+    .cp-map-inner {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    /* Active nav indicator */
+    .hdr-nav a[aria-current="page"] {
+      color: var(--red) !important;
+    }
+    .hdr-nav a[aria-current="page"]::after {
+      transform: scaleX(1) !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <div class="hdr-inner">
+    <a href="index.html" class="hdr-logo" aria-label="Rains Martial Arts">
+      <img src="images/REDBLACKTXTLOGO.png" alt="Rains Martial Arts" />
+    </a>
+    <nav class="hdr-nav" aria-label="Primary">
+      <a href="index.html#classes">Classes</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="index.html#pricing">Memberships</a>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="hdr-right">
+      <a href="index.html#home" class="hdr-trial">Free Trial</a>
+      <button class="hamburger" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- NAV DRAWER -->
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="nav-drawer" id="navDrawer" aria-label="Main navigation" aria-hidden="true">
+  <div class="drawer-head">
+    <img src="images/REDBLACKTXTLOGO.png" alt="RMA" class="drawer-logo" />
+    <button class="drawer-close" id="navClose" type="button" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="drawer-links">
+    <a href="index.html" class="drawer-link">Home</a>
+    <a href="index.html#classes" class="drawer-link">Classes</a>
+    <a href="index.html#schedule" class="drawer-link">Schedule</a>
+    <a href="index.html#pricing" class="drawer-link">Memberships</a>
+    <a href="index.html#testimonials" class="drawer-link">Reviews</a>
+    <a href="contact.html" class="drawer-link">Contact</a>
+  </div>
+  <div class="drawer-footer">
+    <a href="index.html#home" class="btn-primary drawer-trial">Book Free Trial</a>
+    <div class="drawer-socials">
+      <a href="https://www.facebook.com/profile.php?id=61583813382121" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/rainsmartialarts/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@rainsmartialart" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/></svg>
+      </a>
+    </div>
+    <p class="drawer-address">1227 N Washington Ave, Suite 201<br>Cookeville, TN 38501</p>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="cp-hero reveal">
+  <span class="kicker">Get In Touch</span>
+  <h1>We'd Love to<br><span class="red">Hear From You</span></h1>
+  <div class="cp-rule"></div>
+  <p class="cp-hero-sub">Questions about programs, schedule, or pricing? Ready to get started? Reach out — we respond fast and we're always happy to help.</p>
+</div>
+
+<!-- MAIN GRID -->
+<div class="cp-grid">
+
+  <!-- CONTACT FORM -->
+  <div class="cp-form-panel reveal">
+    <h2>Send a Message</h2>
+    <p class="cp-form-intro">We'll get back to you within one business day — usually much sooner.</p>
+
+    <form id="contactForm" name="contact" method="POST" action="/thank-you.html"
+          data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact" />
+      <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
+
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="c-name">Your Name</label>
+          <input type="text" id="c-name" name="name" required placeholder="First &amp; Last" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="c-phone">Phone</label>
+          <input type="tel" id="c-phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="c-email">Email Address</label>
+        <input type="email" id="c-email" name="email" required placeholder="you@example.com" autocomplete="email" />
+      </div>
+
+      <div class="form-group">
+        <label for="c-interest">I'm interested in</label>
+        <select id="c-interest" name="interest">
+          <option value="">Select a program…</option>
+          <option>Adult Karate</option>
+          <option>Adult Kickboxing / Muay Thai</option>
+          <option>Kids Karate</option>
+          <option>Kids Kickboxing</option>
+          <option>Young Warriors (Ages 3–5)</option>
+          <option>Women's Kickboxing</option>
+          <option>Private Lessons</option>
+          <option>Fight Night</option>
+          <option>General Question</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" name="message" rows="5"
+          placeholder="Tell us a little about yourself or what you're looking for…"></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary cp-submit">Send Message</button>
+    </form>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="cp-info-panel">
+
+    <!-- Contact details -->
+    <div class="cp-card reveal">
+      <p class="cp-card-title">Contact Us</p>
+
+      <a href="tel:9316449963" class="cp-item">
+        <div class="cp-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-16.74-16.74A2 2 0 0 1 5.06 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="cp-item-label">Phone</span>
+          <span class="cp-item-val">(931) 644-9963</span>
+        </div>
+      </a>
+
+      <a href="mailto:rainsmartial@gmail.com" class="cp-item">
+        <div class="cp-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div>
+          <span class="cp-item-label">Email</span>
+          <span class="cp-item-val">rainsmartial@gmail.com</span>
+        </div>
+      </a>
+
+      <a href="https://maps.google.com/?q=1227+N+Washington+Ave+Suite+201+Cookeville+TN"
+         target="_blank" rel="noopener" class="cp-item">
+        <div class="cp-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div>
+          <span class="cp-item-label">Address</span>
+          <span class="cp-item-val">1227 N Washington Ave, Suite 201<br>Cookeville, TN 38501</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Hours -->
+    <div class="cp-card reveal">
+      <p class="cp-card-title">Class Hours</p>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Monday</span>
+        <span class="cp-hours-time">3:00 – 8:30 PM</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Tuesday</span>
+        <span class="cp-hours-time">3:00 – 8:30 PM</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Wednesday</span>
+        <span class="cp-hours-time">3:00 – 8:30 PM</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Thursday</span>
+        <span class="cp-hours-time">3:00 – 8:30 PM</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Friday</span>
+        <span class="cp-hours-time">7:00 – 9:00 PM</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Saturday</span>
+        <span class="cp-hours-off">Closed</span>
+      </div>
+      <div class="cp-hours-row">
+        <span class="cp-hours-day">Sunday</span>
+        <span class="cp-hours-off">Closed</span>
+      </div>
+    </div>
+
+    <!-- Social + CTA -->
+    <div class="cp-social-card reveal">
+      <p class="cp-card-title">Follow Along</p>
+      <div class="cp-social-row">
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61583813382121"
+           target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.instagram.com/rainsmartialarts/"
+           target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 7.3A2.8 2.8 0 1 1 14.8 12 2.8 2.8 0 0 1 12 14.8zm4.8-8.9a1.1 1.1 0 1 1-1.1-1.1 1.1 1.1 0 0 1 1.1 1.1z"/>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@rainsmartialart"
+           target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.7 2h3.2c.2 1.6 1.4 3 3 3.4v3.2c-1.3-.1-2.6-.5-3.7-1.2v7.4a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 2.7 2.7V2z"/>
+          </svg>
+        </a>
+      </div>
+      <a href="index.html" class="btn-primary cp-trial-btn">Book Your Free Trial</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="cp-map-wrap reveal">
+  <div class="cp-map-inner">
+    <iframe
+      src="https://www.google.com/maps?q=1227%20N%20Washington%20Ave%2C%20Cookeville%2C%20TN&output=embed"
+      width="100%" height="320" style="border:0;display:block;"
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Rains Martial Arts location">
+    </iframe>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <img src="images/REDBLACKTXTLOGO.png" alt="Rains Martial Arts" class="footer-logo" />
+  <div class="footer-links">
+    <a class="footer-link" href="index.html#classes">Classes</a>
+    <a class="footer-link" href="index.html#schedule">Schedule</a>
+    <a class="footer-link" href="index.html#pricing">Memberships</a>
+    <a class="footer-link" href="contact.html">Contact</a>
+    <a class="footer-link" href="mailto:rainsmartial@gmail.com">Email</a>
+  </div>
+  <p class="footer-text">&copy; <span id="footerYear"></span> Rains Martial Arts &bull; 1227 N Washington Ave, Cookeville, TN &bull; (931) 644-9963</p>
+</footer>
+
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+  // Header scroll
+  const hdr = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Nav drawer
+  const toggle   = document.getElementById('navToggle');
+  const navClose = document.getElementById('navClose');
+  const drawer   = document.getElementById('navDrawer');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function openDrawer() {
+    drawer.classList.add('open');
+    backdrop.classList.add('open');
+    toggle.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    drawer.setAttribute('aria-hidden', 'false');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    backdrop.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  toggle.addEventListener('click', openDrawer);
+  navClose.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
