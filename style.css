@@ -1623,6 +1623,29 @@ a.contact-item:hover { border-color: rgba(229,57,53,0.35); box-shadow: var(--sha
 }
 
 /* ----------------------------------------------------------------
+   Program page trust line + text link
+---------------------------------------------------------------- */
+.prog-hero-trust {
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 500;
+  max-width: 520px;
+  margin: 12px 0 0;
+  opacity: 0.95;
+}
+.prog-hero-trust strong { color: #fff; font-weight: 800; }
+.prog-text-link {
+  display: inline-block;
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prog-text-link:hover { color: var(--red); }
+
+/* ----------------------------------------------------------------
    Hero video
 ---------------------------------------------------------------- */
 .hero-video {
