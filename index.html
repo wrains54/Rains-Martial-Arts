@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Rains Martial Arts | Karate &amp; Kickboxing in Cookeville, TN</title>
-  <meta name="description" content="Karate, Kickboxing and Muay Thai in Cookeville, TN for kids, teens, and adults. 8 programs, all experience levels. Your first 3 classes are free." />
+  <meta name="description" content="Back to School Special: 4 weeks for $50 plus a free uniform. Karate, Kickboxing and Muay Thai in Cookeville, TN for kids, teens, and adults. First 3 classes free." />
   <meta name="keywords" content="Martial Arts Cookeville TN, Karate Cookeville, Kickboxing Cookeville, Muay Thai Cookeville, Kids Martial Arts, Self Defense Cookeville" />
   <meta name="theme-color" content="#f4f4f5" />
   <link rel="canonical" href="https://rainsmartialarts.com/" />
   <meta property="og:title" content="Rains Martial Arts | Cookeville, TN" />
-  <meta property="og:description" content="Karate, Kickboxing and Muay Thai for kids, teens, and adults in Cookeville, TN. Your first 3 classes are free." />
+  <meta property="og:description" content="Back to School Special: 4 weeks for $50 plus a free uniform. Karate, Kickboxing and Muay Thai for kids, teens, and adults in Cookeville, TN." />
   <meta property="og:image" content="https://rainsmartialarts.com/images/STUDIO_1.webp" />
   <meta property="og:url" content="https://rainsmartialarts.com/" />
   <meta property="og:type" content="website" />
@@ -113,6 +113,11 @@
     </h1>
     <p class="hero-sub">Karate, Kickboxing and Muay Thai for kids, teens, and adults. Your first 3 classes are free, no gear and no commitment.</p>
     <p class="hero-trust">Trained by an <strong>IKF World Champion</strong> and a <strong>5th Degree Black Belt</strong> with 50+ years on the mat.</p>
+    <button class="promo-ribbon" type="button" data-open-trial data-promo="Back to School Special">
+      <span class="promo-ribbon-tag">🎒 Back to School Special</span>
+      <span class="promo-ribbon-text"><strong>4 Weeks for $50</strong> + a <strong>FREE Uniform</strong></span>
+      <span class="promo-ribbon-arrow">&rsaquo;</span>
+    </button>
     <div class="hero-ctas">
       <button class="btn-primary" type="button" data-open-trial>Start Free Trial</button>
       <a href="#classes" class="btn-ghost">View Classes</a>
@@ -459,6 +464,15 @@
     <h2>Simple, Honest Pricing</h2>
     <p class="section-sub">Memberships run on a simple 3 month agreement with no hidden fees. Try your first 3 classes free before you sign anything.</p>
   </div>
+
+  <div class="promo-banner reveal">
+    <span class="promo-banner-tag">🎒 Back to School Special</span>
+    <h3 class="promo-banner-headline">4 Weeks for $50 + a FREE Uniform</h3>
+    <p class="promo-banner-sub">Get your child started this school year. Four full weeks of classes plus a uniform to keep, all for $50.</p>
+    <button class="btn-primary" type="button" data-open-trial data-promo="Back to School Special">Claim the Special</button>
+    <span class="promo-banner-fine">Limited time back to school offer. New students only.</span>
+  </div>
+
   <div class="pricing-cards">
     <div class="pricing-card reveal" data-d="1">
       <div class="pricing-name">Membership</div>
@@ -604,8 +618,8 @@
 <div class="cta-banner-wrap">
   <div class="cta-banner-inner reveal">
     <h2>Ready to Start?</h2>
-    <p>Your first 3 classes are free with no commitment. No gear needed. Spots in our kids classes fill up fast, so grab yours this week.</p>
-    <button class="btn-primary" type="button" data-open-trial>Book My Free Trial</button>
+    <p>Get in on the Back to School Special: <strong>4 weeks for $50 plus a free uniform</strong>. Or try your first 3 classes free, no commitment, no gear needed.</p>
+    <button class="btn-primary" type="button" data-open-trial data-promo="Back to School Special">Claim the Back to School Special</button>
     <a class="cta-text-link" href="sms:+19316449963">or text us at (931) 644-9963</a>
   </div>
 </div>
@@ -664,7 +678,7 @@
 
 <!-- STICKY BAR -->
 <div class="sticky-bar" id="stickyBar">
-  <button class="sticky-btn" type="button" data-open-trial>Book Your Free Trial</button>
+  <button class="sticky-btn" type="button" data-open-trial data-promo="Back to School Special">🎒 Back to School: 4 Weeks $50 + Free Uniform</button>
 </div>
 
 <!-- TRIAL FORM BOTTOM SHEET -->
@@ -677,9 +691,10 @@
         <h2 id="sheetTitle">Book Your Free Trial</h2>
         <button class="sheet-close" id="sheetClose" type="button">&times;</button>
       </div>
-      <p class="sheet-desc">Your first 3 classes are free. No gear needed, all levels welcome.</p>
+      <p class="sheet-desc" id="sheetDesc">Your first 3 classes are free. No gear needed, all levels welcome.</p>
       <form name="join" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" id="trialForm">
         <input type="hidden" name="form-name" value="join" />
+        <input type="hidden" name="promo" id="fpromo" value="" />
         <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
         <div class="form-group">
           <label for="fname">Your Name</label>
@@ -781,9 +796,19 @@
   qsa('.drawer-link').forEach(function(a){ a.addEventListener('click', closeNav); });
 
   var sheet = $('trialSheet'), sheetBackdrop = $('sheetBackdrop'), sheetClose = $('sheetClose');
-  function openSheet(preselect) {
+  function openSheet(preselect, promo) {
     sheet.classList.add('open'); sheet.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
     if (preselect) { var s=$('fclass'); if(s){ s.value=preselect; populateTimes(preselect); } }
+    var promoField=$('fpromo'), title=$('sheetTitle'), desc=$('sheetDesc');
+    if (promo) {
+      if(promoField) promoField.value=promo;
+      if(title) title.textContent='Claim the Back to School Special';
+      if(desc) desc.innerHTML='<strong>4 weeks for $50 plus a free uniform.</strong> Fill this out and we will reach out to get you started.';
+    } else {
+      if(promoField) promoField.value='';
+      if(title) title.textContent='Book Your Free Trial';
+      if(desc) desc.textContent='Your first 3 classes are free. No gear needed, all levels welcome.';
+    }
     setTimeout(function(){ var f=qs('input:not([type=hidden])',sheet); if(f) f.focus(); }, 400);
   }
   function closeSheet() { sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
@@ -793,7 +818,7 @@
   document.addEventListener('click', function(e){
     var btn = e.target.closest('[data-open-trial]');
     if (!btn) return;
-    e.preventDefault(); closeNav(); openSheet(btn.dataset.class||null);
+    e.preventDefault(); closeNav(); openSheet(btn.dataset.class||null, btn.dataset.promo||null);
   });
 
   var ffor=$('ffor'), childFields=$('childFields'), fchildname=$('fchildname'), fchildage=$('fchildage');

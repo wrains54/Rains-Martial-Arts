@@ -73,6 +73,11 @@
       <h1 class="prog-hero-title">Adult Karate</h1>
       <p class="prog-hero-sub">Traditional Japanese karate for adults, discipline, technique, and mental toughness</p>
       <p class="prog-hero-trust">Trained by an <strong>IKF World Champion</strong> and a <strong>5th Degree Black Belt</strong> with 50+ years on the mat.</p>
+      <button class="promo-ribbon" type="button" id="progPromo">
+        <span class="promo-ribbon-tag">🎒 Back to School Special</span>
+        <span class="promo-ribbon-text"><strong>4 Weeks for $50</strong> + a <strong>FREE Uniform</strong></span>
+        <span class="promo-ribbon-arrow">&rsaquo;</span>
+      </button>
     </div>
   </div>
 
@@ -150,7 +155,7 @@
   </footer>
 
   <div class="sticky-bar" id="stickyBar">
-    <button class="sticky-btn" id="stickyBtn" type="button">Book Your Free Class →</button>
+    <button class="sticky-btn" id="stickyBtn" type="button">🎒 Back to School: 4 Weeks $50 + Free Uniform</button>
   </div>
 
   <div class="sheet" id="sheet" aria-hidden="true">
@@ -161,12 +166,13 @@
         <div class="sheet-header">
           <div>
             <h2>Book Your Free Class</h2>
-            <p class="sheet-desc">Your first 3 classes are free. We'll reach out to confirm your time.</p>
+            <p class="sheet-desc">Back to School Special: 4 weeks for $50 plus a free uniform. Prefer to just try it first? Your first 3 classes are free.</p>
           </div>
           <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
         </div>
         <form name="join" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field" id="trialForm">
           <input type="hidden" name="form-name" value="join" />
+          <input type="hidden" name="promo" id="fpromo" value="" />
           <p style="display:none"><label>Don't fill: <input name="bot-field" /></label></p>
           <div class="form-group"><label for="fname">Full Name</label><input type="text" id="fname" name="name" required placeholder="Your name" /></div>
           <div class="form-group"><label for="femail">Email</label><input type="email" id="femail" name="email" required placeholder="you@example.com" /></div>
@@ -208,6 +214,9 @@
     function upd(cls){ft.innerHTML='';if(!cls||!SCHED[cls]){ft.innerHTML='<option value="">Select a class first</option>';return;}if(cls==='Private Lessons'){ft.innerHTML='<option value="Private Lesson, will contact to schedule">Private Lesson, will contact to schedule</option>';return;}var o=nxt(SCHED[cls],6);ft.innerHTML='<option value="">Choose a time</option>';o.forEach(function(x){var op=document.createElement('option');op.value=op.textContent=x;ft.appendChild(op);});}
     fc.value='Adult Karate';upd('Adult Karate');fc.addEventListener('change',function(){upd(fc.value);});
   })();
+  </script>
+  <script>
+  (function(){var pp=document.getElementById("progPromo");if(!pp)return;pp.addEventListener("click",function(){var f=document.getElementById("fpromo");if(f)f.value="Back to School Special";var sh=document.getElementById("sheet");if(sh){sh.classList.add("open");sh.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}});})();
   </script>
 </body>
 </html>
