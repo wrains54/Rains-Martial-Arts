@@ -73,11 +73,6 @@
       <h1 class="prog-hero-title">Private Lessons</h1>
       <p class="prog-hero-sub">Personalized coaching focused entirely on your goals, your pace, your progress</p>
       <p class="prog-hero-trust">Trained by an <strong>IKF World Champion</strong> and a <strong>5th Degree Black Belt</strong> with 50+ years on the mat.</p>
-      <button class="promo-ribbon" type="button" id="progPromo">
-        <span class="promo-ribbon-tag">🎒 Back to School Special</span>
-        <span class="promo-ribbon-text"><strong>4 Weeks for $50</strong> + a <strong>FREE Uniform</strong></span>
-        <span class="promo-ribbon-arrow">&rsaquo;</span>
-      </button>
     </div>
   </div>
 
@@ -213,9 +208,6 @@
       ft.innerHTML='<option value="">Choose a time</option>';res.slice(0,6).forEach(function(x){var op=document.createElement('option');op.value=op.textContent=x;ft.appendChild(op);});
     });
   })();
-  </script>
-  <script>
-  (function(){var pp=document.getElementById("progPromo");if(!pp)return;pp.addEventListener("click",function(){var f=document.getElementById("fpromo");if(f)f.value="Back to School Special";var sh=document.getElementById("sheet");if(sh){sh.classList.add("open");sh.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}});})();
   </script>
 </body>
 </html>
