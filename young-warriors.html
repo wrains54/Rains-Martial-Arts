@@ -73,11 +73,6 @@
       <h1 class="prog-hero-title">Young Warriors</h1>
       <p class="prog-hero-sub">A fun, structured intro to martial arts built for younger kids</p>
       <p class="prog-hero-trust">Trained by an <strong>IKF World Champion</strong> and a <strong>5th Degree Black Belt</strong> with 50+ years on the mat.</p>
-      <button class="promo-ribbon" type="button" id="progPromo">
-        <span class="promo-ribbon-tag">🎒 Back to School Special</span>
-        <span class="promo-ribbon-text"><strong>4 Weeks for $50</strong> + a <strong>FREE Uniform</strong></span>
-        <span class="promo-ribbon-arrow">&rsaquo;</span>
-      </button>
     </div>
   </div>
 
@@ -156,7 +151,7 @@
   </footer>
 
   <div class="sticky-bar" id="stickyBar">
-    <button class="sticky-btn" id="stickyBtn" type="button">🎒 Back to School: 4 Weeks $50 + Free Uniform</button>
+    <button class="sticky-btn" id="stickyBtn" type="button">Book Your Free Trial →</button>
   </div>
 
   <div class="sheet" id="sheet" aria-hidden="true">
@@ -167,7 +162,7 @@
         <div class="sheet-header">
           <div>
             <h2>Book Your Free Class</h2>
-            <p class="sheet-desc">Back to School Special: 4 weeks for $50 plus a free uniform. Prefer to just try it first? Your first 3 classes are free.</p>
+            <p class="sheet-desc">Your first 3 classes are free. No gear needed, all levels welcome.</p>
           </div>
           <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
         </div>
@@ -298,9 +293,6 @@
     updateTimes('Young Warriors');
     fclass.addEventListener('change', function(){ updateTimes(fclass.value); });
   })();
-  </script>
-  <script>
-  (function(){var pp=document.getElementById("progPromo");if(!pp)return;pp.addEventListener("click",function(){var f=document.getElementById("fpromo");if(f)f.value="Back to School Special";var sh=document.getElementById("sheet");if(sh){sh.classList.add("open");sh.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";}});})();
   </script>
 </body>
 </html>
